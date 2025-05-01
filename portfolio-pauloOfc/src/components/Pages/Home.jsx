@@ -169,7 +169,7 @@ const Home = ({setPage}) => {
                     </ul>
                     <div className="flex items-cente">
                       <ButtonGithub url="https://github.com/PauloCesar26/TCC_HireQuest"/>
-                      <ButtonProject urlPage="/Home/Projeto1"/>
+                      <ButtonProject urlPage="/Home/MarketingPessoal"/>
                     </div>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ const Home = ({setPage}) => {
                     </ul>
                     <div className="flex">
                       <ButtonGithub url="https://github.com/PauloCesar26/clone-site-netflix"/>
-                      <ButtonProject url="https://paulocesar26.github.io/sistemaSimplesJS/"/>
+                      <ButtonProject urlPage="/Home/PageNetflix" />
                     </div>
                   </div>
                 </div>
@@ -236,7 +236,7 @@ const Home = ({setPage}) => {
                     </ul>
                     <div className="flex">
                       <ButtonGithub url="https://github.com/PauloCesar26/sistemaSimplesJS"/>
-                      <ButtonProject url="https://paulocesar26.github.io/sistemaSimplesJS/"/>
+                      <ButtonProject url="https://qgdomenor.github.io/JojocaDoces/"/>
                     </div>
                   </div>
                 </div>

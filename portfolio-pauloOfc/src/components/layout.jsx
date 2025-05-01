@@ -6,7 +6,8 @@ import Home from "@/components/Pages/Home"
 import ProjectCreator from '@/components/Pages/ProjectCreator'
 import Habilidades from '@/components/Pages/Habilidades';
 import AllProjects from '@/components/Pages/AllProjects';
-import Projeto1 from '@/components/Pages/Projeto1';
+import MarketingPessoal from '@/components/Pages/MarketingPessoal';
+import PageNetflix from './Pages/PageNetflix';
 
 export default function Layout({ children }) {
   const navigate = useNavigate();
@@ -26,8 +27,10 @@ export default function Layout({ children }) {
               <Route path="/Criador" element={<ProjectCreator />} />
               <Route path="/Habilidades" element={<Habilidades />} />
               <Route path="/AllProjects" element={<AllProjects />} />
-              <Route path="/AllProjects/Projeto1" element={<Projeto1 />} />
-              <Route path="/Home/Projeto1" element={<Projeto1 />} />
+              <Route path="/AllProjects/MarketingPessoal" element={<MarketingPessoal />} />
+              <Route path="/Home/MarketingPessoal" element={<MarketingPessoal />} />
+              <Route path="/AllProjects/PageNetflix" element={<PageNetflix />} />
+              <Route path="/Home/PageNetflix" element={<PageNetflix />} />
               <Route path="*" element={<Home />} /> 
           </Routes>
         </div>

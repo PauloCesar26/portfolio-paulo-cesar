@@ -11,16 +11,27 @@ function AllProjects() {
             <CardProject 
               imgSrc="/img/projectHirequest.png" 
               altText="Projeto 1"
-              urlPage="/AllProjects/Projeto1">
+              urlPage="/AllProjects/MarketingPessoal">
               <span>HireQuest: Marketing Pessoal</span>
             </CardProject>
 
-            <CardProject imgSrc="/img/projectHirequest.png" altText="Projeto 1">
-                <span>HireQuest: Marketing Pessoal</span>
+            <CardProject 
+              imgSrc="/img/projectNetflix.png" 
+              altText="Projeto 2"
+              urlPage="/AllProjects/PageNetflix" >
+                <span>Landing Page do site da Netflix</span>
             </CardProject>
 
             <CardProject imgSrc="/img/projectHirequest.png" altText="Projeto 1">
                 <span>HireQuest: Marketing Pessoal</span>
+            </CardProject>
+
+            <CardProject imgSrc="null" altText="Projeto">
+                <span>Em breve mais projetos</span>
+            </CardProject>
+
+            <CardProject imgSrc="null" altText="Projeto">
+                <span>Em breve mais projetos</span>
             </CardProject>
           </div>
         </div>
