@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    width: 100%;
+    height: auto;
+    min-width: 300px;  
+    max-width: 2300px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+html, body{
+    overflow-x: hidden;
+}
+.banner{
+    height: calc(100vh - 1.25rem);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7), rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url("/public/img/fundo.jpeg");
+    background-attachment:fixed;
+    background-position:50% 50%;
+    background-size:cover;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+.banner:after{
+    content: " ";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 40%, #000 100%);
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 40%, #000 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 40%, #000 100%); 
+}
+.fundoFrase{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0,0,0,0.8), rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url("/public/img/fundo.jpeg");
+    background-attachment:fixed;
+    background-position:50% 50%;
+    background-size:cover;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+.fundoFrase:after{
+    content: " ";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 40%, #000 100%);
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 40%, #000 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 40%, #000 100%); 
+}
+.projectsImg{
+    background-attachment:scroll;
+    background-position:center;
+    background-size:cover;
+    object-fit:cover;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+.sun{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.moon{
+    display: none;
+}
+.menu-btn.ativa {
+    background-color: oklch(0.274 0.006 286.033); 
+}
+a img{
+    padding: 0;
+    margin: 0;
+    width: 150px;
+    height: 150px;
+    z-index: 0;
+}
+a div{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px, rgba(0, 0, 0, 0.4) 0px 16px 56px, rgba(0, 0, 0, 0.5) 0px 24px 80px;
+}
+.dark a div{
+    box-shadow: rgba(60, 60, 92, 0.1) 0px 8px 24px, rgba(60, 60, 92, 0.4) 0px 16px 56px, rgba(60, 60, 92, 0.5) 0px 24px 80px;
+}
+
+.font{
+    font-family: "Inter", sans-serif;
+}
+.fontTitle{
+    font-family: "Inter", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+.fontContent{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.shadow-custom:hover{
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.dark .shadow-custom:hover{
+    box-shadow: rgba(77, 77, 77, 0.56) 0px 22px 70px 4px;
+}
+.shadow-button:hover{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.shadow-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.dark .shadow-card:hover{
+    box-shadow: rgba(255, 255, 255, 0.15) 0px 15px 25px, rgba(255, 255, 255, 0.05) 0px 5px 10px;
+}
+.shadow{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+.dark .shadow{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 8px 24px, rgba(255, 255, 255, 0.1) 0px 16px 56px, rgba(255, 255, 255, 0.1) 0px 24px 80px;
+}
+.icon-sidebar svg{
+    width: 24px;
+    height: 24px;
+}
+.responsiveProject{
+    width: 950px;
+}
+@media screen and (max-width: 950px){
+    .responsiveProject{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 500px){
+    .responsiveProject{
+        width: 95%;
+    }
+}
+

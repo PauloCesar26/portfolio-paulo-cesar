@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog | JavaScript</title>
+    <style>
+        div h1{
+            font-family: "Fredoka", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+        span{
+            font-family: "Fredoka", sans-serif;
+            font-size: 1rem;
+            font-weight: 100;
+        }
+        .responsive{
+            width: 650px;
+        }
+        @media screen and (max-width: 950px){
+            .responsive{
+                width: 90%;
+            }
+        }
+        @media screen and (max-width: 500px){
+            .responsive{
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col h-[100vh] max-w-[2500px] min-w-[300px] ml-auto mr-auto bg-zinc-700">
+    <div class="flex-1 w-[90%] h-auto ml-auto mr-auto flex items-center flex-col">
+        <div class="mt-10 responsive flex gap-3 text-white">
+            <div class="flex gap-2">
+                <!-- <img src="./img/imgPerfilblog.png" alt="" class="w-[30px]"> -->
+                <span>Paulo Cesar</span>
+            </div>
+            <span>▪</span>
+            <div class="">
+                <span>11/04/2025</span>
+            </div>
+            <span>▪</span>
+            <div class="">
+                <span>Blog</span>
+            </div>
+        </div>
+        <h1 class="mt-5 text-white text-[2.3rem]">JavaScript: Explorando os conceitos do DOM</h1>
+        <p class="responsive mt-3 mb-3 text-white text-[17px]">Entenda como o JavaScript se conecta ao HTML para manipular elementos e transformar páginas web de forma dinâmica.</p>
+        <div class="responsive">
+            <div class="w-full flex items-center justify-center">
+                <img src="./img/imgJavascript.jpeg" alt="" class="w-[650px]"/>
+            </div>
+            <div class="w-[100%] h-auto p-3 space-y-7 text-zinc-100 flex flex-col items-center justify-center">
+                <div class="responsive space-y-1 flex flex-col justify-center">
+                    <p class="text-[17px] text-justify">
+                        De início, é preciso lembrar que o javascript é uma linguagem versátil, capaz de atuar tanto 
+                        no lado do servidor (back-end) quanto no lado do cliente (front-end), que é a parte visual da 
+                        aplicação. No front-end, o javascript interage com  o DOM (Document Object  Model) que representa a 
+                        estrutura da página HTML e por meio dele é possível  modificar os elementos modificando cores,
+                        textos, adicionando e removendo elementos e entre outras coisas que será abordado mais adiante.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        Antes de tudo, é necessário entender como que javascript consegue interagir com o DOM, que lembrando
+                        é uma árvore do arquivo HTML, como assim? O html possui tags como div, h1, p, button e entre outras, 
+                        elas são representadas como um nó ou objeto que o javascript acessa para fazer a manipulação. 
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        A partir disso, para ele chegar a esse conteúdo é usado o “document” que vai selecionar o elemento 
+                        que queremos, para fazer com que ele funcione e faça o que desejamos tem que adicionar outras 
+                        propriedades que vão apontar o elemento certo que vai sofrer alguma ação ou alteração. Para isso, 
+                        existe os métodos, são eles: getElementById que pega o id de um item no html e traz para o arquivo 
+                        javascript, getElementByClassName mesma função só que ele pega uma classe (class), querySelector 
+                        acessa qualquer item que corresponde ao seletor do CSS, por exemplo, se for um ponto dentro 
+                        parênteses que corresponde a uma classe ele vai pegar a classe correspondente, já o querySelectorAll 
+                        vai selecionar todos os elementos que corresponde ao que está dentro do parênteses, como se fosse uma 
+                        lista de todos que possui a mesma identificação. 
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        Em breve continuação...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative bottom-0 mt-5 border-t-[1px] border-zinc-600 p-4 w-full flex items-center justify-center text-zinc-400">
+        <span>&copy; Paulo Cesar 2025</span>
+    </div>
+
+</body>
+</html>

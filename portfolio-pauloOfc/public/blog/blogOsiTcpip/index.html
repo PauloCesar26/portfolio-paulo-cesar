@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog | OSI e TCP IP</title>
+    <style>
+        div h1{
+            font-family: "Fredoka", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+        span{
+            font-family: "Fredoka", sans-serif;
+            font-size: 1rem;
+            font-weight: 100;
+        }
+        .responsive{
+            width: 650px;
+        }
+        @media screen and (max-width: 950px){
+            .responsive{
+                width: 90%;
+            }
+        }
+        @media screen and (max-width: 500px){
+            .responsive{
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col h-[100vh] max-w-[2500px] min-w-[300px] ml-auto mr-auto bg-zinc-700">
+    <div class="flex-1 w-[90%] h-auto ml-auto mr-auto flex items-center flex-col">
+        <div class="mt-10 responsive flex gap-3 text-white">
+            <div class="flex gap-2">
+                <!-- <img src="./img/imgPerfilblog.png" alt="" class="w-[30px]"> -->
+                <span>Paulo Cesar</span>
+            </div>
+            <span>▪</span>
+            <div class="">
+                <span>01/03/2024</span>
+            </div>
+            <span>▪</span>
+            <div class="">
+                <span>Blog</span>
+            </div>
+        </div>
+        <h1 class="mt-5 text-white text-[2.3rem]">Modelo OSI e TCP IP: Conceitos e comparação dos temas</h1>
+        <p class="responsive mt-3 mb-3 text-white text-[17px]">Saiba os conceitos básicos dos modelos e compreenda os dois por meio de uma comparação</p>
+        <div class="responsive">
+            <div class="w-full flex items-center justify-center">
+                <img src="./img/rede.jpeg" alt="" class="w-[650px]"/>
+            </div>
+            <div class="w-[100%] h-1uto p-3 space-y-7 text-zinc-100 flex flex-col items-center justify-center">
+                <div class="responsive space-y-1 flex flex-col justify-center">
+                    <p class="text-[18px] font-bold">
+                        Modelo OSI:
+                    </p>
+                    <p class="text-[17px] text-justify">
+                        O Modelo OSI (Open Systems Interconnection) é um modelo conceitual que descreve como os sistemas de rede
+                        devem se comunicar uns com os outros. Foi desenvolvido pela International Organization for Standardization
+                        (ISO) como um padrão para facilitar a comunicação entre diferentes sistemas de computadores, independentemente
+                        do fabricante ou da tecnologia subjacente.
+                    </p>
+                    <br>
+                    <p class="text-[18px] font-bold">
+                        Camadas do modelo OSI:
+                    </p>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada Física (Physical Layer):</strong> Esta camada lida com a transmissão física dos dados sobre o meio de
+                        comunicação, como cabos de cobre, fibras ópticas ou ondas de rádio. Ela define as características 
+                        elétricas, mecânicas e funcionais das interfaces físicas.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Enlace de Dados (Data Link Layer):</strong> Esta camada é responsável pela comunicação entre
+                        dispositivos diretamente conectados. Ela fornece uma transferência de dados confiável e 
+                        livre de erros entre os dispositivos na mesma rede local.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Rede (Network Layer):</strong> Esta camada é responsável pelo roteamento de dados através de
+                        redes múltiplas. Ela determina a melhor rota para os dados viajarem da fonte para o destino, 
+                        levando em consideração fatores como congestionamento de rede, topologia e prioridades de 
+                        serviço.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Transporte (Transport Layer):</strong> Esta camada é responsável pela entrega de dados 
+                        de forma confiável e ordenada entre os dispositivos finais. Ela controla o fluxo de dados,
+                        segmentação e retransmissão em caso de perda de dados.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Sessão (Session Layer):</strong> Esta camada estabelece, gerencia e encerra as conexões entre as aplicações
+                        em sistemas diferentes. Ela permite que as aplicações se comuniquem entre si, sincronizem suas atividades 
+                        e gerenciem sessões de comunicação.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Apresentação (Presentation Layer):</strong> Esta camada é responsável pela representação dos dados 
+                        de forma independente do formato de dados subjacente. Ela converte os dados de um formato específico 
+                        para um formato comum que pode ser entendido por todas as partes envolvidas na comunicação.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify pb-5">
+                        <strong>Camada de Aplicação (Application Layer):</strong> Esta camada fornece serviços de rede diretamente às 
+                        aplicações do usuário final. Ela inclui protocolos de comunicação e serviços para tarefas como
+                        transferência de arquivos, correio eletrônico, acesso remoto e navegação na web.
+                    </p>
+                    <hr>
+                    <p class="text-[18px] font-bold pt-5">
+                        Modelo TCP IP:
+                    </p>
+                    <p class="text-[17px] text-justify">
+                        O Modelo TCP/IP (Transmission Control Protocol/Internet Protocol) é um conjunto de protocolos de comunicação 
+                        amplamente utilizado para redes de computadores e a base da internet moderna. Ele define uma estrutura de 
+                        protocolos em camadas, semelhante ao Modelo OSI, mas com menos camadas.
+                    </p>
+                    <br>
+                    <p class="text-[18px] font-bold">
+                        Camadas do modelo TCP IP:
+                    </p>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Interface de Rede (ou Camada de Acesso à Rede):</strong> Esta camada é equivalente às 
+                        camadas física e de enlace de dados do Modelo OSI. Ela lida com a transmissão física dos 
+                        dados e fornece acesso à rede local. Inclui protocolos como Ethernet, Wi-Fi, e PPP 
+                        (Point-to-Point Protocol).
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Internet (ou Camada de Rede):</strong> Esta camada é equivalente à camada de rede do 
+                        Modelo OSI. Ela é responsável pelo roteamento de pacotes de dados entre redes diferentes. 
+                        O protocolo principal nesta camada é o IP (Internet Protocol), que fornece endereçamento 
+                        e roteamento de pacotes.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        <strong>Camada de Transporte:</strong> Esta camada é equivalente à camada de transporte do Modelo OSI. Ela 
+                        fornece comunicação fim a fim confiável e ordenada entre os dispositivos na rede. Os 
+                        principais protocolos nesta camada são o TCP (Transmission Control Protocol), que é 
+                        orientado a conexão e garante a entrega confiável dos dados, e o UDP (User Datagram 
+                        Protocol), que é não orientado a conexão e oferece uma comunicação mais rápida, mas 
+                        menos confiável.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify pb-5">
+                        <strong>Camada de Aplicação:</strong> Esta camada é equivalente às camadas de sessão, apresentação e 
+                        aplicação do Modelo OSI, combinadas. Ela fornece serviços de comunicação de alto nível 
+                        para as aplicações do usuário final, como transferência de arquivos (FTP), correio 
+                        eletrônico (SMTP, POP3), navegação na web (HTTP), e muitos outros. Esta camada inclui 
+                        uma variedade de protocolos de aplicação específicos.
+                    </p>
+                    <hr>
+                    <p class="text-[18px] font-bold pt-5">
+                        Comparação dos temas
+                    </p>
+                    <p class="text-[17px] text-justify">
+                        O Modelo OSI (Open Systems Interconnection) e o Modelo TCP/IP (Transmission Control Protocol
+                        /Internet Protocol) são dois modelos de arquitetura de rede amplamente reconhecidos que 
+                        descrevem a comunicação entre sistemas de computadores. Embora ambos forneçam uma estrutura 
+                        conceitual para entender as comunicações de rede, existem diferenças distintas entre os dois. 
+                        O Modelo OSI, desenvolvido pela International Organization for Standardization (ISO), é 
+                        composto por sete camadas bem definidas, cada uma com funções específicas. Começando pela 
+                        camada física, que lida com a transmissão física dos dados, e terminando na camada de aplicação, 
+                        que fornece serviços de rede para as aplicações do usuário final. Este modelo oferece uma 
+                        abordagem estruturada e hierárquica para entender as comunicações de rede, facilitando o 
+                        desenvolvimento, a implantação e a solução de problemas de redes de computadores.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        Por outro lado, o Modelo TCP/IP é uma abordagem mais simplificada e prática para a comunicação
+                        de rede. Consiste em quatro camadas principais: interface de rede, internet, transporte e 
+                        aplicação. A camada de interface de rede lida com a transmissão física dos dados, enquanto a 
+                        camada de internet é responsável pelo roteamento de pacotes de dados entre redes diferentes. 
+                        A camada de transporte fornece comunicação fim a fim confiável e ordenada, e a camada de 
+                        aplicação fornece serviços de comunicação de alto nível para as aplicações do usuário final. 
+                        O Modelo TCP/IP é a base da Internet moderna e é amplamente implementado em redes reais em 
+                        todo o mundo.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        Uma das principais diferenças entre os dois modelos é a sua complexidade. O Modelo OSI é 
+                        mais complexo devido ao número maior de camadas e à definição precisa das funções de cada 
+                        camada. Por outro lado, o Modelo TCP/IP é menos complexo, com um número menor de camadas 
+                        e uma estrutura mais flexível. Isso faz com que o Modelo TCP/IP seja mais amplamente 
+                        adotado na prática e seja a base da maioria das redes modernas, incluindo a Internet.
+                    </p>
+                    <br>
+                    <p class="text-[17px] text-justify">
+                        Em resumo, enquanto o Modelo OSI fornece uma estrutura detalhada e formalizada para 
+                        entender as comunicações de rede, o Modelo TCP/IP é mais prático, flexível e amplamente 
+                        implementado na prática. Ambos os modelos têm suas vantagens e desvantagens, e a escolha 
+                        entre eles depende das necessidades específicas de cada implementação de rede.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative bottom-0 mt-5 border-t-[1px] border-zinc-600 p-4 w-full flex items-center justify-center text-zinc-400">
+        <span>&copy; Paulo Cesar 2025</span>
+    </div>
+
+</body>
+</html>
