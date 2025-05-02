@@ -1,10 +1,20 @@
 import { Link } from "react-scroll"
+import ScrollReveal from "scrollreveal"
+import { useEffect } from "react"
 
 function Banner() {
+    useEffect(() => {
+      ScrollReveal().reveal(".animationInicial", {
+        opacity: 0,
+        easing: 'ease-in-out',
+        duration: 1600
+      });
+    }, []);
+
     return (
       <>
           <div className="banner text-center flex flex-col justify-center h-full">
-            <div className="w-full font-[Arial] z-30 flex flex-col items-center">
+            <div className="animationInicial w-full font-[Arial] z-30 flex flex-col items-center">
               <div className="flex flex-col items-center justify-center">
                 <h3 className="font text-[1.5rem] font-medium max-md:pl-4 max-md:pr-4">Olá, seja bem-vindo ao portfólio do</h3>
                 <span className="font text-[3.5rem] font-black">Paulo Cesar</span>

@@ -8,6 +8,7 @@ import Habilidades from '@/components/Pages/Habilidades';
 import AllProjects from '@/components/Pages/AllProjects';
 import MarketingPessoal from '@/components/Pages/MarketingPessoal';
 import PageNetflix from './Pages/PageNetflix';
+import PageQrcode from './Pages/PageQrcode';
 
 export default function Layout({ children }) {
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ export default function Layout({ children }) {
               <Route path="/Home/MarketingPessoal" element={<MarketingPessoal />} />
               <Route path="/AllProjects/PageNetflix" element={<PageNetflix />} />
               <Route path="/Home/PageNetflix" element={<PageNetflix />} />
+              <Route path="/AllProjects/PageSistemaJS" element={<PageQrcode />} />
+              <Route path="/Home/PageSistemaJS" element={<PageQrcode />} />
               <Route path="*" element={<Home />} /> 
           </Routes>
         </div>

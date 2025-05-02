@@ -1,7 +1,16 @@
-import Banner from "../ui/Banner"
 import { useState } from "react"
+import ScrollReveal from "scrollreveal"
+import { useEffect } from "react"
 
 const Habilidades = () => {
+  useEffect(() => {
+    ScrollReveal().reveal(".animation", {
+        opacity: 0,
+        easing: 'ease-in-out',
+        duration: 1500
+    });
+  }, []);
+
   const [filter, setFilter] = useState("all");
 
   const habilidadesSelect = Object.freeze({
@@ -89,13 +98,13 @@ const Habilidades = () => {
   });
   return (
     <>
-      <div className="mt-20">
+      <div className="animation mt-20">
         <div className="mt-10 flex flex-col items-center justify-center w-full space-y-5 p-3 text-center">
           <h1 className="text-black font-medium dark:text-white fontTitle mb-10"> Hard Skills em Programação</h1>
 
           <label htmlFor="habilidades" data-i18n="filter" className="text-black dark:text-white font text-[1.2rem]">Filter Habilidades:
-          <select name="players" className="font text-[1.1rem] bg-gray-400 text-white p-1 ml-2 rounded-[15px] dark:bg-white dark:text-black" value={filter} onChange={(e) => setFilter(e.target.value)}>
-            <option value="all" data-i18n="all">All Habilidades</option>
+          <select name="players" className="font text-[1.1rem] bg-gray-400 text-white p-1 pr-2 ml-2 rounded-[15px] dark:bg-white dark:text-black" value={filter} onChange={(e) => setFilter(e.target.value)}>
+            <option value="all" data-i18n="all">Todas as Habilidades</option>
             <option value="frontend" data-i18n="nickname">Front-end</option>
             <option value="backend" data-i18n="forward">Back-end</option>
             <option value="bancodados" data-i18n="midfielder">Banco de Dados</option>

@@ -1,6 +1,6 @@
-function ButtonGithub({url}) {
+function ButtonGithub({urlGithub}) {
     const openGithub = () => {
-        window.open(url, "_blank")
+        window.open(urlGithub, "_blank")
     };
   return (
     <>
@@ -21,8 +21,8 @@ function ButtonGithub({url}) {
                         mr-2 
                         hover:dark:bg-zinc-800 
                         hover:bg-zinc-500/60
-                        max-sm:h-[40px]
-                        max-sm:w-[40px]
+                        max-sm:h-[55px]
+                        max-sm:w-[60px]
                         sm:w-[50px]
                         lg:w-[60px]
                         lg:h-[60px]"

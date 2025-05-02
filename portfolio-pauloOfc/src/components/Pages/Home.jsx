@@ -2,31 +2,60 @@ import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Banner from "@/components/ui/Banner"
 import { toast } from "sonner"
-import { ExternalLink } from "lucide-react"
-import ScrollReveal from "scrollreveal";
+import ScrollReveal from "scrollreveal"
 import ButtonBlog from "@/components/ui/ButtonBlog"
 import ButtonProject from "@/components/ui/ButtonProject"
 import ButtonGithub from "@/components/ui/ButtonGithub"
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
-  const isDisabled = true;
   
   useEffect(() => {
-    ScrollReveal().reveal(".animation", {
+    ScrollReveal().reveal(".animationLeft", {
       origin: "left",
-      distance: "400px",
-      duration: 2000,
+      distance: "200px",
+      duration: 1500,
       easing: "ease-in-out",
       reset: false,
     });
 
-    ScrollReveal().reveal(".animationContent", {
+    ScrollReveal().reveal(".animationRight", {
       origin: "rigth",
-      distance: "400px",
-      duration: 2000,
+      distance: "200px",
+      duration: 1500,
       easing: "ease-in-out",
       reset: false,
+    });
+
+    ScrollReveal().reveal(".animation", {
+      distance: '150px',
+      origin: 'left',
+      duration: 1500,
+      easing: 'ease-in-out',
+      interval: 1000,
+      reset: false,
+    });
+
+    ScrollReveal().reveal(".animationBlog", {
+      distance: '150px',
+      origin: 'bottom',
+      duration: 1500,
+      easing: 'ease-in-out',
+      interval: 1000,
+      reset: false,
+    });
+
+    ScrollReveal().reveal(".animationButton", {
+      rotate: {x: 100, y:0, z: 0},
+      easing: 'ease-in-out',
+      duration: 1500,
+      reset: false
+    });
+
+    ScrollReveal().reveal(".animationFrase", {
+      rotate: {x:100, y:0, z:0},
+      easing: 'ease-in-out',
+      duration: 1500
     });
   }, []);
 
@@ -110,8 +139,9 @@ const Home = ({setPage}) => {
 
           {/* About */}
           <div className="transition duration-700 ease-in-out min-h-[400px] pt-10 mb-10 text-black bg-zinc-100 dark:bg-black dark:text-white p-6 flex flex-col justify-center items-center">
-            <h1 className="fontTitle animation">Sobre mim</h1>
-            <div className="animationContent fontContent text-[1.1rem] flex flex-row-reverse max-lg:flex-col flex-wrap justify-center items-center w-full">
+            <h1 className="fontTitle animationLeft">Sobre mim</h1>
+
+            <div className="animationRight fontContent text-[1.1rem] flex flex-row-reverse max-lg:flex-col flex-wrap justify-center items-center w-full">
               <div className="w-full md:w-1/2 flex justify-center">
                 <img src="/img/imgPortfolio.png" alt="Imagem do criador do portfolio"/>
               </div>
@@ -137,10 +167,10 @@ const Home = ({setPage}) => {
 
           {/* My projects */}
           <div className="h-auto pt-10 pb-10 flex flex-col justify-center items-center bg-zinc-200/40 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white">Meus Projetos</h1>
+            <h1 className="fontTitle text-black dark:text-white animationLeft">Meus Projetos</h1>
             <div className="mt-10 mb-10 h-auto flex flex-col gap-10 justify-center items-center flex-wrap ml-5 mr-5">
               {/* Project 1 */}
-              <div className="bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
+              <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
                 <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
                   <img src="/img/projectHirequest.png" alt="Imagem do Projeto 1" className="w-full h-full object-cover object-center bg-cover bg-center"/>
                 </div>
@@ -159,15 +189,15 @@ const Home = ({setPage}) => {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5">
+                  <div className="xl:flex items-center xl:justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5 max-xl:space-y-7 mt-5">
                     <ul className="flex gap-2 items-center">
-                      <li className="w-[14%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                      <li className="w-[12%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
-                      <li className="w-[12%]"><img src="/img/icons/php.svg" alt="PHP" /></li>
-                      <li className="w-[13%]"><img src="/img/icons/bootstrap.svg" alt="Bootstrap" /></li>
-                      <li className="w-[16%]"><img src="/img/icons/mysql.svg" alt="MySQL" /></li>
+                      <li className="w-[15%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
+                      <li className="w-[13%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
+                      <li className="w-[13%]"><img src="/img/icons/php.svg" alt="PHP" /></li>
+                      <li className="w-[14%]"><img src="/img/icons/bootstrap.svg" alt="Bootstrap" /></li>
+                      <li className="w-[17%]"><img src="/img/icons/mysql.svg" alt="MySQL" /></li>
                     </ul>
-                    <div className="flex items-cente">
+                    <div className="flex items-center max-xl:justify-end">
                       <ButtonGithub url="https://github.com/PauloCesar26/TCC_HireQuest"/>
                       <ButtonProject urlPage="/Home/MarketingPessoal"/>
                     </div>
@@ -176,7 +206,7 @@ const Home = ({setPage}) => {
               </div>
 
               {/* Project 2 */}
-              <div className="bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px]  w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
+              <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px]  w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
                 <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
                   <img src="/img/projectNetflix.png" alt="Imagem do Projeto 2" className="w-full h-full object-cover object-center bg-cover bg-center"/>
                 </div>
@@ -193,23 +223,23 @@ const Home = ({setPage}) => {
                       </p>
                     </div>
                   </div>
-
-                  <div className="flex items-center justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5">
+                  
+                  <div className="xl:flex items-center xl:justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5 max-xl:space-y-7 mt-5">
                     <ul className="flex gap-2 items-center">
-                      <li className="w-[23%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                      <li className="w-[20%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
-                      <li className="w-[20%]"><img src="/img/icons/javascript.svg" alt="JS" /></li>
+                      <li className="w-[15%] xl:w-[25%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
+                      <li className="w-[13%] xl:w-[21%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
+                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/javascript.svg" alt="CSS" /></li>
                     </ul>
-                    <div className="flex">
+                    <div className="flex items-center max-xl:justify-end">
                       <ButtonGithub url="https://github.com/PauloCesar26/clone-site-netflix"/>
-                      <ButtonProject urlPage="/Home/PageNetflix" />
+                      <ButtonProject urlPage="/Home/PageNetflix"/>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Project 3 */}
-              <div className="bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px]  w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
+              <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px]  w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
                 <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
                   <img src="/img/projectQrcode.png" alt="Imagem do Projeto 3" className="w-full h-full object-cover object-center bg-cover bg-center"/>
                 </div>
@@ -228,15 +258,15 @@ const Home = ({setPage}) => {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5">
+                  <div className="xl:flex items-center xl:justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5 max-xl:space-y-7 mt-5">
                     <ul className="flex gap-2 items-center">
-                      <li className="w-[23%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                      <li className="w-[20%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
-                      <li className="w-[20%]"><img src="/img/icons/javascript.svg" alt="JS" /></li>
+                      <li className="w-[15%] xl:w-[25%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
+                      <li className="w-[13%] xl:w-[21%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
+                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/javascript.svg" alt="CSS" /></li>
                     </ul>
-                    <div className="flex">
+                    <div className="flex items-center max-xl:justify-end">
                       <ButtonGithub url="https://github.com/PauloCesar26/sistemaSimplesJS"/>
-                      <ButtonProject url="https://qgdomenor.github.io/JojocaDoces/"/>
+                      <ButtonProject urlPage="/Home/PageSistemaJS"/>
                     </div>
                   </div>
                 </div>
@@ -245,22 +275,22 @@ const Home = ({setPage}) => {
             </div>
             <button 
               onClick={() => navigate("/AllProjects")} 
-              className="font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
+              className="animationButton font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
               Todos os projetos
             </button>
           </div>
 
           <div className="fundoFrase min-h-[350px] max-h-[500px] p-10 flex flex-col justify-center items-center">
-            <p className="fontContent max-md:text-[1.5rem] md:text-[1.5rem] lg:text-[1.8rem] z-40 p-5">
+            <p className="animationFrase fontContent max-md:text-[1.5rem] md:text-[1.5rem] lg:text-[1.8rem] z-40 p-5">
             "Programador não é aquele que sabe a linguagem de programação X ou Y, programador é aquele que sabe aprender rápido e aplicar o seu conhecimento." - Paulo Cesar</p>
           </div>
 
           {/* Blog */}
           <div className="transition duration-700 ease-in-out h-auto pt-10 pb-10 flex flex-col justify-center items-center text-black bg-zinc-100 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white">Blog</h1>
+            <h1 className="fontTitle text-black dark:text-white animationRight">Blog</h1>
               <div className="fontContent mt-10 mb-10 h-auto flex gap-10 justify-center flex-wrap">
                 {/* Blog 1 */}
-                <div className="bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
+                <div className="animationBlog bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
                   <div className="flex flex-col w-full h-[50%] bg-zinc-900">
                       <img src="/img/imgJavascript.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
                   </div>
@@ -272,7 +302,7 @@ const Home = ({setPage}) => {
                   </div>
                 </div>
                 {/* Blog 2 */}
-                <div className="bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
+                <div className="animationBlog bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
                   <div className="flex flex-col w-full h-[50%] bg-zinc-900">
                       <img src="/img/rede.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
                   </div>
@@ -287,7 +317,7 @@ const Home = ({setPage}) => {
           </div>
           
           <footer id="contato" className="bg-zinc-200/40 dark:bg-black w-full flex flex-col items-center pt-10 pb-2 pl-10 pr-10">
-            <div className="w-full flex flex-col  flex-wrap items-center">
+            <div className="animationLeft w-full flex flex-col  flex-wrap items-center">
               <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">Entre em contato</h1>
               <div className="w-full lg:w-[40%] pt-5 pb-8 mb-5 flex flex-col justify-center items-center space-y-6 md:w-1/2 border-b-1 border-zinc-500">
                 <button

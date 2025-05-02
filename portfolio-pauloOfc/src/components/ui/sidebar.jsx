@@ -23,7 +23,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
@@ -244,8 +243,6 @@ function SidebarTrigger({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  
-
   return (
     <div className="icon-sidebar z-50 w-full fixed bg-zinc-100 text-black p-5 dark:bg-black transition duration-700 ease-in-out">  
       <div className="flex items-center">
@@ -417,7 +414,7 @@ function SidebarGroupLabel({
       className={cn(
         "text-sidebar-foreground/70 ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-sm outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
         "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
-        className="text-base text-black justify-center dark:text-white"
+        className="font text-base text-black justify-center dark:text-white"
       )}
       {...props} />
   );

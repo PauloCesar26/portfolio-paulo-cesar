@@ -26,8 +26,8 @@ function ButtonProject({urlPage}) {
                   hover:bg-zinc-500/60
                   lg:w-[115px]
                   lg:h-[60px]
-                  max-sm:h-[40px]
-                  max-sm:w-[105px]
+                  max-sm:h-[55px]
+                  max-sm:w-[110px]
                   text-[1rem]
                   cursor-pointer"
         onClick={() => navigate(urlPage)}>

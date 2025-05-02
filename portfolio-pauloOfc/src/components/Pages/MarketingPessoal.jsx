@@ -33,11 +33,11 @@ function MarketingPessoal() {
                         <div className="flex flex-col space-y-3 dark:text-zinc-100 text-black">
                             <p>Tecnologias usadas:</p>
                             <ul className="flex  gap-2 items-center">
-                                <li className="w-[14%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                                <li className="w-[12%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
-                                <li className="w-[12%]"><img src="/img/icons/php.svg" alt="PHP" /></li>
-                                <li className="w-[13%]"><img src="/img/icons/bootstrap.svg" alt="Bootstrap" /></li>
-                                <li className="w-[16%]"><img src="/img/icons/mysql.svg" alt="MySQL" /></li>
+                                <li className="w-[15%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
+                                <li className="w-[14%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
+                                <li className="w-[14%]"><img src="/img/icons/php.svg" alt="PHP" /></li>
+                                <li className="w-[14%]"><img src="/img/icons/bootstrap.svg" alt="Bootstrap" /></li>
+                                <li className="w-[18%]"><img src="/img/icons/mysql.svg" alt="MySQL" /></li>
                             </ul>
                         </div>
                         <div className="w-full flex items-center justify-end mt-5 border-t-1 border-zinc-900/20 dark:border-zinc-400/20 pt-5">

@@ -8,11 +8,11 @@ function CardProject({imgSrc, altText, children, urlGithub, urlPage }) {
             <div className="flex flex-col w-full h-[50%] bg-zinc-900 ">
                 <img src={imgSrc} alt={altText} className="w-full h-full object-cover object-center"/>
             </div>
-            <div className="flex-1 p-4 text-[1.5rem]">
+            <div className="flex-1 p-4 text-[1.5rem] text-black dark:text-white">
                 {children}
             </div>
-            <div className="font font-bold p-5 flex items-center justify-end dark:border-zinc-700 border-t-1">
-                <ButtonGithub />
+            <div className="font font-bold p-5 flex items-center justify-end border-zinc-300 dark:border-zinc-700 border-t-1">
+                <ButtonGithub urlGithub={urlGithub}/>
                 <ButtonProject urlPage={urlPage}/>
             </div>
         </div>
