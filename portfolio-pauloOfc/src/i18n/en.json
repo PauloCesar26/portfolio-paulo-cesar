@@ -1,0 +1,24 @@
+{
+    "home": {
+        "banner": {
+            "title1": "Hello, welcome to the portfolio of",
+            "title": "Paulo Cesar",
+            "title2": "A web developer passionate about technology, driven by challenges and the desire to create solutions with code and with a keen eye for user experience.",
+            "button": "Contact"
+        },
+        "sobre":{
+            "title": "About me",
+            "paragrafo1": "Hello! My name is Paulo Cesar, I'm 18 years old and I'm passionate about technology that transforms ideas into visual projects. Since high school, I studied Systems Development and found myself in the world of programming, and today I study Systems Analysis and Development at Anhanguera College.",
+            "paragrafo2": "I like learning new things and recently I started sharing my learnings on a blog, writing about what I study and experience in programming. For me, programming is much more than knowing language X or Y - it's about solving problems with the right tools.",
+            "paragrafo3": "I am driven by challenges and have a special affection for everything that involves UI (user interface). Creating web applications and websites is where I feel most motivated, always seeking to combine functionality and a good experience for those who use it."
+        },
+        "projetos":{
+            "title": "My Projects",
+            "projeto1":{
+                "title": "Personal Marketing",
+                "text": "Project that was part of the final project of the 3rd year of high school. A website that provides content on personal marketing, with the objective of studying employability and standing out in the job market.",
+                "button": "Project"
+            }
+        }
+    }
+}

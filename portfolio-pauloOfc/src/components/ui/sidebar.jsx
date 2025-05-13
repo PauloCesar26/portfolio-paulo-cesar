@@ -1,8 +1,9 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva } from "class-variance-authority";
-import { PanelLeftOpen, PanelLeftClose, Menu, X } from "lucide-react"
+import { PanelLeftOpen, PanelLeftClose, Menu, X, Languages } from "lucide-react"
 import Dark from "../../hooks/Dark";
+import LanguageSelect from "@/hooks/LanguageSelect";
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -244,14 +245,14 @@ function SidebarTrigger({
   }, [])
 
   return (
-    <div className="icon-sidebar z-50 w-full fixed bg-zinc-100 text-black p-5 dark:bg-black transition duration-700 ease-in-out">  
+    <div className=" z-50 w-full fixed bg-zinc-100 text-black p-5 dark:bg-black transition duration-700 ease-in-out">  
       <div className="flex items-center">
         <Button
           data-sidebar="trigger"
           data-slot="sidebar-trigger"
           variant="ghost"
           size="icon"
-          className="justify-items-star cursor-pointer text-black hover:bg-zinc-100 dark:text-white"
+          className="icon-sidebar justify-items-star cursor-pointer text-black hover:bg-zinc-100 dark:text-white"
           onClick={(event) => {
             onClick?.(event) 
             toggleSidebar()
@@ -264,8 +265,9 @@ function SidebarTrigger({
           <span className="sr-only">Toggle Sidebar</span>
         </Button>
 
-        <div className="fixed flex gap-8 right-10 text-black dark:text-white items-center">
-          <Dark/>
+        <div className="fixed flex gap-6 max-md:right-3 md:right-10 text-black dark:text-white items-center">
+          <Dark />
+          <LanguageSelect />
         </div>
       </div>
     </div>

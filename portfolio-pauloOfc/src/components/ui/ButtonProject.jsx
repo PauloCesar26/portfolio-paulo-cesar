@@ -1,8 +1,10 @@
 import { ExternalLink } from "lucide-react"
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function ButtonProject({urlPage}) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   return (
     <>
@@ -31,7 +33,7 @@ function ButtonProject({urlPage}) {
                   text-[1rem]
                   cursor-pointer"
         onClick={() => navigate(urlPage)}>
-        <ExternalLink /> Projeto
+        <ExternalLink /> {t("home.projetos.projeto1.button")}
       </button>
     </>
   )

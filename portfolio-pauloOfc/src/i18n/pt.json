@@ -1,0 +1,24 @@
+{
+    "home": {
+        "banner": {
+            "title1": "Olá, seja bem-vindo ao portfólio do",
+            "title": "Paulo Cesar",
+            "title2": "Um desenvolvedor web apaixonado por tecnologia, movido por desafios e pela vontade de criar soluções com código e com um olhar atento para a experiência do usuário.",
+            "button": "Contato"
+        },
+        "sobre":{
+            "title": "Sobre mim",
+            "paragrafo1": "Olá! Me chamo Paulo Cesar, tenho 18 anos e sou apaixonado por tecnologia que transformam ideias em projetos visuais. Desde o ensino médio técnico em Desenvolvimento de Sistemas, me encontrei no mundo da programação, e hoje curso Análise e Desenvolvimento de Sistemas na faculdade Anhanguera.",
+            "paragrafo2": "Gosto de aprender coisas novas e, recentemente, comecei a compartilhar meus aprendizados em um blog, escrevendo sobre o que estudo e vivencio na programação. Para mim, programar vai muito além de conhecer linguagem X ou Y - é sobre resolver problemas com as ferramentas certas.",
+            "paragrafo3": "Sou movido por desafios e tenho um carinho especial por tudo que envolve UI (interface do usuário). Criar aplicações web e sites é onde me sinto mais motivado, buscando sempre unir funcionalidade e boa experiência para quem usa."
+        },
+        "projetos":{
+            "title": "Meus Projetos",
+            "projeto1":{
+                "title": "Marketing Pessoal",
+                "text": "Projeto que foi parte do TCC do 3º ano do ensino médio. Um site que disponibiliza conteúdo sobre marketing pessoal, com o objetivo de estudar empregabilidade e se destacar no mercado de trabalho.",
+                "button": "Projeto"
+            }
+        }
+    }
+}

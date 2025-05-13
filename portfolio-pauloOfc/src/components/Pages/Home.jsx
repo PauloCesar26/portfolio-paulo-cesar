@@ -6,9 +6,14 @@ import ScrollReveal from "scrollreveal"
 import ButtonBlog from "@/components/ui/ButtonBlog"
 import ButtonProject from "@/components/ui/ButtonProject"
 import ButtonGithub from "@/components/ui/ButtonGithub"
+import { useTranslation } from "react-i18next"
+import i18n from 'i18next';
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  console.log(t("home.banner.title1"))
+  console.log('Idioma atual:', i18n.language);
   
   useEffect(() => {
     ScrollReveal().reveal(".animationLeft", {
@@ -139,7 +144,7 @@ const Home = ({setPage}) => {
 
           {/* About */}
           <div className="transition duration-700 ease-in-out min-h-[400px] pt-10 mb-10 text-black bg-zinc-100 dark:bg-black dark:text-white p-6 flex flex-col justify-center items-center">
-            <h1 className="fontTitle animationLeft">Sobre mim</h1>
+            <h1 className="fontTitle animationLeft">{t("home.sobre.title")}</h1>
 
             <div className="animationRight fontContent text-[1.1rem] flex flex-row-reverse max-lg:flex-col flex-wrap justify-center items-center w-full">
               <div className="w-full md:w-1/2 flex justify-center">
@@ -147,19 +152,13 @@ const Home = ({setPage}) => {
               </div>
               <div className="w-full md:w-1/2 max-md:w-[80%] flex flex-col justify-center space-y-6 max-lg:p-0 xl:p-10  text-justify">
                 <p>
-                  Olá! Me chamo Paulo Cesar, tenho 18 anos e sou apaixonado por tecnologia que transformam ideias em projetos visuais. 
-                  Desde o ensino médio técnico em Desenvolvimento de Sistemas, me encontrei no mundo da programação, 
-                  e hoje curso Análise e Desenvolvimento de Sistemas na faculdade Anhanguera.
+                  {t("home.sobre.paragrafo1")}
                 </p>
                 <p>
-                  Gosto de aprender coisas novas e, recentemente, comecei a compartilhar meus aprendizados em um blog, 
-                  escrevendo sobre o que estudo e vivencio na programação. Para mim, programar vai muito além de conhecer
-                  linguagem X ou Y - é sobre resolver problemas com as ferramentas certas.
+                  {t("home.sobre.paragrafo2")}
                 </p>
                 <p>
-                  Sou movido por desafios e tenho um carinho especial por tudo que envolve UI (interface do usuário). 
-                  Criar aplicações web e sites é onde me sinto mais motivado, buscando sempre unir funcionalidade e 
-                  boa experiência para quem usa.
+                  {t("home.sobre.paragrafo3")}
                 </p>
               </div>
             </div>
@@ -167,7 +166,7 @@ const Home = ({setPage}) => {
 
           {/* My projects */}
           <div className="h-auto pt-10 pb-10 flex flex-col justify-center items-center bg-zinc-200/40 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white animationLeft">Meus Projetos</h1>
+            <h1 className="fontTitle text-black dark:text-white animationLeft">{t("home.projetos.title")}</h1>
             <div className="mt-10 mb-10 h-auto flex flex-col gap-10 justify-center items-center flex-wrap ml-5 mr-5">
               {/* Project 1 */}
               <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
@@ -177,14 +176,12 @@ const Home = ({setPage}) => {
 
                 <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-full">
                   <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
-                    <div className="pt-3 md:pl-4 text-[1.5rem]">
-                      <span>Marketing Pessoal</span>
+                    <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
+                      <span>{t("home.projetos.projeto1.title")}</span>
                     </div>
                     <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">
                       <p>
-                        Projeto que foi parte do TCC do 3º ano do ensino médio. Um site que disponibiliza conteúdo
-                        sobre marketing pessoal, com o objetivo de estudar empregabilidade e se destacar no mercado
-                        de trabalho.
+                        {t("home.projetos.projeto1.text")}
                       </p>
                     </div>
                   </div>
@@ -213,7 +210,7 @@ const Home = ({setPage}) => {
 
                 <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-[65%] lg:h-full">
                   <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
-                    <div className="pt-3 md:pl-4 text-[1.5rem]">
+                    <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
                       <span>Clone do site oficial da Netflix (2024)</span>
                     </div>
                     <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">
@@ -246,7 +243,7 @@ const Home = ({setPage}) => {
 
                 <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-[65%] lg:h-full">
                   <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
-                    <div className="pt-3 md:pl-4 text-[1.5rem]">
+                    <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
                       <span>Sistema Simples com JS</span>
                     </div>
                     <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">

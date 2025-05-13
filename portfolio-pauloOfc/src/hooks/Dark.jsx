@@ -18,7 +18,7 @@ function Dark() {
     }, [isDark]);
 
     const darkToggle = () => {
-        setIsDark((prev) => {
+        setIsDark((prev) => { 
             const newTheme = !prev;
             if(newTheme){
                 localStorage.setItem("dark", "1"); // Salva no localStorage
@@ -37,12 +37,10 @@ function Dark() {
     // }
 
   return (
-    <div className="dark transition duration-700 ease-in-out">
-        <button onClick={darkToggle} className="dark:transition duration-700 ease-in-out cursor-pointer">
-            {/* Ícone que muda de acordo com o estado do tema */}
-            {isDark ? <Sun size={22} className="text-white" /> : <MoonStar size={20} className="text-black" />}
-        </button>
-    </div>
+    <button onClick={darkToggle} className="transition duration-700 ease-in-out cursor-pointer">
+        {/* Ícone que muda de acordo com o estado do tema */}
+        {isDark ? <Sun className="icon-sidebar text-white" /> : <MoonStar className="icon-sidebar text-black" />}
+    </button>
   )
 }
 
