@@ -9,7 +9,7 @@ import AllProjects from '@/components/Pages/AllProjects';
 import MarketingPessoal from '@/components/Pages/MarketingPessoal';
 import PageNetflix from './Pages/PageNetflix';
 import PageQrcode from './Pages/PageQrcode';
-import '@/i18n/i18n';
+import '@/i18n/i18n'
 
 export default function Layout({ children }) {
   const navigate = useNavigate();
