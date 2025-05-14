@@ -3,6 +3,7 @@ import { Sidebar } from "@/components/ui/sidebar"
 import Layout from './components/layout'
 import './App.css'
 import { Toaster } from 'sonner'
+import './i18n/i18n'
 
 function App() {
   return (

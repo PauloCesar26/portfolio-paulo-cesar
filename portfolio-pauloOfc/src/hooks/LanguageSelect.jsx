@@ -16,9 +16,6 @@ function LanguageSelect() {
       return localStorage.getItem("idioma") || "pt";
     });
 
-    //sincronizar o idioma da biblioteca i18b com o estado language
-
-
   return (
     <>
       <div className="font flex items-center space-x-2 hover:bg-zinc-200/90 hover:dark:bg-zinc-900/60 p-2 rounded-[15px] ease-in-out transition duration-[0.3s]">
