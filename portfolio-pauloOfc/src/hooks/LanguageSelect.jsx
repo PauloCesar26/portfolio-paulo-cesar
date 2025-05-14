@@ -10,6 +10,7 @@ function LanguageSelect() {
       const selectLanguage = e.target.value;
 
       localStorage.setItem("idioma", selectLanguage);
+      window.location.reload();   
     }
     const [language, setLanguage ] = useState(() => {
       return localStorage.getItem("idioma") || "pt";
