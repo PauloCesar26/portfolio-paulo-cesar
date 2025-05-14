@@ -1,4 +1,11 @@
 {
+    "sidebar": {
+        "homeSidebar": "Home",
+        "desenvolvedor": "Developer",
+        "habilidades": "Skills",
+        "projetos": "Projects"
+    },
+
     "home": {
         "banner": {
             "title1": "Hello, welcome to the portfolio of",
@@ -18,6 +25,42 @@
                 "title": "Personal Marketing",
                 "text": "Project that was part of the final project of the 3rd year of high school. A website that provides content on personal marketing, with the objective of studying employability and standing out in the job market.",
                 "button": "Project"
+            },
+            "projeto2":{
+                "title": "Clone of the official Netflix website (2024)",
+                "text": "A project I developed to challenge myself to clone a website I've always admired. I thought: why not create something similar and show that I'm capable of doing a project on the same level as Netflix?"
+            },
+            "projeto3":{
+                "title": "Simple System with JS",
+                "text": "Project developed for a confectionery store known as Jojoca Doces, they wanted to innovate the messages that are sent to the customer along with the delivered product. The system was developed with javascript and involves data saving and QR code generator."
+            },
+            "buttonAll":"All projects"
+        },
+
+        "phrase": "A programmer is not someone who knows programming language X or Y, a programmer is someone who knows how to learn quickly and apply their knowledge.",
+
+        "blog": {
+            "blog1": {
+                "title": "JavaScript: Exploring DOM Concepts"
+            },
+            "blog2": {
+                "title": "OSI Model and TCP IP: Concepts and comparison of topics"
+            },
+            "buttonBlog": "Access Blog"
+        },
+
+        "footer": {
+            "contact": "Contact me",
+            "button": "Contact",
+            "message": "Send a message:",
+            "form": {
+                "name": "Name:",
+                "inputName": "Enter your name",
+                "email": "Enter your email:",
+                "inputEmail": "Enter your email",
+                "message": "Message:",
+                "textareaMessage": "Enter your message",
+                "button": "Submit"
             }
         }
     }

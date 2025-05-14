@@ -1,4 +1,11 @@
 {
+    "sidebar": {
+        "homeSidebar": "Início",
+        "desenvolvedor": "Desenvolvedor",
+        "habilidades": "Habilidades",
+        "projetos": "Projetos"
+    },
+
     "home": {
         "banner": {
             "title1": "Olá, seja bem-vindo ao portfólio do",
@@ -12,12 +19,49 @@
             "paragrafo2": "Gosto de aprender coisas novas e, recentemente, comecei a compartilhar meus aprendizados em um blog, escrevendo sobre o que estudo e vivencio na programação. Para mim, programar vai muito além de conhecer linguagem X ou Y - é sobre resolver problemas com as ferramentas certas.",
             "paragrafo3": "Sou movido por desafios e tenho um carinho especial por tudo que envolve UI (interface do usuário). Criar aplicações web e sites é onde me sinto mais motivado, buscando sempre unir funcionalidade e boa experiência para quem usa."
         },
+
         "projetos":{
             "title": "Meus Projetos",
             "projeto1":{
                 "title": "Marketing Pessoal",
                 "text": "Projeto que foi parte do TCC do 3º ano do ensino médio. Um site que disponibiliza conteúdo sobre marketing pessoal, com o objetivo de estudar empregabilidade e se destacar no mercado de trabalho.",
                 "button": "Projeto"
+            },
+            "projeto2":{
+                "title": "Clone do site oficial da Netflix (2024)",
+                "text": "Projeto que desenvolvi para me desafiar a clonar um site que sempre admirei. Pensei: por que não criar algo semelhante e mostrar que sou capaz de fazer um projeto no nível da Netflix?"
+            },
+            "projeto3":{
+                "title": "Sistema Simples com JS",
+                "text": "Projeto desenvolvido para uma doceria conhecida como Jojoca Doces, eles quiseram inovar os recados que são mandados para o cliente junto com o produto entregue. O sistema foi desenvolvido com javascript e envolve salvamento de dados e gerador de QR code."
+            },
+            "buttonAll":"Todos os projetos"
+        },
+
+        "phrase": "Programador não é aquele que sabe a linguagem de programação X ou Y, programador é aquele que sabe aprender rápido e aplicar o seu conhecimento.",
+
+        "blog": {
+            "blog1": {
+                "title": "JavaScript: Explorando os conceitos do DOM"
+            },
+            "blog2": {
+                "title": "Modelo OSI e TCP IP: Conceitos e comparação dos temas"
+            },
+            "buttonBlog": "Acessar Blog"
+        },
+
+        "footer": {
+            "contact": "Entre em contato",
+            "button": "Contato",
+            "message": "Mande uma mensagem:",
+            "form": {
+                "name": "Nome:",
+                "inputName": "Digite seu nome",
+                "email": "Digite seu e-mail:",
+                "inputEmail": "Digite seu e-mail",
+                "message": "Mensagem:",
+                "textareaMessage": "Digite sua mensagem",
+                "button": "Enviar"
             }
         }
     }

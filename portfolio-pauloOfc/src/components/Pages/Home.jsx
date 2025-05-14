@@ -19,7 +19,7 @@ const Home = ({setPage}) => {
     ScrollReveal().reveal(".animationLeft", {
       origin: "left",
       distance: "200px",
-      duration: 1500,
+      duration: 1000,
       easing: "ease-in-out",
       reset: false,
     });
@@ -27,7 +27,7 @@ const Home = ({setPage}) => {
     ScrollReveal().reveal(".animationRight", {
       origin: "rigth",
       distance: "200px",
-      duration: 1500,
+      duration: 1000,
       easing: "ease-in-out",
       reset: false,
     });
@@ -35,16 +35,16 @@ const Home = ({setPage}) => {
     ScrollReveal().reveal(".animation", {
       distance: '150px',
       origin: 'left',
-      duration: 1500,
+      duration: 1000,
       easing: 'ease-in-out',
-      interval: 1000,
+      interval: 900,
       reset: false,
     });
 
     ScrollReveal().reveal(".animationBlog", {
       distance: '150px',
       origin: 'bottom',
-      duration: 1500,
+      duration: 1000,
       easing: 'ease-in-out',
       interval: 1000,
       reset: false,
@@ -53,14 +53,14 @@ const Home = ({setPage}) => {
     ScrollReveal().reveal(".animationButton", {
       rotate: {x: 100, y:0, z: 0},
       easing: 'ease-in-out',
-      duration: 1500,
+      duration: 1000,
       reset: false
     });
 
     ScrollReveal().reveal(".animationFrase", {
       rotate: {x:100, y:0, z:0},
       easing: 'ease-in-out',
-      duration: 1500
+      duration: 1000
     });
   }, []);
 
@@ -166,7 +166,7 @@ const Home = ({setPage}) => {
 
           {/* My projects */}
           <div className="h-auto pt-10 pb-10 flex flex-col justify-center items-center bg-zinc-200/40 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white animationLeft">{t("home.projetos.title")}</h1>
+            <h1 className="fontTitle text-black dark:text-white animationRight">{t("home.projetos.title")}</h1>
             <div className="mt-10 mb-10 h-auto flex flex-col gap-10 justify-center items-center flex-wrap ml-5 mr-5">
               {/* Project 1 */}
               <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
@@ -211,12 +211,11 @@ const Home = ({setPage}) => {
                 <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-[65%] lg:h-full">
                   <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
                     <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
-                      <span>Clone do site oficial da Netflix (2024)</span>
+                      <span>{t("home.projetos.projeto2.title")}</span>
                     </div>
                     <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">
                       <p>
-                        Projeto que desenvolvi para me desafiar a clonar um site que sempre admirei. Pensei: por que 
-                        não criar algo semelhante e mostrar que sou capaz de fazer um projeto no nível da Netflix?
+                        {t("home.projetos.projeto2.text")}
                       </p>
                     </div>
                   </div>
@@ -244,13 +243,11 @@ const Home = ({setPage}) => {
                 <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-[65%] lg:h-full">
                   <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
                     <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
-                      <span>Sistema Simples com JS</span>
+                      <span>{t("home.projetos.projeto3.title")}</span>
                     </div>
                     <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">
                       <p>
-                        Projeto desenvolvido para uma doceria conhecida como Jojoca Doces, eles quiseram inovar os recados
-                        que são mandados para o cliente junto com o produto entregue. O sistema foi desenvolvido com javascript
-                        e envolve salvamento de dados e gerador de QR code.
+                        {t("home.projetos.projeto3.text")}
                       </p>
                     </div>
                   </div>
@@ -273,38 +270,40 @@ const Home = ({setPage}) => {
             <button 
               onClick={() => navigate("/AllProjects")} 
               className="animationButton font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
-              Todos os projetos
+              {t("home.projetos.buttonAll")}
             </button>
           </div>
 
           <div className="fundoFrase min-h-[350px] max-h-[500px] p-10 flex flex-col justify-center items-center">
             <p className="animationFrase fontContent max-md:text-[1.5rem] md:text-[1.5rem] lg:text-[1.8rem] z-40 p-5">
-            "Programador não é aquele que sabe a linguagem de programação X ou Y, programador é aquele que sabe aprender rápido e aplicar o seu conhecimento." - Paulo Cesar</p>
+              "{t("home.phrase")}" - Paulo Cesar
+            </p>
           </div>
 
           {/* Blog */}
           <div className="transition duration-700 ease-in-out h-auto pt-10 pb-10 flex flex-col justify-center items-center text-black bg-zinc-100 dark:bg-zinc-900/40">
             <h1 className="fontTitle text-black dark:text-white animationRight">Blog</h1>
-              <div className="fontContent mt-10 mb-10 h-auto flex gap-10 justify-center flex-wrap">
+              <div className="animationLeft fontContent mt-10 mb-10 h-auto flex gap-10 justify-center flex-wrap">
                 {/* Blog 1 */}
-                <div className="animationBlog bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
+                <div className="bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
                   <div className="flex flex-col w-full h-[50%] bg-zinc-900">
                       <img src="/img/imgJavascript.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
                   </div>
                   <div className="flex-1 p-4 text-[1.5rem]">
-                      <span>JavaScript: Explorando os conceitos do DOM</span>
+                      <span>{t("home.blog.blog1.title")}</span>
                   </div>
                   <div className="font font-bold text-[0.9rem] p-5 flex items-center justify-end dark:border-zinc-700">
                     <ButtonBlog filePath="/blog/blogJavascript/index.html"/>
                   </div>
                 </div>
+
                 {/* Blog 2 */}
-                <div className="animationBlog bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
+                <div className=" bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
                   <div className="flex flex-col w-full h-[50%] bg-zinc-900">
                       <img src="/img/rede.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
                   </div>
                   <div className="flex-1 p-4 text-[1.5rem]">
-                      <span>Modelo OSI e TCP IP: Conceitos e comparação dos temas</span>
+                      <span>{t("home.blog.blog2.title")}</span>
                   </div>
                   <div className="font font-bold text-[0.9rem] p-5 flex items-center justify-end dark:border-zinc-700">
                     <ButtonBlog filePath="/blog/blogOsiTcpip/index.html"/>
@@ -314,43 +313,43 @@ const Home = ({setPage}) => {
           </div>
           
           <footer id="contato" className="bg-zinc-200/40 dark:bg-black w-full flex flex-col items-center pt-10 pb-2 pl-10 pr-10">
-            <div className="animationLeft w-full flex flex-col  flex-wrap items-center">
-              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">Entre em contato</h1>
+            <div className="animationRight w-full flex flex-col  flex-wrap items-center">
+              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">{t("home.footer.contact")}</h1>
               <div className="w-full lg:w-[40%] pt-5 pb-8 mb-5 flex flex-col justify-center items-center space-y-6 md:w-1/2 border-b-1 border-zinc-500">
                 <button
-                    onClick={() => navigate("/Criador")} 
-                    className="font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
-                    Contato
+                  onClick={() => navigate("/Criador")} 
+                  className="font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
+                  {t("home.footer.button")}
                 </button>
               </div>
 
-              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">Mande uma mensagem:</h1>
+              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">{t("home.footer.message")}</h1>
               <div className="font w-full flex items-center justify-center mt-10">
                 <div className="w-full lg:w-[40%]">
                   <form onSubmit={validation} action="https://formsubmit.co/pc.cordeirolima@gmail.com" method="POST" className="flex flex-col text-black dark:text-white text-[18px]">
-                    <label htmlFor="">Nome:</label>
+                    <label htmlFor="">{t("home.footer.form.name")}</label>
                     <input type="text" 
                       name="name" 
-                      placeholder="Digite seu nome"
+                      placeholder={t("home.footer.form.inputName")}
                       value={formInfo.name}
                       onChange={information}
                       className="text-black dark:text-white border-1 border-zinc-600 rounded-[10px] pt-2 pb-2 pl-3 pr-3"
                     />
                     
-                    <label htmlFor="" className="mt-6">Digite seu e-mail:</label>
+                    <label htmlFor="" className="mt-6">{t("home.footer.form.email")}</label>
                     <input 
                       type="text" 
                       name="email" 
-                      placeholder="Digite seu e-mail"
+                      placeholder={t("home.footer.form.inputEmail")}
                       value={formInfo.email}
                       onChange={information}
                       className="text-black dark:text-white border-1 border-zinc-600 rounded-[10px] pt-2 pb-2 pl-3 pr-3"
                     />
                     
-                    <label htmlFor="" className="mt-6">Mensagem:</label>
+                    <label htmlFor="" className="mt-6">{t("home.footer.form.message")}</label>
                     <textarea 
                       name="message" 
-                      placeholder="Digite sua mensagem" 
+                      placeholder={t("home.footer.form.textareaMessage")}
                       value={formInfo.message}
                       onChange={information} 
                       className="text-black dark:text-white pt-2 pb-2 pl-3 pr-3 min-h-[150px] border-1 border-zinc-600 rounded-[10px]"
@@ -359,7 +358,7 @@ const Home = ({setPage}) => {
                     <div className="w-full flex items-center justify-center">
                       <button type="submit"
                         className="font font-bold flex items-center justify-center mt-5 pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
-                        Enviar
+                        {t("home.footer.form.button")}
                       </button>
                     </div>
                   </form>

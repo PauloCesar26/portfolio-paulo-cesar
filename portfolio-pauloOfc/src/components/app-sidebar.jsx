@@ -10,20 +10,22 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 export function AppSidebar({ setPage }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
   
   const items = [
     {
-      title: "Início",
+      title: t("sidebar.homeSidebar"),
       page: "Home",
       icon: Home,
     },
     {
-      title: "Desenvolvedor",
+      title: t("sidebar.desenvolvedor"),
       page: "Criador",
       icon: UserRound,
     },
@@ -31,12 +33,12 @@ export function AppSidebar({ setPage }) {
 
   const moreItems = [
     {
-      title: "Habilidades",
+      title: t("sidebar.habilidades"),
       page: "Habilidades",
       icon: CodeXml,
     },
     {
-      title: "Projetos",
+      title: t("sidebar.projetos"),
       page: "AllProjects",
       icon: Library,
     },
