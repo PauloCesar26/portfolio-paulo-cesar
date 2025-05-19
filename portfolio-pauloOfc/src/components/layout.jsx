@@ -6,9 +6,10 @@ import Home from "@/components/Pages/Home"
 import ProjectCreator from '@/components/Pages/ProjectCreator'
 import Habilidades from '@/components/Pages/Habilidades';
 import AllProjects from '@/components/Pages/AllProjects';
-import MarketingPessoal from '@/components/Pages/MarketingPessoal';
-import PageNetflix from './Pages/PageNetflix';
-import PageQrcode from './Pages/PageQrcode';
+import MarketingPessoal from '@/components/Pages/Projects/MarketingPessoal';
+import PageNetflix from './Pages/Projects/PageNetflix';
+import PageQrcode from './Pages/Projects/PageQrcode';
+import PageCalorie from '@/components/Pages/Projects/PageCalorie';
 
 export default function Layout({ children }) {
   const navigate = useNavigate();
@@ -34,6 +35,8 @@ export default function Layout({ children }) {
               <Route path="/Home/PageNetflix" element={<PageNetflix />} />
               <Route path="/AllProjects/PageSistemaJS" element={<PageQrcode />} />
               <Route path="/Home/PageSistemaJS" element={<PageQrcode />} />
+              <Route path="/AllProjects/PageCalorieCounter" element={<PageCalorie />} />
+              <Route path="/Home/PageCalorieCounter" element={<PageCalorie />} />
               <Route path="*" element={<Home />} /> 
           </Routes>
         </div>

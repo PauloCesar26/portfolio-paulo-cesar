@@ -1,7 +1,5 @@
 import { useTranslation } from "react-i18next"
 import { useState, useEffect } from "react"
-import { Languages } from "lucide-react"
-
 
 function LanguageSelect() {
     const {i18n} = useTranslation();
@@ -23,8 +21,8 @@ function LanguageSelect() {
             {language === "pt" ? <img src="/img/icons/pt.svg" alt="" className="w-6 h-6 object-cover rounded-full"/> : <img src="/img/icons/en.svg" alt="" className="w-5 h-5 rounded-full"/>}
           </div>
           <select onChange={handleLanguage} value={language} className="cursor-pointer">
-            <option value="pt" className="bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white">Português</option>
-            <option value="en" className="bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white">English</option>
+            <option value="pt" className="bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white hover:bg-zinc-500">Português</option>
+            <option value="en" className="bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white hover:bg-zinc-500">English</option>
           </select>  
       </div>
     </>

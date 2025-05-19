@@ -64,5 +64,36 @@
                 "button": "Enviar"
             }
         }
+    },
+
+    "pageDesenvolvedor": {
+        "contact": "Entre em contato:",
+        "more": "Saiba mais sobre mim:"
+    },
+
+    "pageSkill": {
+        "title": "Hard Skills em Programação",
+        "filter": "Filtrar habilidades:",
+        "options": {
+            "all": "Todas as habilidades",
+            "frontend": "Front-end",
+            "backend": "Back-end",
+            "database": "Banco de dados",
+            "editor": "Editor de código",
+            "controVersion": "Controle de versão"
+        }
+    },
+
+    "pageProjects": {
+        "title": "Todos os Projetos",
+        "project1": "HireQuest: Marketing Pessoal",
+        "project2": "Landing Page do site da Netflix",
+        "project3": "Sistema JavaScript: Recado com QR code",
+        "project4": "Layout ficha de nutrição - Praticando CSS",
+        "project5": "Contador de calorias - Praticando Javascript",
+        "projectEmBreve": "Em breve projeto"
     }
+
+
+
 }

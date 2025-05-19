@@ -63,5 +63,33 @@
                 "button": "Submit"
             }
         }
+    },
+
+    "pageDesenvolvedor": {
+        "contact": "Contact me:",
+        "more": "More about me:"
+    },
+
+    "pageSkill": {
+        "title": "Hard Skills in Programming",
+        "filter": "Filter skills:",
+        "options": {
+            "all": "All skills",
+            "frontend": "Front-end",
+            "backend": "Back-end",
+            "database": "Database",
+            "editor": "Code editor",
+            "controVersion": "Version control"
+        }
+    },
+
+    "pageProjects": {
+        "title": "All Projects",
+        "project1": "HireQuest: Personal Marketing",
+        "project2": "Netflix website landing page",
+        "project3": "JavaScript System: Message with QR code",
+        "project4": "Nutrition sheet layout - Practicing CSS",
+        "project5": "Calorie counter - Practicing JavaScript",
+        "projectEmBreve": "Project coming soon"
     }
 }

@@ -1,8 +1,10 @@
 import CardProject from "@/components/ui/CardProject"
 import ScrollReveal from "scrollreveal"
 import { useEffect } from "react"
+import { useTranslation } from "react-i18next"
 
 function AllProjects() {
+  const { t } = useTranslation();
   useEffect(() => {
     ScrollReveal().reveal(".animation", {
         opacity: 0,
@@ -14,7 +16,7 @@ function AllProjects() {
     return (
       <>
         <div className="animation mt-20 mb-10 flex flex-col items-center justify-center space-y-10">
-          <h1 className="text-black dark:text-white fontTitle">Todos os Projetos</h1>
+          <h1 className="text-black dark:text-white fontTitle">{t("pageProjects.title")}</h1>
 
           <div className="mb-10 h-auto flex gap-10 justify-center flex-wrap lg:p-5">
             <CardProject 
@@ -22,7 +24,7 @@ function AllProjects() {
               altText="Projeto 1"
               urlGithub="https://github.com/PauloCesar26/TCC_HireQuest"
               urlPage="/AllProjects/MarketingPessoal">
-              <span>HireQuest: Marketing Pessoal</span>
+              <span>{t("pageProjects.project1")}</span>
             </CardProject>
 
             <CardProject 
@@ -30,7 +32,7 @@ function AllProjects() {
               altText="Projeto 2"
               urlGithub="https://github.com/PauloCesar26/clone-site-netflix"
               urlPage="/AllProjects/PageNetflix">
-                <span>Landing Page do site da Netflix</span>
+                <span>{t("pageProjects.project2")}</span>
             </CardProject>
 
             <CardProject 
@@ -38,19 +40,33 @@ function AllProjects() {
               altText="Projeto 1"
               urlGithub="https://github.com/PauloCesar26/sistemaSimplesJS"
               urlPage="/AllProjects/PageSistemaJS">
-                <span>Sistema JavaScript: Recado com QR code</span>
+                <span>{t("pageProjects.project3")}</span>
+            </CardProject>
+
+            <CardProject 
+              imgSrc="/img/projectCSS.png" 
+              altText="Projeto">
+                <span>{t("pageProjects.project4")}</span>
+            </CardProject>
+
+            <CardProject 
+              imgSrc="/img/projectCalorie.png" 
+              altText="Projeto"
+              urlGithub="https://github.com/PauloCesar26/FreeCodeCamp/tree/main/FreeCodeCamp-Studying/JavaScript/JS03_CalorieCounter"
+              urlPage="/AllProjects/PageCalorieCounter">
+                <span>{t("pageProjects.project5")}</span>
             </CardProject>
 
             <CardProject 
               imgSrc="/img/emBreve.png" 
               altText="Projeto">
-                <span>Em breve projeto</span>
+                <span>{t("pageProjects.projectEmBreve")}</span>
             </CardProject>
 
             <CardProject 
               imgSrc="/img/emBreve.png" 
               altText="Projeto">
-                <span>Em breve projeto</span>
+                <span>{t("pageProjects.projectEmBreve")}</span>
             </CardProject>
           </div>
         </div>

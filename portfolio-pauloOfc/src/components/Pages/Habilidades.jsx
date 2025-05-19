@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ScrollReveal from "scrollreveal"
 import { useEffect } from "react"
+import { useTranslation } from "react-i18next"
 
 const Habilidades = () => {
   useEffect(() => {
@@ -12,6 +13,7 @@ const Habilidades = () => {
   }, []);
 
   const [filter, setFilter] = useState("all");
+  const { t } = useTranslation();
 
   const habilidadesSelect = Object.freeze({
     elements: [
@@ -100,16 +102,16 @@ const Habilidades = () => {
     <>
       <div className="animation mt-20">
         <div className="mt-10 flex flex-col items-center justify-center w-full space-y-5 p-3 text-center">
-          <h1 className="text-black font-medium dark:text-white fontTitle mb-10"> Hard Skills em Programação</h1>
+          <h1 className="text-black font-medium dark:text-white fontTitle mb-10">{t("pageSkill.title")}</h1>
 
-          <label htmlFor="habilidades" data-i18n="filter" className="text-black dark:text-white font text-[1.2rem]">Filter Habilidades:
+          <label htmlFor="habilidades" data-i18n="filter" className="text-black dark:text-white font text-[1.2rem]">{t("pageSkill.filter")}
           <select name="players" className="font text-[1.1rem] bg-gray-400 text-white p-1 pr-2 ml-2 rounded-[15px] dark:bg-white dark:text-black" value={filter} onChange={(e) => setFilter(e.target.value)}>
-            <option value="all" data-i18n="all">Todas as Habilidades</option>
+            <option value="all" data-i18n="all">{t("pageSkill.options.all")}</option>
             <option value="frontend" data-i18n="nickname">Front-end</option>
             <option value="backend" data-i18n="forward">Back-end</option>
-            <option value="bancodados" data-i18n="midfielder">Banco de Dados</option>
-            <option value="ide" data-i18n="defender">Editor de código / IDE</option>
-            <option value="controleversao" data-i18n="goalkeeper">Controle de versão</option>
+            <option value="bancodados" data-i18n="midfielder">{t("pageSkill.options.database")}</option>
+            <option value="ide" data-i18n="defender">{t("pageSkill.options.editor")} / IDE</option>
+            <option value="controleversao" data-i18n="goalkeeper">{t("pageSkill.options.controVersion")}</option>
           </select>
           </label>
         </div>
