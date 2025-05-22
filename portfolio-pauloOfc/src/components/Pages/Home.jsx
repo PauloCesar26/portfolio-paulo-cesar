@@ -8,11 +8,11 @@ import ButtonProject from "@/components/ui/ButtonProject"
 import ButtonGithub from "@/components/ui/ButtonGithub"
 import { useTranslation } from "react-i18next"
 import i18n from 'i18next';
+import LoandingOverlay from "@/components/ui/LoandingOverlay"
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  console.log(t("home.banner.title1"))
   console.log('Idioma atual:', i18n.language);
   
   useEffect(() => {
@@ -82,6 +82,7 @@ const Home = ({setPage}) => {
     );
   };
 
+  const [isLoading, setIsLoading] = useState(false);
   const validation = async (event) => {
     event.preventDefault();
 
@@ -104,19 +105,20 @@ const Home = ({setPage}) => {
       return;
     }
   
-      const data = new FormData();
-      data.append("name", formInfo.name);
-      data.append("email", formInfo.email);
-      data.append("message", formInfo.message);
-      data.append("_captcha", "false");
-      data.append("_honey", "");
-  
+    const data = new FormData();
+    data.append("name", formInfo.name);
+    data.append("email", formInfo.email);
+    data.append("message", formInfo.message);
+    data.append("_captcha", "false");
+    data.append("_honey", "");
+    
       try{
+        setIsLoading(true);
         const response = await fetch("https://formsubmit.co/pc.cordeirolima@gmail.com", {
           method: "POST",
           body: data
         });
-  
+        
         if(response.ok){
           setStatus(toast.success("Mensagem enviada com sucesso!"));
           setFormInfo(
@@ -135,11 +137,15 @@ const Home = ({setPage}) => {
         setStatus(toast.error("Erro ao enviar a mensagem!"))
         console.log(error);
       }
-  };
-  
-  return (
-    <>
+      finally{
+        setIsLoading(false);
+      }
+    };
+    
+    return (
+      <>
         <div>
+          {isLoading && <LoandingOverlay/>}
           <Banner/>
 
           {/* About */}

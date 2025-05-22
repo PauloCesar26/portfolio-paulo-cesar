@@ -1,30 +1,10 @@
 import { useTranslation } from "react-i18next"
 import { useState, useEffect } from "react"
-import { LoaderCircle } from "lucide-react";
+import LoandingOverlay from "@/components/ui/LoandingOverlay"
 
 function LanguageSelect() {
     const {i18n} = useTranslation();
     const [isLoading, setIsLoading] = useState(false);
-
-    function LoandingOverlay(){
-      return (
-        <div className="
-            fixed 
-            top-0 
-            left-0
-            w-full
-            h-full
-            bg-white
-            dark:bg-black
-            opacity-90
-            z-50
-            flex
-            items-center
-            justify-center">
-              <LoaderCircle className="animate-spin w-10 h-10 text-black dark:text-white"/>
-        </div>
-      );
-    }
 
     const handleLanguage = (e) => {
       const selectLanguage = e.target.value;
