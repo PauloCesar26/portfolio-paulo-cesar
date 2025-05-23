@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next"
 import i18n from 'i18next';
 import LoandingOverlay from "@/components/ui/LoandingOverlay"
 
+
 const Home = ({setPage}) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -51,14 +52,16 @@ const Home = ({setPage}) => {
     });
 
     ScrollReveal().reveal(".animationButton", {
-      rotate: {x: 100, y:0, z: 0},
+      distance: '150px',
+      origin:'bottom',
       easing: 'ease-in-out',
       duration: 1000,
       reset: false
     });
 
     ScrollReveal().reveal(".animationFrase", {
-      rotate: {x:100, y:0, z:0},
+      distance: '200px',
+      origin:'bottom',
       easing: 'ease-in-out',
       duration: 1000
     });

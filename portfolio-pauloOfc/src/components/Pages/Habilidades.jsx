@@ -39,7 +39,7 @@ const Habilidades = () => {
       },
       {
         name: "PHP", 
-        category: ["frontend", "backend"],
+        category: ["backend"],
         image: "./img/icons/php.svg" 
       },
       {
@@ -81,6 +81,11 @@ const Habilidades = () => {
         name: "Neovim", 
         category: ["ide"], 
         image: "./img/icons/neovim.svg"
+      },
+      {
+        name: "Notepad++", 
+        category: ["ide"], 
+        image: "./img/icons/notepad.svg"
       },
       {
         name: "Git", 
