@@ -159,7 +159,7 @@ const Home = ({setPage}) => {
               <div className="w-full md:w-1/2 flex justify-center">
                 <img src="/img/imgPortfolio.png" alt="Imagem do criador do portfolio"/>
               </div>
-              <div className="w-full md:w-1/2 max-md:w-[80%] flex flex-col justify-center space-y-6 md:mt-10 max-lg:p-0 xl:p-10  text-justify">
+              <div className="w-full md:w-1/2 max-md:w-[80%] flex flex-col justify-center space-y-6 max-lg:mt-10 max-lg:p-0 xl:p-10  text-justify">
                 <p>
                   {t("home.sobre.paragrafo1")}
                 </p>

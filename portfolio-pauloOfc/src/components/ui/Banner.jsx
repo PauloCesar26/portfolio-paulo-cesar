@@ -17,11 +17,22 @@ function Banner() {
     return (
       <>
           <div className="banner text-center flex flex-col justify-center h-full">
-            <div className="animationInicial w-full font-[Arial] z-30 flex flex-col items-center">
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="font max-md:text-[1.2rem] md:text-[1.4rem] font-medium max-md:pl-4 max-md:pr-4 text-white">{t("home.banner.title1")}</h3>
-                <span className="font max-md:text-[3.1rem] md:text-[4.1rem] font-black text-white">{t("home.banner.title")}</span>
-                <p className="font max-md:text-[1.3rem] md:text-[1.5rem] font-medium md:w-[60%] max-md:w-[85%] text-white">
+            <div className="animationInicial w-full z-30 flex flex-col items-center">
+              <div className="flex flex-col items-center justify-center space-y-[2px]">
+                <p className="
+                  font 
+                  max-md:text-[1.2rem] 
+                  md:text-[1.4rem] 
+                  font-medium 
+                  max-md:pl-4 
+                  max-md:pr-4 
+                  text-white">
+                  {t("home.banner.title1")}
+                </p>
+                <h1 className="font max-md:text-[3.1rem] md:text-[4.2rem] font-black text-white">
+                  {t("home.banner.title")}
+                </h1>
+                <p className="font max-md:text-[1.3rem] md:text-[1.5rem] font-medium md:w-[65%] max-md:w-[85%] text-white">
                  {t("home.banner.title2")}
                 </p>
               </div>
