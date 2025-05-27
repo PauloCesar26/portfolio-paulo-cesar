@@ -56,7 +56,7 @@ export function AppSidebar({ setPage }) {
                         <SidebarMenuButton asChild>
                           <button 
                               onClick={() => navigate(item.page)}
-                              className={`${location.pathname === `/${item.page}` ? "bg-zinc-400/30 dark:bg-zinc-800" : ""} [&>svg]:w-5 [&>svg]:h-5`}>
+                              className={`${location.pathname === `/${item.page}` ? "bg-zinc-400/30 dark:bg-zinc-900" : ""} [&>svg]:w-5 [&>svg]:h-5`}>
                               <item.icon/>
                               <span>{item.title}</span>
                           </button>

@@ -19,9 +19,9 @@ function Banner() {
           <div className="banner text-center flex flex-col justify-center h-full">
             <div className="animationInicial w-full font-[Arial] z-30 flex flex-col items-center">
               <div className="flex flex-col items-center justify-center">
-                <h3 className="font text-[1.5rem] font-medium max-md:pl-4 max-md:pr-4">{t("home.banner.title1")}</h3>
-                <span className="font text-[3.5rem] font-black">{t("home.banner.title")}</span>
-                <p className="font text-[1.4rem] max-md:text-[1.1rem] font-medium md:w-[66%] max-md:w-[85%]">
+                <h3 className="font max-md:text-[1.2rem] md:text-[1.4rem] font-medium max-md:pl-4 max-md:pr-4 text-white">{t("home.banner.title1")}</h3>
+                <span className="font max-md:text-[3.1rem] md:text-[4.1rem] font-black text-white">{t("home.banner.title")}</span>
+                <p className="font max-md:text-[1.3rem] md:text-[1.5rem] font-medium md:w-[60%] max-md:w-[85%] text-white">
                  {t("home.banner.title2")}
                 </p>
               </div>
@@ -29,7 +29,7 @@ function Banner() {
                 to="contato"
                 smooth={true}
                 duration={900}
-                className="font font-bold mt-5 flex items-center justify-center pt-4 pb-4 pl-6 pr-6 bg-white text-[20px] text-black dark:bg-white dark:text-black rounded-[15px] cursor-pointer hover:scale-[1.1] transition duration-[0.5s] ease-in-out hover:bg-zinc-300 shadow-button hover:text-white hover:dark:text-white">
+                className="font font-bold mt-5 flex items-center justify-center pt-3 pb-3 pl-6 pr-6 bg-white md:text-[20px] max-md:text-[16px] text-black dark:bg-white dark:text-black rounded-[12px] cursor-pointer hover:scale-[1.1] transition duration-[0.5s] ease-in-out hover:bg-zinc-300 shadow-button hover:text-white hover:dark:text-white">
                   {t("home.banner.button")}
               </Link>
             </div>
