@@ -525,7 +525,7 @@ function SidebarMenuButton({
       data-sidebar="menu-button"
       data-size={size}
       data-active={isActive}
-      className={cn(sidebarMenuButtonVariants({ variant, size }), className="pt-5 pb-5 font-semibold cursor-pointer hover:bg-zinc-400/30 transition duration-700 ease-in-out dark:hover:bg-zinc-900")}
+      className={cn(sidebarMenuButtonVariants({ variant, size }), className="pt-5 pb-5 font-semibold cursor-pointer hover:bg-zinc-400/30 transition duration-700 ease-in-out dark:hover:bg-zinc-800/70")}
       {...props} />
   )
 
