@@ -16,8 +16,8 @@ const ProjectCreator = ({setPage}) => {
 
     return (
         <>
-        <div className="transition duration-700 ease-in-out w-[100%] min-h-[calc(100vh-5rem)] bg-zinc-100 dark:bg-black">
-            <div className="w-[100%] h-[90vh] flex flex-wrap justify-center space-x-5 mt-20 max-md:pb-10">
+        <div className="transition duration-700 ease-in-out w-[100%] lg:w-full max-md:min-h-[120vh] md:min-h-[130vh] lg:min-h-[100vh] bg-zinc-100 dark:bg-black overflow-hidden">
+            <div className="w-[100%] md:h-[90vh] flex flex-wrap justify-center space-x-5 mt-10 max-md:pb-10">
                 <div className="animation shadow w-[80%] md:h-[auto] flex flex-wrap justify-center max-lg:flex-col bg-zinc-300 dark:bg-zinc-900/40 m-10 mt-10 mb-10 relative">    
                     <div className="w-full max-lg:h-[auto] lg:w-[35%] flex items-center justify-center">
                         <img src="/img/imgPortfolio.png" className="w-[30rem]"/>
@@ -37,7 +37,7 @@ const ProjectCreator = ({setPage}) => {
                                 <span className="text-[1.5rem] font-medium">Linkedin</span>
                             </button>
                             <button onClick={() => window.open("https://github.com/PauloCesar26", "_blank")} 
-                                className="w-[80%] bg-zinc-400/60 text-black dark:bg-zinc-700 dark:text-white shadow-button pt-4 pb-4 rounded-[15px] flex items-center justify-center pr-10 gap-5 cursor-pointer hover:scale-[1.01] hover:text-white transition duration-500 ease-in-out">
+                                className="w-[80%] bg-zinc-400/60 text-black dark:bg-zinc-700 dark:text-white shadow-button pt-4 pb-4 rounded-[15px] flex items-center justify-center pr-10 mb-10 gap-5 cursor-pointer hover:scale-[1.01] hover:text-white transition duration-500 ease-in-out">
                                 <img src="/img/icons/github.svg" alt="" className="w-[50px]"/>
                                 <span className="text-[1.5rem] font-medium">Github</span>
                             </button>
