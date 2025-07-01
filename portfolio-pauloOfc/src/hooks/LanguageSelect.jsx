@@ -31,6 +31,7 @@ function LanguageSelect() {
   return (
     <>
       {isLoading && <LoandingOverlay/>}
+      {/* Tela mobile */}
         <button onClick={handleClick} className={`
           block
           sm:hidden
@@ -69,7 +70,8 @@ function LanguageSelect() {
             top-[-9px] 
             left-8 
             rotate-45 
-            z-10"></div>
+            z-10">  
+          </div>
 
           <div className="
             font 
@@ -118,7 +120,7 @@ function LanguageSelect() {
 
 
 
-        {/* Depois */}
+        {/* Tela maior que 664px */}
         <button onClick={handleClick} className={`
           block
           max-sm:hidden

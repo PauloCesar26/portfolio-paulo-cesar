@@ -10,6 +10,7 @@ import MarketingPessoal from '@/components/Pages/Projects/MarketingPessoal';
 import PageNetflix from './Pages/Projects/PageNetflix';
 import PageQrcode from './Pages/Projects/PageQrcode';
 import PageCalorie from '@/components/Pages/Projects/PageCalorie';
+import SistemaEstoque from './Pages/Projects/SistemaEstoque';
 
 export default function Layout({ children }) {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ export default function Layout({ children }) {
               <Route path="/AllProjects/PageNetflix" element={<PageNetflix />} />
               <Route path="/Home/PageNetflix" element={<PageNetflix />} />
               <Route path="/AllProjects/PageSistemaJS" element={<PageQrcode />} />
-              <Route path="/Home/PageSistemaJS" element={<PageQrcode />} />
+              <Route path="/Home/SistemaEstoque" element={<SistemaEstoque />} />
               <Route path="/AllProjects/PageCalorieCounter" element={<PageCalorie />} />
               <Route path="/Home/PageCalorieCounter" element={<PageCalorie />} />
               <Route path="*" element={<Home />} /> 

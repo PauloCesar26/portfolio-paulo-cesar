@@ -1,6 +1,6 @@
-function ButtonGithub({urlGithub}) {
+function ButtonGithub({url}) {
     const openGithub = () => {
-        window.open(urlGithub, "_blank")
+        window.open(url, "_blank")
     };
   return (
     <>

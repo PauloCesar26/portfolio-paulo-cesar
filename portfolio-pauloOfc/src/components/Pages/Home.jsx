@@ -243,7 +243,7 @@ const Home = ({setPage}) => {
               {/* Project 3 */}
               <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px]  w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
                 <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
-                  <img src="/img/projectQrcode.png" alt="Imagem do Projeto 3" className="w-full h-full object-cover object-center bg-cover bg-center"/>
+                  <img src="/img/projectEstoqueJD.png" alt="Imagem do Projeto 3" className="w-full h-full object-cover object-center bg-cover bg-center"/>
                 </div>
 
                 <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-[65%] lg:h-full">
@@ -261,18 +261,18 @@ const Home = ({setPage}) => {
                   <div className="xl:flex items-center xl:justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5 max-xl:space-y-7 mt-5">
                     <ul className="flex gap-2 items-center">
                       <li className="w-[15%] xl:w-[25%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                      <li className="w-[13%] xl:w-[21%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
-                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/javascript.svg" alt="CSS" /></li>
+                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/javascript.svg" alt="JS" /></li>
+                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/tailwind.svg" alt="JS" /></li>
                     </ul>
                     <div className="flex items-center max-xl:justify-end">
-                      <ButtonGithub url="https://github.com/PauloCesar26/sistemaSimplesJS"/>
-                      <ButtonProject urlPage="/Home/PageSistemaJS"/>
+                      <ButtonGithub url="https://github.com/PauloCesar26/controle-estoque-pedido"/>
+                      <ButtonProject urlPage="/Home/SistemaEstoque"/>
                     </div>
                   </div>
                 </div>
               </div>
-              
             </div>
+
             <button 
               onClick={() => navigate("/AllProjects")} 
               className="animationButton font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">

@@ -32,8 +32,8 @@
                 "text": "Projeto que desenvolvi para me desafiar a clonar um site que sempre admirei. Pensei: por que não criar algo semelhante e mostrar que sou capaz de fazer um projeto no nível da Netflix?"
             },
             "projeto3":{
-                "title": "Sistema Simples com JS",
-                "text": "Projeto desenvolvido para uma doceria conhecida como Jojoca Doces, eles quiseram inovar os recados que são mandados para o cliente junto com o produto entregue. O sistema foi desenvolvido com javascript e envolve salvamento de dados e gerador de QR code."
+                "title": "Sistema de estoque e pedido",
+                "text": "Projeto desenvolvido para uma doceria conhecida como Jojoca Doces, um sistema que resolveu um problema da doceria que era ter o controle do seu estoque conforme os pedidos eram feitos."
             },
             "buttonAll":"Todos os projetos"
         },

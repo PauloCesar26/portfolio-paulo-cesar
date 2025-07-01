@@ -22,7 +22,7 @@ function AllProjects() {
             <CardProject 
               imgSrc="/img/projectHirequest.png" 
               altText="Projeto 1"
-              urlGithub="https://github.com/PauloCesar26/TCC_HireQuest"
+              url="https://github.com/PauloCesar26/TCC_HireQuest"
               urlPage="/AllProjects/MarketingPessoal">
               <span>{t("pageProjects.project1")}</span>
             </CardProject>
@@ -30,7 +30,7 @@ function AllProjects() {
             <CardProject 
               imgSrc="/img/projectNetflix.png" 
               altText="Projeto 2"
-              urlGithub="https://github.com/PauloCesar26/clone-site-netflix"
+              url="https://github.com/PauloCesar26/clone-site-netflix"
               urlPage="/AllProjects/PageNetflix">
                 <span>{t("pageProjects.project2")}</span>
             </CardProject>
@@ -38,7 +38,7 @@ function AllProjects() {
             <CardProject 
               imgSrc="/img/projectQrcode.png" 
               altText="Projeto 1"
-              urlGithub="https://github.com/PauloCesar26/sistemaSimplesJS"
+              url="https://github.com/PauloCesar26/sistemaSimplesJS"
               urlPage="/AllProjects/PageSistemaJS">
                 <span>{t("pageProjects.project3")}</span>
             </CardProject>
@@ -52,7 +52,7 @@ function AllProjects() {
             <CardProject 
               imgSrc="/img/projectCalorie.png" 
               altText="Projeto"
-              urlGithub="https://github.com/PauloCesar26/FreeCodeCamp/tree/main/FreeCodeCamp-Studying/JavaScript/JS03_CalorieCounter"
+              url="https://github.com/PauloCesar26/FreeCodeCamp/tree/main/FreeCodeCamp-Studying/JavaScript/JS03_CalorieCounter"
               urlPage="/AllProjects/PageCalorieCounter">
                 <span>{t("pageProjects.project5")}</span>
             </CardProject>
