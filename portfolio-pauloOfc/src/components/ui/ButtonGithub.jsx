@@ -14,13 +14,12 @@ function ButtonGithub({url}) {
                         font-bold 
                         rounded-[10px] 
                         bg-zinc-400/60 
-                        text-black 
                         dark:bg-zinc-700 
                         dark:text-zinc-300 
                         cursor-pointer 
                         mr-2 
-                        hover:dark:bg-zinc-800 
-                        hover:bg-zinc-500/60
+                        hover:dark:bg-zinc-100 
+                        hover:bg-zinc-900 
                         max-sm:h-[55px]
                         max-sm:w-[60px]
                         sm:w-[50px]

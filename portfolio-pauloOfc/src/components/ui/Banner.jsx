@@ -40,7 +40,7 @@ function Banner() {
                 to="contato"
                 smooth={true}
                 duration={900}
-                className="font font-bold mt-5 flex items-center justify-center pt-3 pb-3 pl-6 pr-6 bg-white md:text-[20px] max-md:text-[16px] text-black dark:bg-white dark:text-black rounded-[12px] cursor-pointer hover:scale-[1.1] transition duration-[0.5s] ease-in-out hover:bg-zinc-300 shadow-button hover:text-white hover:dark:text-white">
+                className="font font-bold mt-5 flex items-center justify-center pt-3 pb-3 pl-6 pr-6 md:text-[20px] max-md:text-[16px] text-black bg-white text-black rounded-[12px] cursor-pointer hover:scale-[1.1] transition duration-[0.5s] ease-in-out border-2 border-zinc-500 shadow-lg hover:shadow-white">
                   {t("home.banner.button")}
               </Link>
             </div>

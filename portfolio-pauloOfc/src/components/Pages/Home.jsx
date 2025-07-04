@@ -175,7 +175,7 @@ const Home = ({setPage}) => {
             <h1 className="fontTitle text-black dark:text-white animationRight">{t("home.projetos.title")}</h1>
             <div className="mt-10 mb-10 h-auto flex flex-col gap-10 justify-center items-center flex-wrap ml-5 mr-5">
               {/* Project 1 */}
-              <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
+              <div className="animation bg-zinc-100 border-2 hover:border-black border-zinc-300 dark:border-zinc-800 hover:dark:border-white text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-custom">
                 <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
                   <img src="/img/projectHirequest.png" alt="Imagem do Projeto 1" className="w-full h-full object-cover object-center bg-cover bg-center"/>
                 </div>
@@ -209,7 +209,7 @@ const Home = ({setPage}) => {
               </div>
 
               {/* Project 2 */}
-              <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px]  w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
+              <div className="animation bg-zinc-100 border-2 hover:border-black border-zinc-300 dark:border-zinc-800 hover:dark:border-white text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-custom">
                 <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
                   <img src="/img/projectNetflix.png" alt="Imagem do Projeto 2" className="w-full h-full object-cover object-center bg-cover bg-center"/>
                 </div>
@@ -241,7 +241,7 @@ const Home = ({setPage}) => {
               </div>
 
               {/* Project 3 */}
-              <div className="animation bg-zinc-100 border-1 border-zinc-400 text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px]  w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-custom">
+              <div className="animation bg-zinc-100 border-2 hover:border-black border-zinc-300 dark:border-zinc-800 hover:dark:border-white text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-custom">
                 <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
                   <img src="/img/projectEstoqueJD.png" alt="Imagem do Projeto 3" className="w-full h-full object-cover object-center bg-cover bg-center"/>
                 </div>
@@ -275,7 +275,7 @@ const Home = ({setPage}) => {
 
             <button 
               onClick={() => navigate("/AllProjects")} 
-              className="animationButton font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
+              className="animationButton font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-400 ease-in-out hover:scale-[1.03] shadow-lg hover:shadow-zinc-600 hover:dark:shadow-zinc-400">
               {t("home.projetos.buttonAll")}
             </button>
           </div>
@@ -291,7 +291,7 @@ const Home = ({setPage}) => {
             <h1 className="fontTitle text-black dark:text-white animationRight">Blog</h1>
               <div className="animationLeft fontContent mt-10 mb-10 h-auto flex gap-10 justify-center flex-wrap">
                 {/* Blog 1 */}
-                <div className="bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
+                <div className="bg-zinc-200/40 border-2 border-zinc-300 hover:border-black dark:border-zinc-800 hover:dark:border-white flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-card">
                   <div className="flex flex-col w-full h-[50%] bg-zinc-900">
                       <img src="/img/imgJavascript.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
                   </div>
@@ -304,7 +304,7 @@ const Home = ({setPage}) => {
                 </div>
 
                 {/* Blog 2 */}
-                <div className=" bg-zinc-200/40 border-1 border-zinc-400 flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-800 ease-in-out hover:scale-[1.02]  shadow-card">
+                <div className="bg-zinc-200/40 border-2 border-zinc-300 hover:border-black dark:border-zinc-800 hover:dark:border-white flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-card">
                   <div className="flex flex-col w-full h-[50%] bg-zinc-900">
                       <img src="/img/rede.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
                   </div>
@@ -324,7 +324,7 @@ const Home = ({setPage}) => {
               <div className="w-full lg:w-[40%] pt-5 pb-8 mb-5 flex flex-col justify-center items-center space-y-6 md:w-1/2 border-b-1 border-zinc-500">
                 <button
                   onClick={() => navigate("/Criador")} 
-                  className="font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
+                  className="font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-400 ease-in-out hover:scale-[1.03] shadow-lg hover:shadow-zinc-600 hover:dark:shadow-zinc-400">
                   {t("home.footer.button")}
                 </button>
               </div>
@@ -363,7 +363,7 @@ const Home = ({setPage}) => {
                     
                     <div className="w-full flex items-center justify-center">
                       <button type="submit"
-                        className="font font-bold flex items-center justify-center mt-5 pt-3 pb-3 pl-10 pr-10 bg-zinc-900/80 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-700 ease-in-out shadow-button hover:dark:text-white hover:scale-[1.02]">
+                        className="font font-bold flex items-center justify-center mt-5 pt-3 pb-3 pl-10 pr-10 bg-zinc-900 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-400 ease-in-out hover:scale-[1.03] shadow-lg hover:shadow-zinc-600 hover:dark:shadow-zinc-400">
                         {t("home.footer.form.button")}
                       </button>
                     </div>

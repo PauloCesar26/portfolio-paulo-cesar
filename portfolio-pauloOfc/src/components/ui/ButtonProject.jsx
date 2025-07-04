@@ -19,13 +19,14 @@ function ButtonProject({urlPage}) {
                   font-bold 
                   p-3 
                   rounded-[10px] 
-                  bg-zinc-400/60 
-                  text-black 
-                  dark:bg-zinc-700 
-                  dark:text-zinc-300 
+                  bg-zinc-900 
+                  text-white 
+                  dark:text-black
+                  dark:bg-zinc-100 
+                  dark:text-text-black 
                   mr-2 
-                  hover:dark:bg-zinc-800 
-                  hover:bg-zinc-500/60
+                  hover:dark:bg-zinc-300 
+                  hover:bg-zinc-800
                   lg:w-[115px]
                   lg:h-[60px]
                   max-sm:h-[55px]
