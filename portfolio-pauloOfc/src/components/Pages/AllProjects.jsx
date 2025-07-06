@@ -21,7 +21,7 @@ function AllProjects() {
           <div className="mb-10 h-auto flex gap-10 justify-center flex-wrap lg:p-5">
             <CardProject 
               imgSrc="/img/projectHirequest.png" 
-              altText="Projeto 1"
+              altText="Projeto"
               url="https://github.com/PauloCesar26/TCC_HireQuest"
               urlPage="/AllProjects/MarketingPessoal">
               <span>{t("pageProjects.project1")}</span>
@@ -29,15 +29,23 @@ function AllProjects() {
 
             <CardProject 
               imgSrc="/img/projectNetflix.png" 
-              altText="Projeto 2"
+              altText="Projeto"
               url="https://github.com/PauloCesar26/clone-site-netflix"
               urlPage="/AllProjects/PageNetflix">
                 <span>{t("pageProjects.project2")}</span>
             </CardProject>
 
             <CardProject 
+              imgSrc="/img/projectEstoqueJD.png" 
+              altText="Projeto"
+              url="https://github.com/PauloCesar26/controle-estoque-pedido"
+              urlPage="/AllProjects/SistemaEstoque">
+                <span>{t("pageProjects.project6")}</span>
+            </CardProject>
+
+            <CardProject 
               imgSrc="/img/projectQrcode.png" 
-              altText="Projeto 1"
+              altText="Projeto"
               url="https://github.com/PauloCesar26/sistemaSimplesJS"
               urlPage="/AllProjects/PageSistemaJS">
                 <span>{t("pageProjects.project3")}</span>
@@ -56,6 +64,7 @@ function AllProjects() {
               urlPage="/AllProjects/PageCalorieCounter">
                 <span>{t("pageProjects.project5")}</span>
             </CardProject>
+
 
             <CardProject 
               imgSrc="/img/emBreve.png" 

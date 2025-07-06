@@ -15,18 +15,20 @@ function MarketingPessoal() {
                     </div>
                     <div className="w-[100%] h-1uto pt-6 pl-10 pr-10 pb-7 space-y-7 dark:text-zinc-100 text-black flex flex-col">
                         <p>
-                            Projeto que foi parte do TCC do 3º ano do ensino médio. Um site que disponibiliza conteúdo
-                            sobre marketing pessoal, com o objetivo de estudar empregabilidade e se destacar no mercado
-                            de trabalho.
+                            Este projeto foi desenvolvido como parte do Trabalho de Conclusão de Curso (TCC) do 3º ano do ensino médio. 
+                            Trata-se de um site educativo focado em marketing pessoal, com o objetivo de ajudar estudantes e profissionais 
+                            a entenderem melhor a empregabilidade e aprenderem como se destacar no mercado de trabalho.
                         </p>
                         <p>
-                            Site que faz o uso do banco de dados para armazenar todos os jeitos que o usuário
-                            pode digitar para fazer a pesquisa e todos os conteúdos estão incluídos no db para
-                            fazer a renderização das informações na tela, fazendo a conexão com php
+                            A plataforma conta com um sistema de busca inteligente que utiliza um banco de dados para armazenar diversas 
+                            variações de termos que o usuário pode digitar durante a pesquisa. Todos os conteúdos informativos também 
+                            estão armazenados no banco de dados, permitindo que as informações sejam carregadas dinamicamente na tela 
+                            através de uma conexão com PHP.
                         </p>
                         <p>
-                            A finalidade do projeto é disponibilizar conteúdos onde os usuários podem estudar,
-                            consultar e visitar diferentes tipos de informação sobre marketing pessoal. 
+                            O principal propósito do projeto é oferecer um ambiente acessível onde os usuários possam estudar, consultar 
+                            e explorar diferentes tipos de conteúdos relacionados ao marketing pessoal, promovendo aprendizado e 
+                            desenvolvimento profissional.
                         </p>
                     </div>
                     <div className="flex flex-col items-start max-lg:p-4 lg:p-5">

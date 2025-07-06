@@ -15,16 +15,18 @@ function PageQrcode() {
                     </div>
                     <div className="w-[100%] h-1uto pt-6 pl-10 pr-10 pb-7 space-y-7 dark:text-zinc-100 text-black flex flex-col">
                         <p>
-                            Projeto desenvolvido para uma doceria conhecida como Jojoca Doces, eles quiseram inovar os recados
-                            que são mandados para o cliente junto com o produto entregue. O sistema foi desenvolvido com javascript
-                            e envolve salvamento de dados e gerador de QR code.
+                           Este projeto foi desenvolvido para a doceria Jojoca Doces, que buscava uma forma inovadora de personalizar os 
+                           recados enviados junto aos seus produtos. A ideia era criar uma experiência mais afetiva e tecnológica para os clientes.
                         </p>
                         <p>
-                            Como ele funciona ?<br/>
-                            Doceria abre um formulário, preenche as informações com o nome do cliente que está
-                            mandando o recado e o nome da pessoa que recebe o recado e a mensagem passada pelo 
-                            cliente, logo após a entrada tem o processamento que é o salvamento das informações 
-                            e o gerador do qr code, por fim a saída que é o recado e o qr code.
+                            A solução foi implementada com JavaScript puro e conta com funcionalidades de salvamento de dados e geração de QR Code.
+                        </p>
+                        <p>
+                            Como funciona o sistema?<br />
+                            A doceria acessa um formulário e preenche os dados necessários: o nome do cliente que está enviando a mensagem, o nome 
+                            do destinatário e o conteúdo do recado. Após o preenchimento, o sistema processa as informações, salvando os dados 
+                            localmente e gerando um QR Code exclusivo. Por fim, o recado e o QR Code são exibidos, podendo ser impressos ou enviados 
+                            junto com o pedido.                        
                         </p>
                     </div>
                     <div className="flex flex-col items-start max-lg:p-4 lg:p-5">

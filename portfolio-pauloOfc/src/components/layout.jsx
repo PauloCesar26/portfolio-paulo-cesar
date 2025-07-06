@@ -36,6 +36,7 @@ export default function Layout({ children }) {
               <Route path="/Home/PageNetflix" element={<PageNetflix />} />
               <Route path="/AllProjects/PageSistemaJS" element={<PageQrcode />} />
               <Route path="/Home/SistemaEstoque" element={<SistemaEstoque />} />
+              <Route path="/AllProjects/SistemaEstoque" element={<SistemaEstoque />} />
               <Route path="/AllProjects/PageCalorieCounter" element={<PageCalorie />} />
               <Route path="/Home/PageCalorieCounter" element={<PageCalorie />} />
               <Route path="*" element={<Home />} /> 
