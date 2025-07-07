@@ -281,7 +281,7 @@ const Home = ({setPage}) => {
           </div>
 
           <div className="fundoFrase min-h-[350px] max-h-[500px] p-10 flex flex-col justify-center items-center">
-            <p className="animationFrase fontContent max-md:text-[1.5rem] md:text-[1.5rem] lg:text-[1.8rem] z-40 max-md:p-5 md:p-20">
+            <p className="animationFrase fontContent max-md:text-[1.5rem] md:text-[1.5rem] lg:text-[1.8rem] z-40 max-md:p-5 md:p-20 text-black dark:text-white">
               "{t("home.phrase")}" - Paulo Cesar
             </p>
           </div>
