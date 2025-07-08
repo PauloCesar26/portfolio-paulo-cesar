@@ -48,43 +48,46 @@ export function AppSidebar({ setPage }) {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-            <SidebarGroupLabel>Paulo Cesar</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {items.map((item) => (
-                      <SidebarMenuItem key={item.title}>
-                        <SidebarMenuButton asChild>
-                          <button 
-                              onClick={() => navigate(item.page)}
-                              className={`${location.pathname === `/${item.page}` ? "bg-zinc-400/30 dark:bg-zinc-800/70" : ""} [&>svg]:w-5 [&>svg]:h-5`}>
-                              <item.icon/>
-                              <span>{item.title}</span>
-                          </button>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                </SidebarMenu>
-            </SidebarGroupContent>
-        </SidebarGroup>
+          <SidebarGroupLabel>
+            <img src="/img/iconPC.png" alt="" className="h-20"/>
+          </SidebarGroupLabel>
 
-          <SidebarGroup className={"mt-4 pt-1 border-t border-zinc-500"}>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {moreItems.map((item) => (
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
                       <button 
-                        onClick={() => navigate(item.page)}
-                        className={`${location.pathname === `/${item.page}` ? "bg-zinc-400/30 dark:bg-zinc-800/70" : ""} [&>svg]:w-5 [&>svg]:h-5`}>
-                        <item.icon />
-                        <span>{item.title}</span>
+                          onClick={() => navigate(item.page)}
+                          className={`${location.pathname === `/${item.page}` ? "bg-zinc-400/30 dark:bg-zinc-800/70" : ""} [&>svg]:w-5 [&>svg]:h-5`}>
+                          <item.icon/>
+                          <span>{item.title}</span>
                       </button>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
+            </SidebarMenu>
+        </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup className={" pt-1 border-t border-zinc-500"}>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {moreItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <button 
+                      onClick={() => navigate(item.page)}
+                      className={`${location.pathname === `/${item.page}` ? "bg-zinc-400/30 dark:bg-zinc-800/70" : ""} [&>svg]:w-5 [&>svg]:h-5`}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </button>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
     </Sidebar>
   )

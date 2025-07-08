@@ -19,8 +19,8 @@ const ProjectCreator = ({setPage}) => {
         <div className="transition duration-700 ease-in-out w-[100%] lg:w-full max-md:min-h-[120vh] md:min-h-[130vh] lg:min-h-[100vh] bg-zinc-100 dark:bg-black overflow-hidden">
             <div className="w-[100%] md:h-[90vh] flex flex-wrap justify-center space-x-5 mt-10 max-md:pb-10">
                 <div className="animation shadow w-[80%] md:h-[auto] flex flex-wrap justify-center max-lg:flex-col bg-zinc-300 dark:bg-zinc-900/40 m-10 mt-10 mb-10 relative">    
-                    <div className="w-full max-lg:h-[auto] lg:w-[35%] flex items-center justify-center">
-                        <img src="/img/imgPortfolio.png" className="w-[30rem]"/>
+                    <div className="w-full max-lg:h-[auto] lg:w-[35%] flex items-center justify-center sm:m-5 max-sm:p-2">
+                        <img src="/img/illustration.png" className="w-[30rem] m-1"/>
                     </div>
                     <div className="lg:flex-1 max-md:mb-10">
                         <div className="h-full flex justify-center flex-col items-center gap-5 text-black dark:text-white">
