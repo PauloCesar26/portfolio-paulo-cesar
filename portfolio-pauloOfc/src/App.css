@@ -170,6 +170,9 @@ a div{
 .responsiveProject{
     width: 950px;
 }
+link[rel="shortcut icon"]{
+    border-radius: 50%;
+}
 @media screen and (max-width: 950px){
     .responsiveProject{
         width: 90%;
