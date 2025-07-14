@@ -15,7 +15,7 @@ html, body{
 }
 .banner{
     height: calc(100vh - 1.25rem);
-    background-image: linear-gradient(rgba(244, 244, 245, 0.9), rgba(252, 252, 252, 0.7), rgba(190, 190, 190, 0.7), rgba(255, 255, 255, 0.9)), url("/public/img/fundo.jpeg");
+    background-image: linear-gradient(rgba(244, 244, 245, 0.9), rgba(252, 252, 252, 0.8), rgba(190, 190, 190, 0.8), rgba(255, 255, 255, 0.9)), url("/public/img/fundo.jpeg");
     background-attachment:fixed;
     background-position:50% 50%;
     background-size:cover;

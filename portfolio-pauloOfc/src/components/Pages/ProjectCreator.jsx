@@ -1,7 +1,7 @@
-import { Mail } from "lucide-react"
-import { useEffect } from "react"
-import ScrollReveal from "scrollreveal"
-import { useTranslation } from "react-i18next"
+import { Mail } from "lucide-react";
+import { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
+import { useTranslation } from "react-i18next";
 
 const ProjectCreator = ({setPage}) => {
     const { t } = useTranslation();

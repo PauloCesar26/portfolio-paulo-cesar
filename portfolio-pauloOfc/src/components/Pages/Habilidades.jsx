@@ -1,7 +1,6 @@
-import { useState } from "react"
-import ScrollReveal from "scrollreveal"
-import { useEffect } from "react"
-import { useTranslation } from "react-i18next"
+import ScrollReveal from "scrollreveal";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Habilidades = () => {
   useEffect(() => {

@@ -1,7 +1,7 @@
-import CardProject from "@/components/ui/CardProject"
-import ScrollReveal from "scrollreveal"
-import { useEffect } from "react"
-import { useTranslation } from "react-i18next"
+import CardProject from "@/components/ui/CardProject";
+import ScrollReveal from "scrollreveal";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function AllProjects() {
   const { t } = useTranslation();

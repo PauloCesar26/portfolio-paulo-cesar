@@ -1,4 +1,4 @@
-import ButtonGithub from "@/components/ui/ButtonGithub"
+import ButtonGithub from "@/components/ui/ButtonGithub";
 
 function SistemaEstoque() {
   return (

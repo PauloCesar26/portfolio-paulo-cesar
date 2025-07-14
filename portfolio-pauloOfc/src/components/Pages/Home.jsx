@@ -1,15 +1,13 @@
-import { useNavigate } from "react-router-dom"
-import { useState, useEffect } from "react"
-import Banner from "@/components/ui/Banner"
-import { toast } from "sonner"
-import ScrollReveal from "scrollreveal"
-import ButtonBlog from "@/components/ui/ButtonBlog"
-import ButtonProject from "@/components/ui/ButtonProject"
-import ButtonGithub from "@/components/ui/ButtonGithub"
-import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Banner from "@/components/ui/Banner";
+import { toast } from "sonner";
+import ScrollReveal from "scrollreveal";
+import { useTranslation } from "react-i18next";
 import i18n from 'i18next';
-import LoandingOverlay from "@/components/ui/LoandingOverlay"
-
+import LoandingOverlay from "@/components/ui/LoandingOverlay";
+import CardProjectHome from "../ui/CardProjectHome";
+import BlogCard from "../ui/BlogCard";
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
@@ -172,105 +170,59 @@ const Home = ({setPage}) => {
 
           {/* My projects */}
           <div className="h-auto pt-10 pb-10 flex flex-col justify-center items-center bg-zinc-200/40 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white animationRight">{t("home.projetos.title")}</h1>
+            <h1 className="fontTitle text-black dark:text-white animationRight">
+              {t("home.projetos.title")}
+            </h1>
             <div className="mt-10 mb-10 h-auto flex flex-col gap-10 justify-center items-center flex-wrap ml-5 mr-5">
-              {/* Project 1 */}
-              <div className="animation bg-zinc-100 border-2 hover:border-black border-zinc-300 dark:border-zinc-800 hover:dark:border-white text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-custom">
-                <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
-                  <img src="/img/projectHirequest.png" alt="Imagem do Projeto 1" className="w-full h-full object-cover object-center bg-cover bg-center"/>
-                </div>
+              <CardProjectHome
+                imgSrc="/img/projectHirequest.png"
+                imgAlt="Imagem projeto 1"
 
-                <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-full">
-                  <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
-                    <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
-                      <span>{t("home.projetos.projeto1.title")}</span>
-                    </div>
-                    <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">
-                      <p>
-                        {t("home.projetos.projeto1.text")}
-                      </p>
-                    </div>
-                  </div>
+                title={t("home.projetos.projeto1.title")}
+                description={t("home.projetos.projeto1.text")}
+                techIcons={[
+                  {iconWidth:"w-[15%]", src: "/img/icons/html.svg", alt:"HTML"},
+                  {iconWidth:"w-[13%]", src: "/img/icons/css.svg", alt:"CSS"},
+                  {iconWidth:"w-[13%]", src: "/img/icons/php.svg", alt:"PHP"},
+                  {iconWidth:"w-[14%]", src: "/img/icons/bootstrap.svg", alt:"Bootstrap"},
+                  {iconWidth:"w-[17%]", src: "/img/icons/mysql.svg", alt:"MySql"}
+                ]}
 
-                  <div className="xl:flex items-center xl:justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5 max-xl:space-y-7 mt-5">
-                    <ul className="flex gap-2 items-center">
-                      <li className="w-[15%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                      <li className="w-[13%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
-                      <li className="w-[13%]"><img src="/img/icons/php.svg" alt="PHP" /></li>
-                      <li className="w-[14%]"><img src="/img/icons/bootstrap.svg" alt="Bootstrap" /></li>
-                      <li className="w-[17%]"><img src="/img/icons/mysql.svg" alt="MySQL" /></li>
-                    </ul>
-                    <div className="flex items-center max-xl:justify-end">
-                      <ButtonGithub url="https://github.com/PauloCesar26/TCC_HireQuest"/>
-                      <ButtonProject urlPage="/Home/MarketingPessoal"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                githubUrl="https://github.com/PauloCesar26/TCC_HireQuest"
+                projectUrl="/Home/MarketingPessoal"
+              />
 
-              {/* Project 2 */}
-              <div className="animation bg-zinc-100 border-2 hover:border-black border-zinc-300 dark:border-zinc-800 hover:dark:border-white text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-custom">
-                <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
-                  <img src="/img/projectNetflix.png" alt="Imagem do Projeto 2" className="w-full h-full object-cover object-center bg-cover bg-center"/>
-                </div>
+              <CardProjectHome
+                imgSrc="/img/projectNetflix.png"
+                imgAlt="Imagem projeto 2"
 
-                <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-[65%] lg:h-full">
-                  <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
-                    <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
-                      <span>{t("home.projetos.projeto2.title")}</span>
-                    </div>
-                    <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">
-                      <p>
-                        {t("home.projetos.projeto2.text")}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="xl:flex items-center xl:justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5 max-xl:space-y-7 mt-5">
-                    <ul className="flex gap-2 items-center">
-                      <li className="w-[15%] xl:w-[25%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                      <li className="w-[13%] xl:w-[21%]"><img src="/img/icons/css.svg" alt="CSS" /></li>
-                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/javascript.svg" alt="CSS" /></li>
-                    </ul>
-                    <div className="flex items-center max-xl:justify-end">
-                      <ButtonGithub url="https://github.com/PauloCesar26/clone-site-netflix"/>
-                      <ButtonProject urlPage="/Home/PageNetflix"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                title={t("home.projetos.projeto2.title")}
+                description={t("home.projetos.projeto2.text")}
+                techIcons={[
+                  {iconWidth:"w-[15%] xl:w-[25%]", src: "/img/icons/html.svg", alt:"HTML"},
+                  {iconWidth:"w-[13%] xl:w-[21%]", src: "/img/icons/css.svg", alt:"CSS"},
+                  {iconWidth:"w-[14%] xl:w-[22%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
+                ]}
 
-              {/* Project 3 */}
-              <div className="animation bg-zinc-100 border-2 hover:border-black border-zinc-300 dark:border-zinc-800 hover:dark:border-white text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px]  max-sm:w-[320px] w-[400px] h-[auto] dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-custom">
-                <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
-                  <img src="/img/projectEstoqueJD.png" alt="Imagem do Projeto 3" className="w-full h-full object-cover object-center bg-cover bg-center"/>
-                </div>
+                githubUrl="https://github.com/PauloCesar26/clone-site-netflix"
+                projectUrl="/Home/PageNetflix"
+              />
 
-                <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-[65%] lg:h-full">
-                  <div className="flex flex-col flex-1 space-y-5 pl-4 pr-4">
-                    <div className="pt-3 md:pl-4 text-[1.5rem] font-semibold">
-                      <span>{t("home.projetos.projeto3.title")}</span>
-                    </div>
-                    <div className="text-[1.1rem] pt-2 pb-2 md:pl-3 pr-3">
-                      <p>
-                        {t("home.projetos.projeto3.text")}
-                      </p>
-                    </div>
-                  </div>
+              <CardProjectHome
+                imgSrc="/img/projectEstoqueJD.png"
+                imgAlt="Imagem projeto 3"
 
-                  <div className="xl:flex items-center xl:justify-between border-t-1 border-zinc-900/20 dark:border-zinc-400/20 max-lg:p-4 lg:p-5 max-xl:space-y-7 mt-5">
-                    <ul className="flex gap-2 items-center">
-                      <li className="w-[15%] xl:w-[25%]"><img src="/img/icons/html.svg" alt="HTML" /></li>
-                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/javascript.svg" alt="JS" /></li>
-                      <li className="w-[14%] xl:w-[22%]"><img src="/img/icons/tailwind.svg" alt="JS" /></li>
-                    </ul>
-                    <div className="flex items-center max-xl:justify-end">
-                      <ButtonGithub url="https://github.com/PauloCesar26/controle-estoque-pedido"/>
-                      <ButtonProject urlPage="/Home/SistemaEstoque"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                title={t("home.projetos.projeto3.title")}
+                description={t("home.projetos.projeto3.text")}
+                techIcons={[
+                  {iconWidth:"w-[15%] xl:w-[25%]", src: "/img/icons/html.svg", alt:"HTML"},
+                  {iconWidth:"w-[14%] xl:w-[22%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
+                  {iconWidth:"w-[14%] xl:w-[22%]", src: "/img/icons/tailwind.svg", alt:"Tailwind"},
+                ]}
+
+                githubUrl="https://github.com/PauloCesar26/controle-estoque-pedido"
+                projectUrl="/Home/SistemaEstoque"
+              />
             </div>
 
             <button 
@@ -288,39 +240,31 @@ const Home = ({setPage}) => {
 
           {/* Blog */}
           <div className="transition duration-700 ease-in-out h-auto pt-10 pb-10 flex flex-col justify-center items-center text-black bg-zinc-100 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white animationRight">Blog</h1>
-              <div className="animationLeft fontContent mt-10 mb-10 h-auto flex gap-10 justify-center flex-wrap">
-                {/* Blog 1 */}
-                <div className="bg-zinc-200/40 border-2 border-zinc-300 hover:border-black dark:border-zinc-800 hover:dark:border-white flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-card">
-                  <div className="flex flex-col w-full h-[50%] bg-zinc-900">
-                      <img src="/img/imgJavascript.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
-                  </div>
-                  <div className="flex-1 p-4 text-[1.5rem]">
-                      <span>{t("home.blog.blog1.title")}</span>
-                  </div>
-                  <div className="font font-bold text-[0.9rem] p-5 flex items-center justify-end dark:border-zinc-700">
-                    <ButtonBlog filePath="/blog/blogJavascript/index.html"/>
-                  </div>
-                </div>
+            <h1 className="fontTitle text-black dark:text-white animationRight">
+              Blog
+            </h1>
+            <div className="animationLeft fontContent mt-10 mb-10 h-auto flex gap-10 justify-center flex-wrap">
+              <BlogCard
+                imgSrc="/img/imgJavascript.jpeg"
+                imgAlt="Imagem Blog"
+                title={t("home.blog.blog1.title")}
+                filePath="/blog/blogJavascript/index.html"
+              />
 
-                {/* Blog 2 */}
-                <div className="bg-zinc-200/40 border-2 border-zinc-300 hover:border-black dark:border-zinc-800 hover:dark:border-white flex flex-col max-md:w-[300px] w-[370px] h-[480px] dark:bg-zinc-900 dark:text-white rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-card">
-                  <div className="flex flex-col w-full h-[50%] bg-zinc-900">
-                      <img src="/img/rede.jpeg" alt="Imagem Blog" className="w-full h-full object-cover object-center"/>
-                  </div>
-                  <div className="flex-1 p-4 text-[1.5rem]">
-                      <span>{t("home.blog.blog2.title")}</span>
-                  </div>
-                  <div className="font font-bold text-[0.9rem] p-5 flex items-center justify-end dark:border-zinc-700">
-                    <ButtonBlog filePath="/blog/blogOsiTcpip/index.html"/>
-                  </div>
-                </div>
-              </div>
+              <BlogCard
+                imgSrc="/img/rede.jpeg"
+                imgAlt="Imagem Blog"
+                title={t("home.blog.blog2.title")}
+                filePath="/blog/blogOsiTcpip/index.html"
+              />
+            </div>
           </div>
           
           <footer id="contato" className="bg-zinc-200/40 dark:bg-black w-full flex flex-col items-center pt-10 pb-2 pl-10 pr-10">
             <div className="animationRight w-full flex flex-col  flex-wrap items-center">
-              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">{t("home.footer.contact")}</h1>
+              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">
+                {t("home.footer.contact")}
+              </h1>
               <div className="w-full lg:w-[40%] pt-5 pb-8 mb-5 flex flex-col justify-center items-center space-y-6 md:w-1/2 border-b-1 border-zinc-500">
                 <button
                   onClick={() => navigate("/Criador")} 
