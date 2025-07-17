@@ -8,6 +8,11 @@ import i18n from 'i18next';
 import LoandingOverlay from "@/components/ui/LoandingOverlay";
 import CardProjectHome from "../ui/CardProjectHome";
 import BlogCard from "../ui/BlogCard";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/autoplay";
+import { CodeXml } from "lucide-react";
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
@@ -18,7 +23,7 @@ const Home = ({setPage}) => {
     ScrollReveal().reveal(".animationLeft", {
       origin: "left",
       distance: "200px",
-      duration: 1000,
+      duration: 900,
       easing: "ease-in-out",
       reset: false,
     });
@@ -26,7 +31,7 @@ const Home = ({setPage}) => {
     ScrollReveal().reveal(".animationRight", {
       origin: "rigth",
       distance: "200px",
-      duration: 1000,
+      duration: 900,
       easing: "ease-in-out",
       reset: false,
     });
@@ -34,18 +39,18 @@ const Home = ({setPage}) => {
     ScrollReveal().reveal(".animation", {
       distance: '150px',
       origin: 'left',
-      duration: 1000,
+      duration: 900,
       easing: 'ease-in-out',
-      interval: 900,
+      interval: 700,
       reset: false,
     });
 
     ScrollReveal().reveal(".animationBlog", {
       distance: '150px',
       origin: 'bottom',
-      duration: 1000,
+      duration: 900,
       easing: 'ease-in-out',
-      interval: 1000,
+      interval: 900,
       reset: false,
     });
 
@@ -53,7 +58,7 @@ const Home = ({setPage}) => {
       distance: '150px',
       origin:'bottom',
       easing: 'ease-in-out',
-      duration: 1000,
+      duration: 900,
       reset: false
     });
 
@@ -61,7 +66,7 @@ const Home = ({setPage}) => {
       distance: '200px',
       origin:'bottom',
       easing: 'ease-in-out',
-      duration: 1000
+      duration: 700
     });
   }, []);
 
@@ -259,6 +264,49 @@ const Home = ({setPage}) => {
               />
             </div>
           </div>
+
+          <div className="w-full p-8 fundoFrase">
+            <Swiper
+              centeredSlides={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              speed={900}
+              modules={[Autoplay]}
+              allowTouchMove={false}
+              className="animationFrase flex items-center sm:max-w-[600px] w-full text-center text-sm text-black dark:text-white dark:text-zinc-300 font font-semibold max-md:text-[1.2rem] md:text-[1.3rem]">
+              <SwiperSlide>
+                <div className="flex items-center justify-center sm:gap-10 gap-3">
+                  <CodeXml />
+                  <span>WebApp é com o Paulo Cesar</span>
+                  <CodeXml />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="flex items-center justify-center sm:gap-10 gap-3">
+                  <CodeXml />
+                  <span>Transformando ideias em código</span>
+                  <CodeXml />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="flex items-center justify-center sm:gap-10 gap-3">
+                  <CodeXml />
+                  <span>Desenvolvedor em constante evolução</span>
+                  <CodeXml />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="flex items-center justify-center sm:gap-10 gap-3">
+                  <CodeXml />
+                  <span>Aprendizado contínuo é a chave</span>
+                  <CodeXml />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
           
           <footer id="contato" className="bg-zinc-200/40 dark:bg-black w-full flex flex-col items-center pt-10 pb-2 pl-10 pr-10">
             <div className="animationRight w-full flex flex-col  flex-wrap items-center">
@@ -275,7 +323,7 @@ const Home = ({setPage}) => {
 
               <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">{t("home.footer.message")}</h1>
               <div className="font w-full flex items-center justify-center mt-10">
-                <div className="w-full lg:w-[40%]">
+                <div className="w-full lg:w-[40%] md:w-1/2">
                   <form onSubmit={validation} action="https://formsubmit.co/pc.cordeirolima@gmail.com" method="POST" className="flex flex-col text-black dark:text-white text-[18px]">
                     <label htmlFor="">{t("home.footer.form.name")}</label>
                     <input type="text" 

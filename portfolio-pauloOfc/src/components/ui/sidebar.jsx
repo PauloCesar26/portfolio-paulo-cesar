@@ -246,8 +246,8 @@ function SidebarTrigger({
   }, [])
 
   return (
-    <div className=" z-50 w-full fixed bg-zinc-100 text-black p-5 dark:bg-black transition duration-700 ease-in-out">  
-      <div className="flex items-center">
+    <div className="z-50 w-full fixed bg-zinc-100 text-black p-5 dark:bg-black transition duration-700 ease-in-out">  
+      <div className="flex items-center ">
         <Button
           data-sidebar="trigger"
           data-slot="sidebar-trigger"
@@ -266,7 +266,7 @@ function SidebarTrigger({
           <span className="sr-only">Toggle Sidebar</span>
         </Button>
 
-        <div className="fixed flex gap-6 max-md:right-3 md:right-10 text-black dark:text-white items-center">
+        <div className="flex fixed gap-6 max-md:right-3 md:right-10 text-black dark:text-white items-center">
           <Dark />
           <LanguageSelect />
         </div>
