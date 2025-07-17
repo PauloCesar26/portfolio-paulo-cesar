@@ -269,14 +269,15 @@ const Home = ({setPage}) => {
             <Swiper
               centeredSlides={true}
               autoplay={{
-                delay: 3000,
+                delay: 2800,
                 disableOnInteraction: false,
               }}
               loop={true}
               speed={900}
               modules={[Autoplay]}
               allowTouchMove={false}
-              className="animationFrase flex items-center sm:max-w-[600px] w-full text-center text-sm text-black dark:text-white dark:text-zinc-300 font font-semibold max-md:text-[1.2rem] md:text-[1.3rem]">
+              spaceBetween={30} 
+              className="animationFrase flex items-center sm:max-w-[530px] w-full text-center text-sm text-black dark:text-white dark:text-zinc-300 font font-semibold max-md:text-[1.2rem] md:text-[1.3rem]">
               <SwiperSlide>
                 <div className="flex items-center justify-center sm:gap-10 gap-3">
                   <CodeXml />
