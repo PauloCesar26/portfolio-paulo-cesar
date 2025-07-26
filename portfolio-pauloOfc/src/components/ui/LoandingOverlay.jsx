@@ -15,7 +15,7 @@ function LoandingOverlay(){
         flex
         items-center
         justify-center">
-            <LoaderCircle className="animate-spin w-15 h-15 text-black dark:text-white"/>
+            <LoaderCircle className="animate-spin w-18 h-18 text-black dark:text-white"/>
     </div>
     );
 }

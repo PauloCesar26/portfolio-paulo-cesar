@@ -1,16 +1,8 @@
-import ScrollReveal from "scrollreveal";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 
 const Habilidades = () => {
-  useEffect(() => {
-    ScrollReveal().reveal(".animation", {
-        opacity: 0,
-        easing: 'ease-in-out',
-        duration: 1500
-    });
-  }, []);
-
   const [filter, setFilter] = useState("all");
   const { t } = useTranslation();
 
@@ -104,8 +96,18 @@ const Habilidades = () => {
   });
   return (
     <>
-      <div className="animation mt-20">
-        <div className="mt-10 flex flex-col items-center justify-center w-full space-y-5 p-3 text-center">
+      <div className="mt-20">
+        <motion.div className="mt-10 flex flex-col items-center justify-center w-full space-y-5 p-3 text-center"
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          transition={{
+            type: "tween",
+            stiffness: 100,
+            damping: 10,
+            delay: 0.3, 
+            duration: 1,
+            ease: "easeInOut"
+          }}>
           <h1 className="text-black font-medium dark:text-white fontTitle mb-10">{t("pageSkill.title")}</h1>
 
           <label htmlFor="habilidades" data-i18n="filter" className="text-black dark:text-white font text-[1.2rem]">{t("pageSkill.filter")}
@@ -118,9 +120,19 @@ const Habilidades = () => {
             <option value="controleversao" data-i18n="goalkeeper">{t("pageSkill.options.controVersion")}</option>
           </select>
           </label>
-        </div>
+        </motion.div>
 
-        <div className="cursor-pointer:none m-10 p-10 flex flex-wrap gap-20 mt-25 justify-center space-y-20">
+        <motion.div className="cursor-pointer:none m-10 p-10 flex flex-wrap gap-20 mt-25 justify-center space-y-20"
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          transition={{
+            type: "tween",
+            stiffness: 100,
+            damping: 10,
+            delay: 0.5, 
+            duration: 1,
+            ease: "easeInOut"
+          }}>
           {habilidadesFilter.map((habilidade, index) => (
             <a key={index}>
               <div className="bg-gray-400 w-[250px] flex flex-col justify-center items-center relative rounded-[15px] dark:bg-gray-900 transition duration-700 ease-in-out">
@@ -129,7 +141,7 @@ const Habilidades = () => {
               </div>
             </a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   )

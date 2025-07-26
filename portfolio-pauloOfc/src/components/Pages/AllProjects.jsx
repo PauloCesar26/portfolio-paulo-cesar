@@ -1,24 +1,38 @@
 import CardProject from "@/components/ui/CardProject";
-import ScrollReveal from "scrollreveal";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 
 function AllProjects() {
   const { t } = useTranslation();
-  useEffect(() => {
-    ScrollReveal().reveal(".animation", {
-        opacity: 0,
-        easing: 'ease-in-out',
-        duration: 1500
-    });
-  }, []);
 
     return (
       <>
         <div className="animation mt-20 mb-10 flex flex-col items-center justify-center space-y-10">
-          <h1 className="text-black dark:text-white fontTitle">{t("pageProjects.title")}</h1>
+          <motion.h1 className="text-black dark:text-white fontTitle"
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            transition={{
+              type: "tween",
+              stiffness: 100,
+              damping: 10,
+              delay: 0.3, 
+              duration: 1,
+              ease: "easeInOut"
+            }}>
+            {t("pageProjects.title")}
+          </motion.h1>
 
-          <div className="mb-10 h-auto flex gap-10 justify-center flex-wrap lg:p-5">
+          <motion.div className="mb-10 h-auto flex gap-10 justify-center flex-wrap lg:p-5"
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            transition={{
+              type: "tween",
+              stiffness: 100,
+              damping: 10,
+              delay: 0.5, 
+              duration: 1,
+              ease: "easeInOut"
+            }}>
             <CardProject 
               imgSrc="/img/projectHirequest.png" 
               altText="Projeto"
@@ -77,7 +91,7 @@ function AllProjects() {
               altText="Projeto">
                 <span>{t("pageProjects.projectEmBreve")}</span>
             </CardProject>
-          </div>
+          </motion.div>
         </div>
       </>
     )

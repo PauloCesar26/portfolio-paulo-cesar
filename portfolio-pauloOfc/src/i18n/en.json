@@ -49,6 +49,13 @@
             "buttonBlog": "Access Blog"
         },
 
+        "swiper-slide": {
+            "phrase1": "WebApp is with Paulo Cesar",
+            "phrase2": "Transforming ideas into code",
+            "phrase3": "Developer in constant evolution",
+            "phrase4": "Continuous learning is key"
+        },
+
         "footer": {
             "contact": "Contact me",
             "button": "Contact",

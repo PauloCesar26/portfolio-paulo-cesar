@@ -13,6 +13,7 @@ import { Autoplay } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/autoplay";
 import { CodeXml } from "lucide-react";
+import { motion } from "motion/react";
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
@@ -277,32 +278,32 @@ const Home = ({setPage}) => {
               modules={[Autoplay]}
               allowTouchMove={false}
               spaceBetween={30} 
-              className="animationFrase flex items-center sm:max-w-[530px] w-full text-center text-sm text-black dark:text-white dark:text-zinc-300 font font-semibold max-md:text-[1.2rem] md:text-[1.3rem]">
+              className="animationFrase flex items-center sm:max-w-[530px] w-full text-center text-sm text-black dark:text-white font  max-md:text-[1.2rem] md:text-[1.3rem]">
               <SwiperSlide>
                 <div className="flex items-center justify-center sm:gap-10 gap-3">
                   <CodeXml />
-                  <span>WebApp é com o Paulo Cesar</span>
+                  <span>{t("home.swiper-slide.phrase1")}</span>
                   <CodeXml />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="flex items-center justify-center sm:gap-10 gap-3">
                   <CodeXml />
-                  <span>Transformando ideias em código</span>
+                  <span>{t("home.swiper-slide.phrase2")}</span>
                   <CodeXml />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="flex items-center justify-center sm:gap-10 gap-3">
                   <CodeXml />
-                  <span>Desenvolvedor em constante evolução</span>
+                  <span>{t("home.swiper-slide.phrase3")}</span>
                   <CodeXml />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="flex items-center justify-center sm:gap-10 gap-3">
                   <CodeXml />
-                  <span>Aprendizado contínuo é a chave</span>
+                  <span>{t("home.swiper-slide.phrase4")}</span>
                   <CodeXml />
                 </div>
               </SwiperSlide>

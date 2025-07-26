@@ -1,7 +1,8 @@
-import { Link } from "react-scroll"
-import ScrollReveal from "scrollreveal"
-import { useEffect } from "react"
-import { useTranslation } from "react-i18next"
+import { Link } from "react-scroll";
+import ScrollReveal from "scrollreveal";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 
 function Banner() {
   const { t } = useTranslation();
@@ -17,8 +18,18 @@ function Banner() {
     return (
       <>
           <div className="banner text-center flex flex-col justify-center h-full">
-            <div className="animationInicial w-full z-30 flex flex-col items-center">
-              <div className="flex flex-col items-center justify-center space-y-[2px]">
+            <motion.div className="w-full z-30 flex flex-col items-center"
+              initial={{opacity: 0, y:-140}}
+              whileInView={{opacity: 1, y:0}}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                delay: 0.3, 
+                duration: 1,
+                ease: "easeInOut"
+              }}>
+              <motion.div className="flex flex-col items-center justify-center space-y-[2px]">
                 <p className="
                   font 
                   max-md:text-[1.2rem] 
@@ -36,7 +47,7 @@ function Banner() {
                 <p className="font max-md:text-[1.3rem] md:text-[1.5rem] font-medium md:w-[65%] max-md:w-[85%] text-black dark:text-white">
                  {t("home.banner.title2")}
                 </p>
-              </div>
+              </motion.div>
               <Link  
                 to="contato"
                 smooth={true}
@@ -44,7 +55,7 @@ function Banner() {
                 className="font font-bold mt-5 flex items-center justify-center pt-3 pb-3 pl-6 pr-6 md:text-[20px] max-md:text-[16px] dark:text-black dark:bg-white text-white bg-zinc-900 text-black rounded-[12px] cursor-pointer hover:scale-[1.1] transition duration-[0.5s] ease-in-out shadow-lg hover:shadow-zinc-600 hover:dark:shadow-zinc-400">
                   {t("home.banner.button")}
               </Link>
-            </div>
+            </motion.div>
           </div>
       </>
     )
