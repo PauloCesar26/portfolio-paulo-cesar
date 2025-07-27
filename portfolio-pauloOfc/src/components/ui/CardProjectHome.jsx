@@ -1,19 +1,26 @@
 import ButtonGithub from "./ButtonGithub";
 import ButtonProject from "./ButtonProject";
+import { motion } from "motion/react";
 
 const CardProjectHome = ({
-  imgSrc,
-  imgAlt,
-  title,
-  description,
-  techIcons,
-  githubUrl,
-  projectUrl
+    imgSrc,
+    imgAlt,
+    title,
+    description,
+    techIcons,
+    githubUrl,
+    projectUrl
 }) => {
   return (
     <div className="animation bg-zinc-100 border-2 hover:border-black border-zinc-300 dark:border-zinc-800 hover:dark:border-white text-black dark:text-white xl:flex xl:w-[80%] xl:h-[350px] max-sm:w-[320px] w-[400px] h-auto dark:bg-zinc-900 rounded-[15px] overflow-hidden transition duration-500 ease-in-out hover:scale-[1.02] shadow-custom">
         <div className="flex max-lg:w-[100%] lg:w-[100%] max-lg:h-[45%] xl:w-[40%] max-md:h-[230px] bg-zinc-900">
-            <img src={imgSrc} alt={imgAlt} className="w-full h-full object-cover object-center bg-cover bg-center" />
+            <motion.img 
+                src={imgSrc} 
+                alt={imgAlt} 
+                className="w-full h-full object-cover object-center bg-cover bg-center" 
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.08}}
+                transition={{ duration: 0.5 }}/>
         </div>
 
         <div className="font flex flex-col lg:w-[100%] xl:w-[60%] h-full">

@@ -13,7 +13,6 @@ import { Autoplay } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/autoplay";
 import { CodeXml } from "lucide-react";
-import { motion } from "motion/react";
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
@@ -183,6 +182,16 @@ const Home = ({setPage}) => {
               <CardProjectHome
                 imgSrc="/img/projectHirequest.png"
                 imgAlt="Imagem projeto 1"
+                initial={{opacity: 0}}
+                  whileInView={{opacity: 1}}
+                  transition={{
+                      type: "tween",
+                      stiffness: 100,
+                      damping: 10,
+                      delay: 1.3, 
+                      duration: 0.8,
+                      ease: "easeInOut"
+                  }}
 
                 title={t("home.projetos.projeto1.title")}
                 description={t("home.projetos.projeto1.text")}

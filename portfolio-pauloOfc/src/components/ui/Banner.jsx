@@ -7,22 +7,14 @@ import { motion } from "motion/react";
 function Banner() {
   const { t } = useTranslation();
 
-    useEffect(() => {
-      ScrollReveal().reveal(".animationInicial", {
-        opacity: 0,
-        easing: 'ease-in-out',
-        duration: 1600
-      });
-    }, []);
-
     return (
       <>
           <div className="banner text-center flex flex-col justify-center h-full">
             <motion.div className="w-full z-30 flex flex-col items-center"
-              initial={{opacity: 0, y:-140}}
-              whileInView={{opacity: 1, y:0}}
+              initial={{opacity: 0, scale: 0.50, y:-180}}
+              whileInView={{opacity: 1, scale: 1, y:0}}
               transition={{
-                type: "spring",
+                type: "tween",
                 stiffness: 100,
                 damping: 10,
                 delay: 0.3, 
