@@ -1,6 +1,4 @@
 import { Link } from "react-scroll";
-import ScrollReveal from "scrollreveal";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 
@@ -11,17 +9,17 @@ function Banner() {
       <>
           <div className="banner text-center flex flex-col justify-center h-full">
             <motion.div className="w-full z-30 flex flex-col items-center"
-              initial={{opacity: 0, scale: 0.50, y:-180}}
-              whileInView={{opacity: 1, scale: 1, y:0}}
+              initial={{opacity: 0}}
+              whileInView={{opacity: 1}}
               transition={{
                 type: "tween",
                 stiffness: 100,
                 damping: 10,
-                delay: 0.3, 
+                delay: 0.4, 
                 duration: 1,
                 ease: "easeInOut"
               }}>
-              <motion.div className="flex flex-col items-center justify-center space-y-[2px]">
+              <div className="flex flex-col items-center justify-center space-y-[2px]">
                 <p className="
                   font 
                   max-md:text-[1.2rem] 
@@ -39,7 +37,7 @@ function Banner() {
                 <p className="font max-md:text-[1.3rem] md:text-[1.5rem] font-medium md:w-[65%] max-md:w-[85%] text-black dark:text-white">
                  {t("home.banner.title2")}
                 </p>
-              </motion.div>
+              </div>
               <Link  
                 to="contato"
                 smooth={true}

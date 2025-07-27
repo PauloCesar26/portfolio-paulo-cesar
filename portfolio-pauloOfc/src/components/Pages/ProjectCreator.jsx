@@ -24,14 +24,14 @@ const ProjectCreator = ({setPage}) => {
                         <div className="w-full max-lg:h-[auto] lg:w-[35%] flex items-center justify-center sm:m-5 max-sm:p-2">
                             <motion.img src="/img/illustration.png" 
                                 className="w-[30rem] m-1"
-                                initial={{opacity: 0}}
-                                whileInView={{opacity: 1}}
+                                initial={{opacity: 0, x: 180, scale: 0.80}}
+                                whileInView={{opacity: 1, x: 0, scale: 1}}
                                 transition={{
                                     type: "tween",
                                     stiffness: 100,
                                     damping: 10,
-                                    delay: 0.6, 
-                                    duration: 0.8,
+                                    delay: 0.5, 
+                                    duration: 1.2,
                                     ease: "easeInOut"
                                 }}/>
                         </div>

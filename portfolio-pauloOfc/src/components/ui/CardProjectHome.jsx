@@ -18,8 +18,8 @@ const CardProjectHome = ({
                 src={imgSrc} 
                 alt={imgAlt} 
                 className="w-full h-full object-cover object-center bg-cover bg-center" 
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1.08}}
+                initial={{ scale: 1}}
+                whileHover={{ scale: 1.06}}
                 transition={{ duration: 0.5 }}/>
         </div>
 
