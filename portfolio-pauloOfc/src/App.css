@@ -178,6 +178,15 @@ link[rel="shortcut icon"]{
 .text-outline{
     -webkit-text-stroke: 1px white;
 }
+::selection {
+  background-color: #71717a; 
+  color: #ffffff;            
+}
+.dark ::selection {
+  background-color: #d4d4d8; 
+  color: #000000;            
+}
+
 @media screen and (max-width: 950px){
     .responsiveProject{
         width: 90%;

@@ -109,7 +109,7 @@ const ProjectCreator = ({setPage}) => {
                                         type: "tween",
                                         stiffness: 100,
                                         damping: 10,
-                                        delay: 1.4, 
+                                        delay: 1.3, 
                                         duration: 0.8,
                                         ease: "easeInOut"
                                     }}

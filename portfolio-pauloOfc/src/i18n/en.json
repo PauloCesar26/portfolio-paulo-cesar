@@ -15,9 +15,9 @@
         },
         "sobre":{
             "title": "About me",
-            "paragrafo1": "Hello! My name is Paulo Cesar, I'm 18 years old and I'm passionate about technology that transforms ideas into visual projects. Since high school, I studied Systems Development and found myself in the world of programming, and today I study Systems Analysis and Development at Anhanguera College.",
-            "paragrafo2": "I like learning new things and recently I started sharing my learnings on a blog, writing about what I study and experience in programming. For me, programming is much more than knowing language X or Y - it's about solving problems with the right tools.",
-            "paragrafo3": "I am driven by challenges and have a special affection for everything that involves UI (user interface). Creating web applications and websites is where I feel most motivated, always seeking to combine functionality and a good experience for those who use it."
+            "paragrafo1": "Hello! My name is Paulo Cesar, I'm 18 years old and I'm <span>passionate about technology that transforms ideas into visual projects.</span> Since high school, I studied Systems Development and found myself in the world of programming, and today I study Systems Analysis and Development at Anhanguera College.",
+            "paragrafo2": "<span>I like learning new things and being self-taught in different areas, such as learning other languages.</span> For me, <span>programming is much more than knowing language X or Y - it's about solving problems with the right tools.</span>",
+            "paragrafo3": "I am driven by challenges and have a special affection for everything that involves UI (user interface). <span>Creating web applications and websites is where I feel most motivated, always seeking to combine functionality and a good experience for those who use it.</span>"
         },
         "projetos":{
             "title": "My Projects",

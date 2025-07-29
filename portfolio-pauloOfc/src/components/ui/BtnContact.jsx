@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
 const BtnContact = forwardRef(function BtnContact(
-  {orl, imgSrc, title, ...rest}, ref
+  {url, imgSrc, title, ...rest}, ref
 ){ 
 return (
     <>

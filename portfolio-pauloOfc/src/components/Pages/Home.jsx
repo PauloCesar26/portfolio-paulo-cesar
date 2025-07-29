@@ -13,6 +13,7 @@ import { Autoplay } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/autoplay";
 import { CodeXml } from "lucide-react";
+import { Trans } from "react-i18next";
 
 const Home = ({setPage}) => {
   const navigate = useNavigate();
@@ -161,13 +162,28 @@ const Home = ({setPage}) => {
               </div>
               <div className="w-full md:w-1/2 max-md:w-[80%] flex flex-col justify-center space-y-6 max-lg:mt-10 max-lg:p-0 xl:p-10  text-justify">
                 <p>
-                  {t("home.sobre.paragrafo1")}
+                  <Trans
+                    i18nKey="home.sobre.paragrafo1"
+                    components={{
+                      span: <span className="bg-zinc-500 text-white dark:bg-zinc-300 dark:text-black" />
+                    }}
+                  />
                 </p>
                 <p>
-                  {t("home.sobre.paragrafo2")}
+                  <Trans
+                    i18nKey="home.sobre.paragrafo2"
+                    components={{
+                      span: <span className="bg-zinc-500 text-white dark:bg-zinc-300 dark:text-black" />
+                    }}
+                  />
                 </p>
                 <p>
-                  {t("home.sobre.paragrafo3")}
+                  <Trans
+                    i18nKey="home.sobre.paragrafo3"
+                    components={{
+                      span: <span className="bg-zinc-500 text-white dark:bg-zinc-300 dark:text-black" />
+                    }}
+                  />
                 </p>
               </div>
             </div>

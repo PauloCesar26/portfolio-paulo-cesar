@@ -15,9 +15,9 @@
         },
         "sobre":{
             "title": "Sobre mim",
-            "paragrafo1": "Olá! Me chamo Paulo Cesar, tenho 18 anos e sou apaixonado por tecnologia que transformam ideias em projetos visuais. Desde o ensino médio técnico em Desenvolvimento de Sistemas, me encontrei no mundo da programação, e hoje curso Análise e Desenvolvimento de Sistemas na faculdade Anhanguera.",
-            "paragrafo2": "Gosto de aprender coisas novas e, recentemente, comecei a compartilhar meus aprendizados em um blog, escrevendo sobre o que estudo e vivencio na programação. Para mim, programar vai muito além de conhecer linguagem X ou Y - é sobre resolver problemas com as ferramentas certas.",
-            "paragrafo3": "Sou movido por desafios e tenho um carinho especial por tudo que envolve UI (interface do usuário). Criar aplicações web e sites é onde me sinto mais motivado, buscando sempre unir funcionalidade e boa experiência para quem usa."
+            "paragrafo1": "Olá! Me chamo Paulo Cesar, tenho 18 anos e sou <span>apaixonado por tecnologia que transformam ideias em projetos visuais.</span> Desde o ensino médio técnico em Desenvolvimento de Sistemas, me encontrei no mundo da programação, e hoje curso Análise e Desenvolvimento de Sistemas na faculdade Anhanguera.",
+            "paragrafo2": "<span>Gosto de aprender coisas novas e ser um autoditada em diversas áreas como aprender outros idiomas.</span> Para mim, <span>programar vai muito além de conhecer linguagem X ou Y - é sobre resolver problemas com as ferramentas certas.</span>",
+            "paragrafo3": "Sou movido por desafios e tenho um carinho especial por tudo que envolve UI (interface do usuário). <span>Criar aplicações web e sites é onde me sinto mais motivado, buscando sempre unir funcionalidade e boa experiência para quem usa.</span>"
         },
 
         "projetos":{
