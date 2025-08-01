@@ -24,7 +24,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useTranslation } from "react-i18next"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
@@ -232,6 +232,7 @@ function SidebarTrigger({
   const { toggleSidebar} = useSidebar()
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [scroll, setScroll] = useState(false);
 
   // useEffect usado para pegar eventos, adicionar/remover eventos
   useEffect(() => {
@@ -245,8 +246,22 @@ function SidebarTrigger({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 200);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+  
   return (
-    <div className="z-50 w-full fixed bg-zinc-100 text-black p-5 dark:bg-black transition duration-700 ease-in-out">  
+    <div className={scroll ? "pt-2 pb-2 pl-5 pr-5 z-50 w-full fixed bg-zinc-100 text-black dark:bg-black transition duration-900 ease-in" : "z-50 w-full fixed bg-zinc-100 text-black p-5 dark:bg-black transition duration-900 ease-in"}>  
       <div className="flex items-center ">
         <Button
           data-sidebar="trigger"
