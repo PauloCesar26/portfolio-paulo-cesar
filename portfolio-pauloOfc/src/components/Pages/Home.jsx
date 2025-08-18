@@ -240,15 +240,16 @@ const Home = ({setPage}) => {
               />
 
               <CardProjectHome
-                imgSrc="/img/projectEstoqueJD.png"
+                imgSrc="/img/projectEstoqueOficial.png"
                 imgAlt="Imagem projeto 3"
 
                 title={t("home.projetos.projeto3.title")}
                 description={t("home.projetos.projeto3.text")}
                 techIcons={[
-                  {iconWidth:"w-[15%] xl:w-[25%]", src: "/img/icons/html.svg", alt:"HTML"},
-                  {iconWidth:"w-[14%] xl:w-[22%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
-                  {iconWidth:"w-[14%] xl:w-[22%]", src: "/img/icons/tailwind.svg", alt:"Tailwind"},
+                  {iconWidth:"w-[15%] xl:w-[20%]", src: "/img/icons/html.svg", alt:"HTML"},
+                  {iconWidth:"w-[14%] xl:w-[21%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
+                  {iconWidth:"w-[14%] xl:w-[21%]", src: "/img/icons/tailwind.svg", alt:"Tailwind"},
+                  {iconWidth:"w-[14%] xl:w-[18%]", src: "/img/icons/logoFirebase.ico", alt:"Firebase"},
                 ]}
 
                 githubUrl="https://github.com/PauloCesar26/controle-estoque-pedido"

@@ -50,7 +50,7 @@ function AllProjects() {
             </CardProject>
 
             <CardProject 
-              imgSrc="/img/projectEstoqueJD.png" 
+              imgSrc="/img/projectEstoqueOficial.png" 
               altText="Projeto"
               url="https://github.com/PauloCesar26/controle-estoque-pedido"
               urlPage="/AllProjects/SistemaEstoque">
