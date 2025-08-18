@@ -246,10 +246,10 @@ const Home = ({setPage}) => {
                 title={t("home.projetos.projeto3.title")}
                 description={t("home.projetos.projeto3.text")}
                 techIcons={[
-                  {iconWidth:"w-[15%] xl:w-[20%]", src: "/img/icons/html.svg", alt:"HTML"},
-                  {iconWidth:"w-[14%] xl:w-[21%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
-                  {iconWidth:"w-[14%] xl:w-[21%]", src: "/img/icons/tailwind.svg", alt:"Tailwind"},
-                  {iconWidth:"w-[14%] xl:w-[18%]", src: "/img/icons/logoFirebase.ico", alt:"Firebase"},
+                  {iconWidth:"w-[15%] xl:w-[15%]", src: "/img/icons/html.svg", alt:"HTML"},
+                  {iconWidth:"w-[14%] xl:w-[15%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
+                  {iconWidth:"w-[14%] xl:w-[15%]", src: "/img/icons/tailwind.svg", alt:"Tailwind"},
+                  {iconWidth:"max-xl:w-[14%] xl:w-[14%]", src: "/img/icons/logoFirebase.ico", alt:"Firebase"},
                 ]}
 
                 githubUrl="https://github.com/PauloCesar26/controle-estoque-pedido"
