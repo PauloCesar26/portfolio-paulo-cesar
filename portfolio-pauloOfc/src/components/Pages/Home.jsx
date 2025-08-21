@@ -252,7 +252,7 @@ const Home = ({setPage}) => {
                   {iconWidth:"max-xl:w-[14%] xl:w-[14%]", src: "/img/icons/logoFirebase.ico", alt:"Firebase"},
                 ]}
 
-                githubUrl="https://github.com/PauloCesar26/controle-estoque-pedido"
+                githubUrl="https://github.com/PauloCesar26/controle-estoque"
                 projectUrl="/Home/SistemaEstoque"
               />
             </div>

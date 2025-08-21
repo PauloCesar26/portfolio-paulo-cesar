@@ -12,7 +12,7 @@ function SistemaEstoque() {
                 <div className="lg:w-[60%] max-lg:w-[90%] max-sm:w-[95%] bg-zinc-200/40 dark:bg-zinc-900">
                     <div className="w-full flex items-center justify-center bg-zinc-900">
                         <video className="w-full" controls>
-                            <source src="/videos/controleEstoque.mp4" type="video/mp4" />
+                            <source src="/videos/controleEstoqueVideo.mp4" type="video/mp4" />
                             Seu navegador não suporta a tag de vídeo.
                         </video>
                     </div>
@@ -44,7 +44,7 @@ function SistemaEstoque() {
                             </ul>
                         </div>
                         <div className="w-full flex items-center justify-end mt-5 border-t-1 border-zinc-900/20 dark:border-zinc-400/20 pt-5">
-                            <ButtonGithub url="https://github.com/PauloCesar26/controle-estoque-pedido"/>
+                            <ButtonGithub url="https://github.com/PauloCesar26/controle-estoque"/>
                         </div>
                     </div>
                 </div>
