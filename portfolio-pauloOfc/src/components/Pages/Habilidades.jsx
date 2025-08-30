@@ -9,6 +9,11 @@ const Habilidades = () => {
   const habilidadesSelect = Object.freeze({
     elements: [
       {
+        name: "Linux", 
+        category: ["os"], 
+        image: "./img/icons/linux.ico"
+      },
+      {
         name: "HTML", 
         category: ["frontend"], 
         image: "./img/icons/html.svg" 
@@ -87,7 +92,7 @@ const Habilidades = () => {
         name: "GitHub", 
         category: ["controleversao"], 
         image: "./img/icons/github.svg"
-      },
+      }
     ]
   });
 
@@ -118,6 +123,7 @@ const Habilidades = () => {
             <option value="bancodados" data-i18n="midfielder">{t("pageSkill.options.database")}</option>
             <option value="ide" data-i18n="defender">{t("pageSkill.options.editor")} / IDE</option>
             <option value="controleversao" data-i18n="goalkeeper">{t("pageSkill.options.controVersion")}</option>
+            <option value="os" data-i18n="goalkeeper">{t("pageSkill.options.os")}</option>
           </select>
           </label>
         </motion.div>

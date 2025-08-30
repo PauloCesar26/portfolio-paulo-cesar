@@ -86,7 +86,8 @@
             "backend": "Back-end",
             "database": "Database",
             "editor": "Code editor",
-            "controVersion": "Version control"
+            "controVersion": "Version control",
+            "os": "OS"
         }
     },
 
