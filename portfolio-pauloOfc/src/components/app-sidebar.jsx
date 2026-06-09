@@ -49,9 +49,11 @@ export function AppSidebar({ setPage }) {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>
-            <img src="/img/iconPC.png" alt="" className="h-20"/>
+            <p className=" font-semibold">Paulo Cesar</p>
           </SidebarGroupLabel>
+        </SidebarGroup>
 
+        <SidebarGroup className={" pt-1 border-t border-zinc-500"}>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -66,13 +68,7 @@ export function AppSidebar({ setPage }) {
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
-            </SidebarMenu>
-        </SidebarGroupContent>
-        </SidebarGroup>
 
-        <SidebarGroup className={" pt-1 border-t border-zinc-500"}>
-          <SidebarGroupContent>
-            <SidebarMenu>
               {moreItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>

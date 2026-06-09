@@ -276,7 +276,7 @@ function SidebarTrigger({
           }}
           {...props}>
 
-          {isMobile ? <Menu /> : (isOpen ? <Menu /> : <X />)}
+          {isMobile ? <Menu /> : (isOpen ? <Menu /> : <Menu />)}
           
           <span className="sr-only">Toggle Sidebar</span>
         </Button>
@@ -540,7 +540,7 @@ function SidebarMenuButton({
       data-sidebar="menu-button"
       data-size={size}
       data-active={isActive}
-      className={cn(sidebarMenuButtonVariants({ variant, size }), className="pt-5 pb-5 font-semibold cursor-pointer hover:bg-zinc-400/30 transition duration-700 ease-in-out dark:hover:bg-zinc-800/70")}
+      className={cn(sidebarMenuButtonVariants({ variant, size }), className="pt-5 pb-5 font-bold cursor-pointer hover:bg-zinc-400/30 transition duration-700 ease-in-out dark:hover:bg-zinc-800/70")}
       {...props} />
   )
 
