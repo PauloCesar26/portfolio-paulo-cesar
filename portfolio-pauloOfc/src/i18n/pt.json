@@ -6,21 +6,51 @@
         "projetos": "Projetos"
     },
 
+    "navbar": {
+        "openMenu": "Abrir menu",
+        "closeMenu": "Fechar menu",
+        "toggleTheme": "Alternar tema claro/escuro",
+        "language": "Idioma",
+        "skipToContent": "Pular para o conteúdo"
+    },
+
     "home": {
         "banner": {
             "title1": "Olá, seja bem-vindo ao portfólio do",
             "title": "Paulo Cesar",
             "title2": "Um desenvolvedor apaixonado por tecnologia, movido por desafios e pela vontade de criar soluções com código e com um olhar atento para a experiência do usuário.",
-            "button": "Contato"
+            "button": "Contato",
+            "scroll": "Role para explorar"
         },
         "sobre":{
+            "eyebrow": "Quem sou eu",
             "title": "Sobre mim",
             "paragrafo1": "Olá! Me chamo Paulo Cesar, tenho 18 anos e sou <span>apaixonado por tecnologia que transformam ideias em projetos visuais.</span> Desde o ensino médio técnico em Desenvolvimento de Sistemas, me encontrei no mundo da programação, e hoje curso Análise e Desenvolvimento de Sistemas na faculdade Anhanguera.",
             "paragrafo2": "<span>Gosto de aprender coisas novas e ser um autoditada em diversas áreas como aprender outros idiomas.</span> Para mim, <span>programar vai muito além de conhecer linguagem X ou Y - é sobre resolver problemas com as ferramentas certas.</span>",
             "paragrafo3": "Sou movido por desafios e tenho um carinho especial por tudo que envolve UI (interface do usuário). <span>Criar aplicações web e sites é onde me sinto mais motivado, buscando sempre unir funcionalidade e boa experiência para quem usa.</span>"
         },
 
+        "aprendendo": {
+            "eyebrow": "Em andamento",
+            "title": "O que estou aprendendo",
+            "subtitle": "Atualmente estou desenvolvendo um CRM, e esse projeto tem sido a minha principal fonte de estudo sobre arquitetura de software e back-end.",
+            "badge": "CRM em desenvolvimento",
+            "solid": {
+                "title": "SOLID",
+                "text": "Princípios de design orientado a objetos para escrever um código mais limpo, desacoplado e fácil de manter, onde cada classe tem uma única responsabilidade."
+            },
+            "mvc": {
+                "title": "MVC",
+                "text": "Separação da aplicação em Model, View e Controller, organizando as regras de negócio, a interface e o fluxo das requisições."
+            },
+            "database": {
+                "title": "Manipulação de banco de dados",
+                "text": "Modelagem de tabelas e relacionamentos, consultas SQL e operações de CRUD para cadastrar, buscar, atualizar e remover os dados dos clientes."
+            }
+        },
+
         "projetos":{
+            "eyebrow": "Portfólio",
             "title": "Meus Projetos",
             "projeto1":{
                 "title": "Marketing Pessoal",
@@ -40,16 +70,6 @@
 
         "phrase": "Programador não é aquele que sabe a linguagem de programação X ou Y, programador é aquele que sabe aprender rápido e aplicar o seu conhecimento.",
 
-        "blog": {
-            "blog1": {
-                "title": "JavaScript: Explorando os conceitos do DOM"
-            },
-            "blog2": {
-                "title": "Modelo OSI e TCP IP: Conceitos e comparação dos temas"
-            },
-            "buttonBlog": "Acessar Blog"
-        },
-
         "swiper-slide": {
             "phrase1": "WebApp é com o Paulo Cesar",
             "phrase2": "Transformando ideias em código",
@@ -58,7 +78,9 @@
         },
 
         "footer": {
+            "eyebrow": "Contato",
             "contact": "Entre em contato",
+            "contactText": "Quer conversar sobre um projeto, uma oportunidade ou só trocar uma ideia? Me mande uma mensagem ou veja mais sobre mim.",
             "button": "Contato",
             "message": "Mande uma mensagem:",
             "form": {
@@ -68,17 +90,38 @@
                 "inputEmail": "Digite seu e-mail",
                 "message": "Mensagem:",
                 "textareaMessage": "Digite sua mensagem",
-                "button": "Enviar"
+                "button": "Enviar",
+                "errorName": "Preencha o campo nome!",
+                "errorEmail": "Preencha o campo email!",
+                "errorMessage": "Preencha o campo mensagem",
+                "success": "Mensagem enviada com sucesso!",
+                "error": "Erro ao enviar a mensagem!"
             }
         }
     },
 
+    "projectsNotice": {
+        "title": "Projetos em atualização",
+        "text": "Estes projetos foram feitos no início da minha jornada e estão desatualizados em relação ao que sei hoje. Logo mais vou atualizá-los e adicionar novos projetos, incluindo o CRM que estou desenvolvendo."
+    },
+
+    "projectPage": {
+        "back": "Voltar",
+        "tech": "Tecnologias usadas:",
+        "github": "Ver no GitHub",
+        "noVideo": "Seu navegador não suporta a tag de vídeo."
+    },
+
     "pageDesenvolvedor": {
+        "eyebrow": "Desenvolvedor",
         "contact": "Entre em contato:",
-        "more": "Saiba mais sobre mim:"
+        "more": "Saiba mais sobre mim:",
+        "copy": "Copiar e-mail",
+        "copied": "E-mail copiado!"
     },
 
     "pageSkill": {
+        "eyebrow": "Stack",
         "title": "Hard Skills em Programação",
         "filter": "Filtrar habilidades:",
         "options": {
@@ -93,6 +136,7 @@
     },
 
     "pageProjects": {
+        "eyebrow": "Portfólio",
         "title": "Todos os Projetos",
         "project1": "HireQuest: Marketing Pessoal",
         "project2": "Landing Page do site da Netflix",
@@ -100,9 +144,7 @@
         "project4": "Layout ficha de nutrição - Praticando CSS",
         "project5": "Contador de calorias - Praticando Javascript",
         "project6": "Sistema de estoque e pedido",
-        "projectEmBreve": "Em breve projeto"
+        "projectEmBreve": "Em breve projeto",
+        "soon": "Em breve"
     }
-
-
-
 }

@@ -1,42 +1,18 @@
-import { ExternalLink } from "lucide-react"
-import { useNavigate } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react"
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function ButtonProject({urlPage}) {
-  const navigate = useNavigate();
   const { t } = useTranslation();
-  
+  if(!urlPage) return null;
+
   return (
-    <>
-      <button  
-        className="transition 
-                  duration-500 
-                  ease-in-out 
-                  flex 
-                  items-center 
-                  gap-2 
-                  font 
-                  font-bold 
-                  p-3 
-                  rounded-[10px] 
-                  bg-zinc-900 
-                  text-white 
-                  dark:text-black
-                  dark:bg-zinc-100 
-                  dark:text-text-black 
-                  mr-2 
-                  hover:dark:bg-zinc-300 
-                  hover:bg-zinc-800
-                  lg:w-[115px]
-                  lg:h-[60px]
-                  max-sm:h-[55px]
-                  max-sm:w-[110px]
-                  text-[1rem]
-                  cursor-pointer"
-        onClick={() => navigate(urlPage)}>
-        <ExternalLink /> {t("home.projetos.projeto1.button")}
-      </button>
-    </>
+    <Link
+      to={urlPage}
+      className="group/btn inline-flex items-center gap-2 h-11 px-5 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold text-sm hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors">
+      {t("home.projetos.projeto1.button")}
+      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"/>
+    </Link>
   )
 }
 

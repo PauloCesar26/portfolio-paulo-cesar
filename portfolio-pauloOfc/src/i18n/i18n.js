@@ -15,10 +15,17 @@ i18n.use(initReactI18next).init({
     },
    },
    lng: idiomaSalvo,
-   fallbacking: "pt",
+   fallbackLng: "pt",
    interpolation: {
     escapeValue: false,
    },
+});
+
+// Mantém o atributo lang do <html> sincronizado com o idioma ativo (acessibilidade/SEO)
+document.documentElement.lang = i18n.language === "en" ? "en" : "pt-BR";
+i18n.on("languageChanged", (lng) => {
+    localStorage.setItem("idioma", lng);
+    document.documentElement.lang = lng === "en" ? "en" : "pt-BR";
 });
 
 export default i18n;
