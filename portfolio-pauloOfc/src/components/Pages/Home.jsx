@@ -1,75 +1,53 @@
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import Banner from "@/components/ui/Banner";
+import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import ScrollReveal from "scrollreveal";
-import { useTranslation } from "react-i18next";
-import i18n from 'i18next';
+import { useTranslation, Trans } from "react-i18next";
+import { ArrowRight, CodeXml, Send } from "lucide-react";
+import { gsap, useGSAP } from "@/lib/gsap";
+import { useReveal } from "@/hooks/useReveal";
+import Banner from "@/components/ui/Banner";
 import LoandingOverlay from "@/components/ui/LoandingOverlay";
-import CardProjectHome from "../ui/CardProjectHome";
-import BlogCard from "../ui/BlogCard";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import "swiper/css";
-import "swiper/css/autoplay";
-import { CodeXml } from "lucide-react";
-import { Trans } from "react-i18next";
+import CardProjectHome from "@/components/ui/CardProjectHome";
+import SectionHeading from "@/components/ui/SectionHeading";
+import OutdatedNotice from "@/components/ui/OutdatedNotice";
+import LearningSection from "@/components/ui/LearningSection";
 
-const Home = ({setPage}) => {
-  const navigate = useNavigate();
-  const { t } = useTranslation();
-  console.log('Idioma atual:', i18n.language);
-  
-  useEffect(() => {
-    ScrollReveal().reveal(".animationLeft", {
-      origin: "left",
-      distance: "200px",
-      duration: 900,
-      easing: "ease-in-out",
-      reset: false,
+const highlight = { span: <span className="highlight" /> };
+
+const inputClass = "w-full rounded-2xl border bg-white dark:bg-zinc-900 px-4 py-3 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-zinc-900 dark:focus:border-white focus:ring-4 focus:ring-zinc-900/5 dark:focus:ring-white/10 transition";
+
+const Home = () => {
+  const { t, i18n } = useTranslation();
+  const scope = useRef(null);
+  useReveal(scope);
+
+  const phrase = t("home.phrase");
+  const slides = [1, 2, 3, 4].map((n) => t(`home.swiper-slide.phrase${n}`));
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // Frase: as palavras "acendem" conforme o usuário rola a página
+      gsap.fromTo(".phrase-word",
+        { opacity: 0.15 },
+        {
+          opacity: 1,
+          stagger: 0.1,
+          ease: "none",
+          scrollTrigger: { trigger: ".phrase-block", start: "top 80%", end: "bottom 45%", scrub: true },
+        }
+      );
+
+      // Faixa de frases em loop infinito (substitui o antigo carrossel)
+      gsap.to(".marquee-track", { xPercent: -50, ease: "none", duration: 40, repeat: -1 });
+
+      // Foto do "Sobre mim" flutuando suavemente
+      gsap.to(".about-photo", { y: -14, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
     });
 
-    ScrollReveal().reveal(".animationRight", {
-      origin: "rigth",
-      distance: "200px",
-      duration: 900,
-      easing: "ease-in-out",
-      reset: false,
-    });
-
-    ScrollReveal().reveal(".animation", {
-      distance: '150px',
-      origin: 'left',
-      duration: 900,
-      easing: 'ease-in-out',
-      interval: 700,
-      reset: false,
-    });
-
-    ScrollReveal().reveal(".animationBlog", {
-      distance: '150px',
-      origin: 'bottom',
-      duration: 900,
-      easing: 'ease-in-out',
-      interval: 900,
-      reset: false,
-    });
-
-    ScrollReveal().reveal(".animationButton", {
-      distance: '150px',
-      origin:'bottom',
-      easing: 'ease-in-out',
-      duration: 900,
-      reset: false
-    });
-
-    ScrollReveal().reveal(".animationFrase", {
-      distance: '200px',
-      origin:'bottom',
-      easing: 'ease-in-out',
-      duration: 700
-    });
-  }, []);
+    return () => mm.revert();
+  }, { scope, dependencies: [i18n.language], revertOnUpdate: true });
 
   // Validando form e mandando os dados via ajax
   const [formInfo, setFormInfo] = useState(
@@ -79,7 +57,6 @@ const Home = ({setPage}) => {
       message: ""
     }
   );
-  const [status, setStatus] = useState("");
   const information = (e) => {
     setFormInfo(
       {
@@ -94,309 +71,267 @@ const Home = ({setPage}) => {
     event.preventDefault();
 
     if(!formInfo.name.trim()){
-      setStatus( 
-        toast.error("Preencha o campo nome!")
-      );
+      toast.error(t("home.footer.form.errorName"));
       return;
     }
     if(!formInfo.email.trim().includes("@")){
-      setStatus(
-        toast.error("Preencha o campo email!")
-      );
+      toast.error(t("home.footer.form.errorEmail"));
       return;
     }
     if(!formInfo.message.trim()){
-      setStatus(
-        toast.error("Preencha o campo mensagem")
-      );
+      toast.error(t("home.footer.form.errorMessage"));
       return;
     }
-  
+
     const data = new FormData();
     data.append("name", formInfo.name);
     data.append("email", formInfo.email);
     data.append("message", formInfo.message);
     data.append("_captcha", "false");
     data.append("_honey", "");
-    
+
       try{
         setIsLoading(true);
         const response = await fetch("https://formsubmit.co/pc.cordeirolima@gmail.com", {
           method: "POST",
           body: data
         });
-        
+
         if(response.ok){
-          setStatus(toast.success("Mensagem enviada com sucesso!"));
+          toast.success(t("home.footer.form.success"));
           setFormInfo(
             {
-              name:"", 
-              email:"", 
+              name:"",
+              email:"",
               message:""
             }
           );
         }
+        else{
+          toast.error(t("home.footer.form.error"));
+        }
       }
       catch(error){
-        setStatus(toast.error("Erro ao enviar a mensagem!"))
+        toast.error(t("home.footer.form.error"));
         console.log(error);
       }
       finally{
         setIsLoading(false);
       }
     };
-    
+
     return (
-      <>
-        <div>
-          {isLoading && <LoandingOverlay/>}
-          <Banner/>
+      <div ref={scope}>
+        {isLoading && <LoandingOverlay/>}
+        <Banner/>
 
-          {/* About */}
-          <div className="transition duration-700 ease-in-out min-h-[400px] pt-10 mb-10 text-black bg-zinc-100 dark:bg-black dark:text-white p-6 flex flex-col justify-center items-center">
-            <h1 className="fontTitle animationLeft">{t("home.sobre.title")}</h1>
+        {/* About */}
+        <section id="sobre" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.2fr]">
+            <div data-reveal="left" className="relative mx-auto w-full max-w-sm">
+              <div className="absolute inset-6 rounded-full bg-zinc-300/60 dark:bg-zinc-700/40 blur-3xl" aria-hidden="true"/>
+              <img
+                src="/img/imgPortfolio.png"
+                alt="Imagem do criador do portfolio"
+                className="about-photo relative w-full drop-shadow-2xl"/>
+            </div>
 
-            <div className="animationRight fontContent text-[1.1rem] flex flex-row-reverse max-lg:flex-col flex-wrap justify-center items-center w-full">
-              <div className="w-full md:w-1/2 flex justify-center">
-                <img src="/img/imgPortfolio.png" alt="Imagem do criador do portfolio"/>
-              </div>
-              <div className="w-full md:w-1/2 max-md:w-[80%] flex flex-col justify-center space-y-6 max-lg:mt-10 max-lg:p-0 xl:p-10  text-justify">
-                <p>
-                  <Trans
-                    i18nKey="home.sobre.paragrafo1"
-                    components={{
-                      span: <span className="bg-zinc-500 text-white dark:bg-zinc-300 dark:text-black" />
-                    }}
-                  />
-                </p>
-                <p>
-                  <Trans
-                    i18nKey="home.sobre.paragrafo2"
-                    components={{
-                      span: <span className="bg-zinc-500 text-white dark:bg-zinc-300 dark:text-black" />
-                    }}
-                  />
-                </p>
-                <p>
-                  <Trans
-                    i18nKey="home.sobre.paragrafo3"
-                    components={{
-                      span: <span className="bg-zinc-500 text-white dark:bg-zinc-300 dark:text-black" />
-                    }}
-                  />
-                </p>
+            <div className="flex flex-col gap-8">
+              <SectionHeading eyebrow={t("home.sobre.eyebrow")} title={t("home.sobre.title")} align="left"/>
+              <div data-reveal="right" data-reveal-stagger className="space-y-5 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+                <p><Trans i18nKey="home.sobre.paragrafo1" components={highlight}/></p>
+                <p><Trans i18nKey="home.sobre.paragrafo2" components={highlight}/></p>
+                <p><Trans i18nKey="home.sobre.paragrafo3" components={highlight}/></p>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* My projects */}
-          <div className="h-auto pt-10 pb-10 flex flex-col justify-center items-center bg-zinc-200/40 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white animationRight">
-              {t("home.projetos.title")}
-            </h1>
-            <div className="mt-10 mb-10 h-auto flex flex-col gap-10 justify-center items-center flex-wrap ml-5 mr-5">
-              <CardProjectHome
-                imgSrc="/img/projectHirequest.png"
-                imgAlt="Imagem projeto 1"
-                initial={{opacity: 0}}
-                  whileInView={{opacity: 1}}
-                  transition={{
-                      type: "tween",
-                      stiffness: 100,
-                      damping: 10,
-                      delay: 1.3, 
-                      duration: 0.8,
-                      ease: "easeInOut"
-                  }}
-
-                title={t("home.projetos.projeto1.title")}
-                description={t("home.projetos.projeto1.text")}
-                techIcons={[
-                  {iconWidth:"w-[15%]", src: "/img/icons/html.svg", alt:"HTML"},
-                  {iconWidth:"w-[13%]", src: "/img/icons/css.svg", alt:"CSS"},
-                  {iconWidth:"w-[13%]", src: "/img/icons/php.svg", alt:"PHP"},
-                  {iconWidth:"w-[14%]", src: "/img/icons/bootstrap.svg", alt:"Bootstrap"},
-                  {iconWidth:"w-[17%]", src: "/img/icons/mysql.svg", alt:"MySql"}
-                ]}
-
-                githubUrl="https://github.com/PauloCesar26/TCC_HireQuest"
-                projectUrl="/Home/MarketingPessoal"
-              />
-
-              <CardProjectHome
-                imgSrc="/img/projectNetflix.png"
-                imgAlt="Imagem projeto 2"
-
-                title={t("home.projetos.projeto2.title")}
-                description={t("home.projetos.projeto2.text")}
-                techIcons={[
-                  {iconWidth:"w-[15%] xl:w-[25%]", src: "/img/icons/html.svg", alt:"HTML"},
-                  {iconWidth:"w-[13%] xl:w-[21%]", src: "/img/icons/css.svg", alt:"CSS"},
-                  {iconWidth:"w-[14%] xl:w-[22%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
-                ]}
-
-                githubUrl="https://github.com/PauloCesar26/clone-site-netflix"
-                projectUrl="/Home/PageNetflix"
-              />
-
-              <CardProjectHome
-                imgSrc="/img/projectEstoqueOficial.png"
-                imgAlt="Imagem projeto 3"
-
-                title={t("home.projetos.projeto3.title")}
-                description={t("home.projetos.projeto3.text")}
-                techIcons={[
-                  {iconWidth:"w-[15%] xl:w-[15%]", src: "/img/icons/html.svg", alt:"HTML"},
-                  {iconWidth:"w-[14%] xl:w-[15%]", src: "/img/icons/javascript.svg", alt:"JavaScript"},
-                  {iconWidth:"w-[14%] xl:w-[15%]", src: "/img/icons/tailwind.svg", alt:"Tailwind"},
-                  {iconWidth:"max-xl:w-[14%] xl:w-[14%]", src: "/img/icons/logoFirebase.ico", alt:"Firebase"},
-                ]}
-
-                githubUrl="https://github.com/PauloCesar26/controle-estoque"
-                projectUrl="/Home/SistemaEstoque"
-              />
-            </div>
-
-            <button 
-              onClick={() => navigate("/AllProjects")} 
-              className="animationButton font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-400 ease-in-out hover:scale-[1.03] shadow-lg hover:shadow-zinc-600 hover:dark:shadow-zinc-400">
-              {t("home.projetos.buttonAll")}
-            </button>
-          </div>
-
-          <div className="fundoFrase min-h-[350px] max-h-[500px] p-10 flex flex-col justify-center items-center">
-            <p className="animationFrase fontContent max-md:text-[1.5rem] md:text-[1.5rem] lg:text-[1.8rem] z-40 max-md:p-5 md:p-20 text-black dark:text-white">
-              "{t("home.phrase")}" - Paulo Cesar
-            </p>
-          </div>
-
-          {/* Blog */}
-          <div className="transition duration-700 ease-in-out h-auto pt-10 pb-10 flex flex-col justify-center items-center text-black bg-zinc-100 dark:bg-zinc-900/40">
-            <h1 className="fontTitle text-black dark:text-white animationRight">
-              Blog
-            </h1>
-            <div className="animationLeft fontContent mt-10 mb-10 h-auto flex gap-10 justify-center flex-wrap">
-              <BlogCard
-                imgSrc="/img/imgJavascript.jpeg"
-                imgAlt="Imagem Blog"
-                title={t("home.blog.blog1.title")}
-                filePath="/blog/blogJavascript/index.html"
-              />
-
-              <BlogCard
-                imgSrc="/img/rede.jpeg"
-                imgAlt="Imagem Blog"
-                title={t("home.blog.blog2.title")}
-                filePath="/blog/blogOsiTcpip/index.html"
-              />
-            </div>
-          </div>
-
-          <div className="w-full p-8 fundoFrase">
-            <Swiper
-              centeredSlides={true}
-              autoplay={{
-                delay: 2800,
-                disableOnInteraction: false,
-              }}
-              loop={true}
-              speed={900}
-              modules={[Autoplay]}
-              allowTouchMove={false}
-              spaceBetween={30} 
-              className="animationFrase flex items-center sm:max-w-[530px] w-full text-center text-sm text-black dark:text-white font  max-md:text-[1.2rem] md:text-[1.3rem]">
-              <SwiperSlide>
-                <div className="flex items-center justify-center sm:gap-10 gap-3">
-                  <CodeXml />
-                  <span>{t("home.swiper-slide.phrase1")}</span>
-                  <CodeXml />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex items-center justify-center sm:gap-10 gap-3">
-                  <CodeXml />
-                  <span>{t("home.swiper-slide.phrase2")}</span>
-                  <CodeXml />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex items-center justify-center sm:gap-10 gap-3">
-                  <CodeXml />
-                  <span>{t("home.swiper-slide.phrase3")}</span>
-                  <CodeXml />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex items-center justify-center sm:gap-10 gap-3">
-                  <CodeXml />
-                  <span>{t("home.swiper-slide.phrase4")}</span>
-                  <CodeXml />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-          
-          <footer id="contato" className="bg-zinc-200/40 dark:bg-black w-full flex flex-col items-center pt-10 pb-2 pl-10 pr-10">
-            <div className="animationRight w-full flex flex-col  flex-wrap items-center">
-              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">
-                {t("home.footer.contact")}
-              </h1>
-              <div className="w-full lg:w-[40%] pt-5 pb-8 mb-5 flex flex-col justify-center items-center space-y-6 md:w-1/2 border-b-1 border-zinc-500">
-                <button
-                  onClick={() => navigate("/Criador")} 
-                  className="font font-bold flex items-center justify-center pt-3 pb-3 pl-10 pr-10 bg-zinc-900 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-400 ease-in-out hover:scale-[1.03] shadow-lg hover:shadow-zinc-600 hover:dark:shadow-zinc-400">
-                  {t("home.footer.button")}
-                </button>
-              </div>
-
-              <h1 className="max-md:font max-md:text-[1.5rem] font-bold md:text-[2.2rem] text-black dark:text-zinc-200">{t("home.footer.message")}</h1>
-              <div className="font w-full flex items-center justify-center mt-10">
-                <div className="w-full lg:w-[40%] md:w-1/2">
-                  <form onSubmit={validation} action="https://formsubmit.co/pc.cordeirolima@gmail.com" method="POST" className="flex flex-col text-black dark:text-white text-[18px]">
-                    <label htmlFor="">{t("home.footer.form.name")}</label>
-                    <input type="text" 
-                      name="name" 
-                      placeholder={t("home.footer.form.inputName")}
-                      value={formInfo.name}
-                      onChange={information}
-                      className="text-black dark:text-white border-1 border-zinc-600 rounded-[10px] pt-2 pb-2 pl-3 pr-3"
-                    />
-                    
-                    <label htmlFor="" className="mt-6">{t("home.footer.form.email")}</label>
-                    <input 
-                      type="text" 
-                      name="email" 
-                      placeholder={t("home.footer.form.inputEmail")}
-                      value={formInfo.email}
-                      onChange={information}
-                      className="text-black dark:text-white border-1 border-zinc-600 rounded-[10px] pt-2 pb-2 pl-3 pr-3"
-                    />
-                    
-                    <label htmlFor="" className="mt-6">{t("home.footer.form.message")}</label>
-                    <textarea 
-                      name="message" 
-                      placeholder={t("home.footer.form.textareaMessage")}
-                      value={formInfo.message}
-                      onChange={information} 
-                      className="text-black dark:text-white pt-2 pb-2 pl-3 pr-3 min-h-[150px] border-1 border-zinc-600 rounded-[10px]"
-                    ></textarea>    
-                    
-                    <div className="w-full flex items-center justify-center">
-                      <button type="submit"
-                        className="font font-bold flex items-center justify-center mt-5 pt-3 pb-3 pl-10 pr-10 bg-zinc-900 text-[18px] text-white dark:bg-zinc-200 dark:text-black rounded-[15px] cursor-pointer transition duration-400 ease-in-out hover:scale-[1.03] shadow-lg hover:shadow-zinc-600 hover:dark:shadow-zinc-400">
-                        {t("home.footer.form.button")}
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div className="w-full p-5 mt-10 border-t-1 border-zinc-700 dark:border-zinc-100/50 flex justify-center text-black dark:text-white">
-              <span>&copy; Paulo Cesar 2025</span>
-            </div>
-          </footer>
+        {/* O que estou aprendendo (CRM) */}
+        <div className="border-y bg-zinc-100/60 dark:bg-zinc-900/30">
+          <LearningSection/>
         </div>
-    </>
+
+        {/* My projects */}
+        <section id="projetos" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <SectionHeading eyebrow={t("home.projetos.eyebrow")} title={t("home.projetos.title")}/>
+
+          <div className="mt-10">
+            <OutdatedNotice/>
+          </div>
+
+          <div className="mt-14 flex flex-col gap-8">
+            <CardProjectHome
+              index={0}
+              imgSrc="/img/projectHirequest.png"
+              imgAlt="Imagem projeto 1"
+              title={t("home.projetos.projeto1.title")}
+              description={t("home.projetos.projeto1.text")}
+              techIcons={[
+                { src: "/img/icons/html.svg", alt: "HTML" },
+                { src: "/img/icons/css.svg", alt: "CSS" },
+                { src: "/img/icons/php.svg", alt: "PHP" },
+                { src: "/img/icons/bootstrap.svg", alt: "Bootstrap" },
+                { src: "/img/icons/mysql.svg", alt: "MySQL" }
+              ]}
+              githubUrl="https://github.com/PauloCesar26/TCC_HireQuest"
+              projectUrl="/Home/MarketingPessoal"
+            />
+
+            <CardProjectHome
+              index={1}
+              imgSrc="/img/projectNetflix.png"
+              imgAlt="Imagem projeto 2"
+              title={t("home.projetos.projeto2.title")}
+              description={t("home.projetos.projeto2.text")}
+              techIcons={[
+                { src: "/img/icons/html.svg", alt: "HTML" },
+                { src: "/img/icons/css.svg", alt: "CSS" },
+                { src: "/img/icons/javascript.svg", alt: "JavaScript" },
+              ]}
+              githubUrl="https://github.com/PauloCesar26/clone-site-netflix"
+              projectUrl="/Home/PageNetflix"
+            />
+
+            <CardProjectHome
+              index={2}
+              imgSrc="/img/projectEstoqueOficial.png"
+              imgAlt="Imagem projeto 3"
+              title={t("home.projetos.projeto3.title")}
+              description={t("home.projetos.projeto3.text")}
+              techIcons={[
+                { src: "/img/icons/html.svg", alt: "HTML" },
+                { src: "/img/icons/javascript.svg", alt: "JavaScript" },
+                { src: "/img/icons/tailwind.svg", alt: "Tailwind" },
+                { src: "/img/icons/logoFirebase.ico", alt: "Firebase" },
+              ]}
+              githubUrl="https://github.com/PauloCesar26/controle-estoque"
+              projectUrl="/Home/SistemaEstoque"
+            />
+          </div>
+
+          <div data-reveal="up" className="mt-12 flex justify-center">
+            <Link
+              to="/AllProjects"
+              className="group inline-flex items-center gap-2 h-12 px-7 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold shadow-lg shadow-zinc-900/20 hover:scale-[1.03] active:scale-[0.98] transition-transform duration-300">
+              {t("home.projetos.buttonAll")}
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
+            </Link>
+          </div>
+        </section>
+
+        {/* Frase */}
+        <section className="relative overflow-hidden border-y bg-zinc-100/60 dark:bg-zinc-900/30">
+          <div className="bg-grid absolute inset-0" aria-hidden="true"/>
+          <blockquote className="phrase-block relative mx-auto max-w-5xl px-6 py-24 md:py-32 text-center">
+            <p aria-label={phrase} className="font-display text-[clamp(1.6rem,4vw,3rem)] font-semibold leading-tight tracking-tight text-zinc-900 dark:text-white">
+              <span aria-hidden="true">
+                “{phrase.split(" ").map((word, index) => (
+                  <span key={index} className="phrase-word">{word} </span>
+                ))}”
+              </span>
+            </p>
+            <footer className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">- Paulo Cesar</footer>
+          </blockquote>
+        </section>
+
+        {/* Faixa de frases */}
+        <div className="marquee-mask overflow-hidden py-8 border-b" aria-label={slides.join(". ")}>
+          <div className="marquee-track flex w-max" aria-hidden="true">
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex shrink-0 items-center">
+                {[...slides, ...slides].map((slide, index) => (
+                  <span key={index} className="flex items-center gap-8 px-8 font-display text-2xl md:text-3xl font-semibold whitespace-nowrap text-zinc-400 dark:text-zinc-600">
+                    {slide}
+                    <CodeXml className="w-6 h-6 text-zinc-900 dark:text-white"/>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contato */}
+        <section id="contato" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+            <div className="flex flex-col gap-8">
+              <SectionHeading
+                eyebrow={t("home.footer.eyebrow")}
+                title={t("home.footer.contact")}
+                subtitle={t("home.footer.contactText")}
+                align="left"/>
+              <div data-reveal="up" className="flex flex-col gap-4">
+                <Link
+                  to="/Criador"
+                  className="group self-start inline-flex items-center gap-2 h-12 px-7 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold shadow-lg shadow-zinc-900/20 hover:scale-[1.03] active:scale-[0.98] transition-transform duration-300">
+                  {t("home.footer.button")}
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
+                </Link>
+                <a href="mailto:pc.cordeirolima@gmail.com" className="self-start text-zinc-600 dark:text-zinc-400 underline underline-offset-4 decoration-zinc-300 dark:decoration-zinc-700 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                  pc.cordeirolima@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <form
+              data-reveal="right"
+              onSubmit={validation}
+              noValidate
+              className="flex flex-col gap-5 rounded-3xl border bg-white/70 dark:bg-zinc-900/50 p-6 md:p-8 shadow-xl shadow-zinc-900/5">
+              <h3 className="font-display text-xl font-bold text-zinc-900 dark:text-white">{t("home.footer.message")}</h3>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t("home.footer.form.name")}</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  autoComplete="name"
+                  placeholder={t("home.footer.form.inputName")}
+                  value={formInfo.name}
+                  onChange={information}
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t("home.footer.form.email")}</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  placeholder={t("home.footer.form.inputEmail")}
+                  value={formInfo.email}
+                  onChange={information}
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="message" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t("home.footer.form.message")}</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  placeholder={t("home.footer.form.textareaMessage")}
+                  value={formInfo.message}
+                  onChange={information}
+                  className={`${inputClass} resize-y min-h-[140px]`}
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="group mt-2 inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold cursor-pointer hover:bg-zinc-700 dark:hover:bg-zinc-200 disabled:opacity-60 transition-colors">
+                {t("home.footer.form.button")}
+                <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"/>
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
   )
 }
 

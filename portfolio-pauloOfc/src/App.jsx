@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import { Sidebar } from "@/components/ui/sidebar"
+import { MotionConfig } from "motion/react";
+import { Toaster } from 'sonner'
 import Layout from './components/layout'
 import './App.css'
-import { Toaster } from 'sonner'
 
 function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <Layout/>
       <Toaster position="bottom-right" richColors/>
-    </>
+    </MotionConfig>
   )
 }
 
