@@ -7,13 +7,13 @@ import Dark from "@/hooks/Dark";
 import LanguageSelect from "@/hooks/LanguageSelect";
 
 // Descobre qual item do menu está ativo a partir da URL.
-// Páginas de detalhe (/Home/Projeto ou /AllProjects/Projeto) marcam "Projetos".
+// Páginas de detalhe (/home/projeto ou /todos-projetos/projeto) marcam "Projetos".
 function getActivePage(pathname) {
   const [first, second] = pathname.split("/").filter(Boolean);
 
-  if(second || first === "AllProjects") return "AllProjects";
-  if(first === "Criador" || first === "Habilidades") return first;
-  return "Home";
+  if(second || first === "todos-projetos") return "todos-projetos";
+  if(first === "dev" || first === "habilidades") return first;
+  return "home";
 }
 
 export default function Navbar() {
@@ -62,7 +62,7 @@ export default function Navbar() {
             ? "border bg-white/75 dark:bg-zinc-900/75 backdrop-blur-xl shadow-lg shadow-zinc-900/5 dark:shadow-black/30"
             : "border border-transparent"
         }`}>
-        <Link to="/Home" className="group flex items-center gap-2.5 shrink-0" aria-label="Paulo Cesar - Home">
+        <Link to="/home" className="group flex items-center gap-2.5 shrink-0" aria-label="Paulo Cesar - Home">
           <span className="grid place-items-center w-9 h-9 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-display font-bold text-sm transition-transform duration-500 group-hover:rotate-[360deg]">
             PC
           </span>

@@ -175,7 +175,7 @@ const Home = () => {
                 { src: "/img/icons/mysql.svg", alt: "MySQL" }
               ]}
               githubUrl="https://github.com/PauloCesar26/TCC_HireQuest"
-              projectUrl="/Home/MarketingPessoal"
+              projectUrl="/home/marketing-pessoal"
             />
 
             <CardProjectHome
@@ -190,7 +190,7 @@ const Home = () => {
                 { src: "/img/icons/javascript.svg", alt: "JavaScript" },
               ]}
               githubUrl="https://github.com/PauloCesar26/clone-site-netflix"
-              projectUrl="/Home/PageNetflix"
+              projectUrl="/home/netflix-page"
             />
 
             <CardProjectHome
@@ -206,13 +206,13 @@ const Home = () => {
                 { src: "/img/icons/logoFirebase.ico", alt: "Firebase" },
               ]}
               githubUrl="https://github.com/PauloCesar26/controle-estoque"
-              projectUrl="/Home/SistemaEstoque"
+              projectUrl="/home/sistema-estoque"
             />
           </div>
 
           <div data-reveal="up" className="mt-12 flex justify-center">
             <Link
-              to="/AllProjects"
+              to="/todos-projetos"
               className="group inline-flex items-center gap-2 h-12 px-7 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold shadow-lg shadow-zinc-900/20 hover:scale-[1.03] active:scale-[0.98] transition-transform duration-300">
               {t("home.projetos.buttonAll")}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
@@ -262,7 +262,7 @@ const Home = () => {
                 align="left"/>
               <div data-reveal="up" className="flex flex-col gap-4">
                 <Link
-                  to="/Criador"
+                  to="/dev"
                   className="group self-start inline-flex items-center gap-2 h-12 px-7 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold shadow-lg shadow-zinc-900/20 hover:scale-[1.03] active:scale-[0.98] transition-transform duration-300">
                   {t("home.footer.button")}
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>

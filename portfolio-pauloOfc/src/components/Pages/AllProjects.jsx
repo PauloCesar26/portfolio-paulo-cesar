@@ -23,7 +23,7 @@ function AllProjects() {
             imgSrc="/img/projectHirequest.png"
             altText="Projeto"
             url="https://github.com/PauloCesar26/TCC_HireQuest"
-            urlPage="/AllProjects/MarketingPessoal">
+            urlPage="/todos-projetos/marketing-pessoal">
             <span>{t("pageProjects.project1")}</span>
           </CardProject>
 
@@ -31,7 +31,7 @@ function AllProjects() {
             imgSrc="/img/projectNetflix.png"
             altText="Projeto"
             url="https://github.com/PauloCesar26/clone-site-netflix"
-            urlPage="/AllProjects/PageNetflix">
+            urlPage="/todos-projetos/netflix-page">
               <span>{t("pageProjects.project2")}</span>
           </CardProject>
 
@@ -39,7 +39,7 @@ function AllProjects() {
             imgSrc="/img/projectEstoqueOficial.png"
             altText="Projeto"
             url="https://github.com/PauloCesar26/controle-estoque"
-            urlPage="/AllProjects/SistemaEstoque">
+            urlPage="/todos-projetos/sistema-estoque">
               <span>{t("pageProjects.project6")}</span>
           </CardProject>
 
@@ -47,7 +47,7 @@ function AllProjects() {
             imgSrc="/img/projectQrcode.png"
             altText="Projeto"
             url="https://github.com/PauloCesar26/sistemaSimplesJS"
-            urlPage="/AllProjects/PageSistemaJS">
+            urlPage="/todos-projetos/sistema-js">
               <span>{t("pageProjects.project3")}</span>
           </CardProject>
 
@@ -61,7 +61,7 @@ function AllProjects() {
             imgSrc="/img/projectCalorie.png"
             altText="Projeto"
             url="https://github.com/PauloCesar26/FreeCodeCamp/tree/main/FreeCodeCamp-Studying/JavaScript/JS03_CalorieCounter"
-            urlPage="/AllProjects/PageCalorieCounter">
+            urlPage="/todos-projetos/calorie-counter">
               <span>{t("pageProjects.project5")}</span>
           </CardProject>
 
