@@ -12,10 +12,10 @@ export default function Footer() {
   const { t } = useTranslation();
 
   const links = [
-    { title: t("sidebar.homeSidebar"), page: "Home" },
-    { title: t("sidebar.desenvolvedor"), page: "Criador" },
-    { title: t("sidebar.habilidades"), page: "Habilidades" },
-    { title: t("sidebar.projetos"), page: "AllProjects" },
+    { title: t("sidebar.homeSidebar"), page: "home" },
+    { title: t("sidebar.desenvolvedor"), page: "dev" },
+    { title: t("sidebar.habilidades"), page: "habilidades" },
+    { title: t("sidebar.projetos"), page: "todos-projetos" },
   ];
 
   return (

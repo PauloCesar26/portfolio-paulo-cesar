@@ -17,7 +17,7 @@ function ProjectLayout({ title, video, image, techIcons, githubUrl, children }) 
   // Volta para a página anterior; se o usuário abriu o link direto, vai para a lista de projetos
   const goBack = () => {
     if(window.history.state?.idx > 0) navigate(-1);
-    else navigate("/AllProjects");
+    else navigate("/todos-projetos");
   };
 
   return (

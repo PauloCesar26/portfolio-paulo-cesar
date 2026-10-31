@@ -72,7 +72,7 @@ function Banner() {
               <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5"/>
             </button>
             <Link
-              to="/AllProjects"
+              to="/todos-projetos"
               className="group inline-flex items-center gap-2 h-12 px-7 rounded-full border bg-white/60 dark:bg-zinc-900/60 backdrop-blur font-semibold text-zinc-900 dark:text-white hover:bg-white dark:hover:bg-zinc-900 transition-colors">
               {t("home.projetos.buttonAll")}
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"/>
