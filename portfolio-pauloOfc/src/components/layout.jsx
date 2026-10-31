@@ -35,19 +35,19 @@ export default function Layout() {
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
             <Routes location={location}>
-                <Route path="/Home" element={<Home />} />
-                <Route path="/Criador" element={<ProjectCreator />} />
-                <Route path="/Habilidades" element={<Habilidades />} />
-                <Route path="/AllProjects" element={<AllProjects />} />
-                <Route path="/AllProjects/MarketingPessoal" element={<MarketingPessoal />} />
-                <Route path="/Home/MarketingPessoal" element={<MarketingPessoal />} />
-                <Route path="/AllProjects/PageNetflix" element={<PageNetflix />} />
-                <Route path="/Home/PageNetflix" element={<PageNetflix />} />
-                <Route path="/AllProjects/PageSistemaJS" element={<PageQrcode />} />
-                <Route path="/Home/SistemaEstoque" element={<SistemaEstoque />} />
-                <Route path="/AllProjects/SistemaEstoque" element={<SistemaEstoque />} />
-                <Route path="/AllProjects/PageCalorieCounter" element={<PageCalorie />} />
-                <Route path="/Home/PageCalorieCounter" element={<PageCalorie />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/dev" element={<ProjectCreator />} />
+                <Route path="/habilidades" element={<Habilidades />} />
+                <Route path="/todos-projetos" element={<AllProjects />} />
+                <Route path="/todos-projetos/marketing-pessoal" element={<MarketingPessoal />} />
+                <Route path="/home/marketing-pessoal" element={<MarketingPessoal />} />
+                <Route path="/todos-projetos/netflix-page" element={<PageNetflix />} />
+                <Route path="/home/netflix-page" element={<PageNetflix />} />
+                <Route path="/todos-projetos/sistema-js" element={<PageQrcode />} />
+                <Route path="/home/sistema-estoque" element={<SistemaEstoque />} />
+                <Route path="/todos-projetos/sistema-estoque" element={<SistemaEstoque />} />
+                <Route path="/todos-projetos/calorie-counter" element={<PageCalorie />} />
+                <Route path="/home/calorie-counter" element={<PageCalorie />} />
                 <Route path="*" element={<Home />} />
             </Routes>
           </motion.div>
