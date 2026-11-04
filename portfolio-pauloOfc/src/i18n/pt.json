@@ -46,6 +46,20 @@
             "database": {
                 "title": "Manipulação de banco de dados",
                 "text": "Modelagem de tabelas e relacionamentos, consultas SQL e operações de CRUD para cadastrar, buscar, atualizar e remover os dados dos clientes."
+            },
+            "ingles": {
+                "label": "Além do código",
+                "title": "Inglês do mundo real",
+                "text": "Estou aprendendo inglês com o curso do Mairo Vergara, colocando a metodologia dele em prática para aprender o idioma como ele é usado no mundo real, e não apenas a gramática de sala de aula.",
+                "imgAlt": "Balões de fala com as bandeiras dos Estados Unidos e do Reino Unido",
+                "method": {
+                    "title": "Método Mairo Vergara",
+                    "text": "Faço o curso e aplico a metodologia no dia a dia, aprendendo com conteúdo real."
+                },
+                "anki": {
+                    "title": "Anki e repetição espaçada",
+                    "text": "Pratico no Anki com memória espaçada para fixar o vocabulário a longo prazo."
+                }
             }
         },
 
