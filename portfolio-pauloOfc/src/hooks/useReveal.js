@@ -26,9 +26,19 @@ export function useReveal(scope, deps = []) {
         const from = offsets[el.dataset.reveal] ?? offsets.up;
         const targets = el.hasAttribute("data-reveal-stagger") ? el.children : el;
 
-        gsap.from(targets, {
+        // fromTo com destino explícito: o GSAP não lê a posição final do CSS, que pode estar no meio
+        // de uma transição (ex.: classes transition-transform do Tailwind). A transição CSS fica
+        // desligada durante a animação e os estilos são limpos no fim para o hover voltar a funcionar.
+        gsap.fromTo(targets, {
           ...from,
           autoAlpha: 0,
+          transition: "none",
+        }, {
+          x: 0,
+          y: 0,
+          autoAlpha: 1,
+          transition: "none",
+          clearProps: "transform,translate,rotate,scale,opacity,visibility,transition",
           duration: 0.9,
           ease: "power3.out",
           stagger: 0.12,

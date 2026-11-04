@@ -46,6 +46,20 @@
             "database": {
                 "title": "Database manipulation",
                 "text": "Modeling tables and relationships, SQL queries and CRUD operations to create, read, update and delete customer data."
+            },
+            "ingles": {
+                "label": "Beyond code",
+                "title": "Real-world English",
+                "text": "I'm learning English through Mairo Vergara's course, putting his methodology into practice to learn the language the way it's used in the real world, not just classroom grammar.",
+                "imgAlt": "Speech bubbles with the flags of the United States and the United Kingdom",
+                "method": {
+                    "title": "Mairo Vergara method",
+                    "text": "I take the course and apply the methodology every day, learning from real content."
+                },
+                "anki": {
+                    "title": "Anki and spaced repetition",
+                    "text": "I practice on Anki with spaced repetition to retain vocabulary in the long term."
+                }
             }
         },
 
